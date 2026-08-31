@@ -1,0 +1,72 @@
+{
+  "version": 1,
+  "title": "MCU: Wio-E5 (STM32WLE5JC + SX126x), SWD/debug, LoRa antenna",
+  "paper": "A3",
+  "components": [
+    {"ref": "U201", "lib_id": "cc1200_balloon:Wio-E5", "value": "Wio-E5",
+     "footprint": "cc1200_balloon:WIO-E5", "fields": {"MPN": "114993120"}},
+    {"ref": "C201", "lib_id": "Device:C", "value": "100n", "footprint": "Capacitor_SMD:C_0402_1005Metric"},
+    {"ref": "C202", "lib_id": "Device:C", "value": "1u", "footprint": "Capacitor_SMD:C_0402_1005Metric"},
+    {"ref": "C203", "lib_id": "Device:C", "value": "10u", "footprint": "Capacitor_SMD:C_0603_1608Metric"},
+
+    {"ref": "J201", "lib_id": "Connector:Conn_Coaxial", "value": "LoRa ANT pads",
+     "footprint": "cc1200_balloon:SolderPad_Coax_Pigtail"},
+
+    {"ref": "R201", "lib_id": "Device:R", "value": "10k", "footprint": "Resistor_SMD:R_0402_1005Metric"},
+    {"ref": "C204", "lib_id": "Device:C", "value": "100n", "footprint": "Capacitor_SMD:C_0402_1005Metric"},
+    {"ref": "J202", "lib_id": "Connector_Generic:Conn_01x06", "value": "SWD+DBG pads",
+     "footprint": "cc1200_balloon:SolderPad_1x06_P1.27mm"},
+
+    {"ref": "R202", "lib_id": "Device:R", "value": "1k", "footprint": "Resistor_SMD:R_0402_1005Metric"},
+    {"ref": "D201", "lib_id": "Device:LED", "value": "STATUS", "footprint": "LED_SMD:LED_0603_1608Metric"},
+
+    {"ref": "R203", "lib_id": "Device:R", "value": "4k7", "footprint": "Resistor_SMD:R_0402_1005Metric"},
+    {"ref": "R204", "lib_id": "Device:R", "value": "4k7", "footprint": "Resistor_SMD:R_0402_1005Metric"}
+  ],
+  "nets": [
+    {"name": "+3V3", "pins": ["U201.1", "C201.1", "C202.1", "C203.1", "R201.1",
+      "R203.1", "R204.1", "J202.1"]},
+    {"name": "GND", "pins": ["U201.2", "U201.14", "U201.16", "U201.22",
+      "C201.2", "C202.2", "C203.2", "C204.2", "J201.2", "J202.2", "D201.1"]},
+
+    {"name": "LORA_RF", "pins": ["U201.15", "J201.1"]},
+    {"name": "NRST", "pins": ["U201.17", "R201.2", "C204.1", "J202.5"]},
+    {"name": "SWDIO", "pins": ["U201.3", "J202.3"]},
+    {"name": "SWCLK", "pins": ["U201.4", "J202.4"]},
+    {"name": "DBG_TX", "pins": ["U201.12", "J202.6"]},
+
+    {"name": "SPI_SCK", "pins": ["U201.8"]},
+    {"name": "SPI_MISO", "pins": ["U201.7"]},
+    {"name": "SPI_MOSI", "pins": ["U201.11"]},
+    {"name": "RADIO_CS", "pins": ["U201.26"]},
+    {"name": "RADIO_RST", "pins": ["U201.5"]},
+    {"name": "RADIO_IRQ", "pins": ["U201.20"]},
+
+    {"name": "SCL", "pins": ["U201.10", "R203.2"]},
+    {"name": "SDA", "pins": ["U201.9", "R204.2"]},
+    {"name": "LIGHTNING_IRQ", "pins": ["U201.23"]},
+
+    {"name": "PM_CS", "pins": ["U201.6"]},
+    {"name": "PM_IRQ", "pins": ["U201.25"]},
+
+    {"name": "GNSS_TX", "pins": ["U201.18"]},
+    {"name": "GNSS_RX", "pins": ["U201.19"]},
+    {"name": "GNSS_PPS", "pins": ["U201.27"]},
+    {"name": "GNSS_ONOFF", "pins": ["U201.13"]},
+
+    {"name": "VBAT_SENSE", "pins": ["U201.24"]},
+    {"name": "STATUS_LED", "pins": ["U201.21", "R202.1"]},
+    {"name": "LED_A", "pins": ["R202.2", "D201.2"]}
+  ],
+  "no_connect": ["U201.28"],
+  "groups": [
+    {"name": "module", "row": 0, "stages": [["C201", "C202", "C203"], ["U201"], ["J201"]]},
+    {"name": "reset and debug", "row": 1, "stages": [["R201", "C204"], ["J202"]]},
+    {"name": "i2c pull-ups", "row": 1, "stages": [["R203", "R204"]]},
+    {"name": "status led", "row": 1, "stages": [["R202"], ["D201"]]}
+  ],
+  "power": {
+    "GND": {"style": "symbol"},
+    "+3V3": {"style": "symbol"}
+  }
+}

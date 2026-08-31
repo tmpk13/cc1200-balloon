@@ -1,0 +1,920 @@
+[
+  {
+    "key": "GRM21BR61A226ME51L|",
+    "value": "22u",
+    "footprint": "Capacitor_SMD:C_0805_2012Metric",
+    "mpn": "GRM21BR61A226ME51L",
+    "query": "0805 22uF 10V X5R capacitor",
+    "expect": {
+      "param": "Capacitance",
+      "value": 0.000022,
+      "pkg": "0805"
+    },
+    "alt": "",
+    "refs": [
+      "C101",
+      "C106",
+      "C502"
+    ],
+    "dnp": false
+  },
+  {
+    "key": "GRM188R60J106ME84D|",
+    "value": "10u",
+    "footprint": "Capacitor_SMD:C_0603_1608Metric",
+    "mpn": "GRM188R60J106ME84D",
+    "query": "0603 10uF 6.3V X5R capacitor",
+    "expect": {
+      "param": "Capacitance",
+      "value": 0.000009999999999999999,
+      "pkg": "0603"
+    },
+    "alt": "",
+    "refs": [
+      "C102",
+      "C104",
+      "C105",
+      "C203",
+      "C411",
+      "C503"
+    ],
+    "dnp": false
+  },
+  {
+    "key": "GRM155R71C104KA88D|",
+    "value": "100n",
+    "footprint": "Capacitor_SMD:C_0402_1005Metric",
+    "mpn": "GRM155R71C104KA88D",
+    "query": "0402 0.1uF 16V X7R capacitor",
+    "expect": {
+      "param": "Capacitance",
+      "value": 1.0000000000000001e-7,
+      "pkg": "0402"
+    },
+    "alt": "",
+    "refs": [
+      "C103",
+      "C107",
+      "C201",
+      "C204",
+      "C403",
+      "C404",
+      "C406",
+      "C407",
+      "C408",
+      "C410",
+      "C413",
+      "C420",
+      "C421",
+      "C501",
+      "C507",
+      "C508",
+      "C509",
+      "C510",
+      "C514"
+    ],
+    "dnp": false
+  },
+  {
+    "key": "GRM155R61A105KE15D|",
+    "value": "1u",
+    "footprint": "Capacitor_SMD:C_0402_1005Metric",
+    "mpn": "GRM155R61A105KE15D",
+    "query": "0402 1uF 10V X5R capacitor",
+    "expect": {
+      "param": "Capacitance",
+      "value": 0.000001,
+      "pkg": "0402"
+    },
+    "alt": "",
+    "refs": [
+      "C202",
+      "C312",
+      "C402",
+      "C405",
+      "C409",
+      "C412",
+      "C417",
+      "C418",
+      "C419",
+      "C504",
+      "C511",
+      "C512",
+      "C513"
+    ],
+    "dnp": false
+  },
+  {
+    "key": "GRM155R71H473KE14D|",
+    "value": "47n",
+    "footprint": "Capacitor_SMD:C_0402_1005Metric",
+    "mpn": "GRM155R71H473KE14D",
+    "query": "0402 0.047uF 50V X7R capacitor",
+    "expect": {
+      "param": "Capacitance",
+      "value": 4.7000000000000004e-8,
+      "pkg": "0402"
+    },
+    "alt": "",
+    "refs": [
+      "C301",
+      "C302",
+      "C303",
+      "C304",
+      "C305",
+      "C306",
+      "C307",
+      "C308",
+      "C309",
+      "C315",
+      "C316"
+    ],
+    "dnp": false
+  },
+  {
+    "key": "GRM1555C1H101JA01D|",
+    "value": "100p",
+    "footprint": "Capacitor_SMD:C_0402_1005Metric",
+    "mpn": "GRM1555C1H101JA01D",
+    "query": "0402 100pF 50V C0G capacitor",
+    "expect": {
+      "param": "Capacitance",
+      "value": 1e-10,
+      "pkg": "0402"
+    },
+    "alt": "",
+    "refs": [
+      "C310",
+      "C414"
+    ],
+    "dnp": false
+  },
+  {
+    "key": "GRM155R71H103KA88D|",
+    "value": "10n",
+    "footprint": "Capacitor_SMD:C_0402_1005Metric",
+    "mpn": "GRM155R71H103KA88D",
+    "query": "0402 10000pF 50V X7R capacitor",
+    "expect": {
+      "param": "Capacitance",
+      "value": 1e-8,
+      "pkg": "0402"
+    },
+    "alt": "",
+    "refs": [
+      "C311",
+      "C314"
+    ],
+    "dnp": false
+  },
+  {
+    "key": "CL05A224KA5NNNC|",
+    "value": "220n",
+    "footprint": "Capacitor_SMD:C_0402_1005Metric",
+    "mpn": "CL05A224KA5NNNC",
+    "query": "0402 0.22uF 16V X5R capacitor",
+    "expect": {
+      "param": "Capacitance",
+      "value": 2.2e-7,
+      "pkg": "0402"
+    },
+    "alt": "",
+    "refs": [
+      "C313"
+    ],
+    "dnp": false
+  },
+  {
+    "key": "GRM1555C1H182JA01D|",
+    "value": "1n8",
+    "footprint": "Capacitor_SMD:C_0402_1005Metric",
+    "mpn": "GRM1555C1H182JA01D",
+    "query": "0402 1800pF 50V C0G capacitor",
+    "expect": {
+      "param": "Capacitance",
+      "value": 1.8000000000000002e-9,
+      "pkg": "0402"
+    },
+    "alt": "",
+    "refs": [
+      "C317"
+    ],
+    "dnp": false
+  },
+  {
+    "key": "CL05C120JB5NNNC|",
+    "value": "12p",
+    "footprint": "Capacitor_SMD:C_0402_1005Metric",
+    "mpn": "CL05C120JB5NNNC",
+    "query": "0402 12pF 50V C0G capacitor",
+    "expect": {
+      "param": "Capacitance",
+      "value": 1.2e-11,
+      "pkg": "0402"
+    },
+    "alt": "",
+    "refs": [
+      "C318",
+      "C319"
+    ],
+    "dnp": false
+  },
+  {
+    "key": "GRM1555C1H560JA01D|",
+    "value": "56p",
+    "footprint": "Capacitor_SMD:C_0402_1005Metric",
+    "mpn": "GRM1555C1H560JA01D",
+    "query": "0402 56pF 50V C0G capacitor",
+    "expect": {
+      "param": "Capacitance",
+      "value": 5.6e-11,
+      "pkg": "0402"
+    },
+    "alt": "",
+    "refs": [
+      "C320"
+    ],
+    "dnp": false
+  },
+  {
+    "key": "GRM1555C1H390JA01D|",
+    "value": "39p",
+    "footprint": "Capacitor_SMD:C_0402_1005Metric",
+    "mpn": "GRM1555C1H390JA01D",
+    "query": "0402 39pF 50V C0G capacitor",
+    "expect": {
+      "param": "Capacitance",
+      "value": 3.9e-11,
+      "pkg": "0402"
+    },
+    "alt": "",
+    "refs": [
+      "C321"
+    ],
+    "dnp": false
+  },
+  {
+    "key": "GRM1555C1H2R2CA01D|",
+    "value": "2p2",
+    "footprint": "Capacitor_SMD:C_0402_1005Metric",
+    "mpn": "GRM1555C1H2R2CA01D",
+    "query": "0402 2.2pF 50V C0G capacitor",
+    "expect": {
+      "param": "Capacitance",
+      "value": 2.2000000000000003e-12,
+      "pkg": "0402"
+    },
+    "alt": "",
+    "refs": [
+      "C322"
+    ],
+    "dnp": false
+  },
+  {
+    "key": "GRM1555C1H5R1CA01D|",
+    "value": "5p1",
+    "footprint": "Capacitor_SMD:C_0402_1005Metric",
+    "mpn": "GRM1555C1H5R1CA01D",
+    "query": "0402 5.1pF 50V C0G capacitor",
+    "expect": {
+      "param": "Capacitance",
+      "value": 5.1e-12,
+      "pkg": "0402"
+    },
+    "alt": "",
+    "refs": [
+      "C323",
+      "C325",
+      "C326"
+    ],
+    "dnp": false
+  },
+  {
+    "key": "GRM1555C1H6R2CA01D|",
+    "value": "6p2",
+    "footprint": "Capacitor_SMD:C_0402_1005Metric",
+    "mpn": "GRM1555C1H6R2CA01D",
+    "query": "0402 6.2pF 50V C0G capacitor",
+    "expect": {
+      "param": "Capacitance",
+      "value": 6.2e-12,
+      "pkg": "0402"
+    },
+    "alt": "",
+    "refs": [
+      "C324"
+    ],
+    "dnp": false
+  },
+  {
+    "key": "GRM1555C1H471JA01D|",
+    "value": "470p",
+    "footprint": "Capacitor_SMD:C_0402_1005Metric",
+    "mpn": "GRM1555C1H471JA01D",
+    "query": "0402 470pF 50V C0G capacitor",
+    "expect": {
+      "param": "Capacitance",
+      "value": 4.7e-10,
+      "pkg": "0402"
+    },
+    "alt": "",
+    "refs": [
+      "C401"
+    ],
+    "dnp": false
+  },
+  {
+    "key": "GRM1555C1H100JA01D|dnp",
+    "value": "10p",
+    "footprint": "Capacitor_SMD:C_0402_1005Metric",
+    "mpn": "GRM1555C1H100JA01D",
+    "query": "0402 10pF 50V C0G capacitor",
+    "expect": {
+      "param": "Capacitance",
+      "value": 1e-11,
+      "pkg": "0402"
+    },
+    "alt": "",
+    "refs": [
+      "C415",
+      "C416"
+    ],
+    "dnp": true
+  },
+  {
+    "key": "FCS0V104ZFTBR24|dnp",
+    "value": "100m",
+    "footprint": "cc1200_balloon:SuperCap_KEMET_FCS_D10.7mm",
+    "mpn": "FCS0V104ZFTBR24",
+    "query": "",
+    "expect": null,
+    "alt": "",
+    "refs": [
+      "C422"
+    ],
+    "dnp": true
+  },
+  {
+    "key": "GRM1555C1H911JA01D|",
+    "value": "910p",
+    "footprint": "Capacitor_SMD:C_0402_1005Metric",
+    "mpn": "GRM1555C1H911JA01D",
+    "query": "0402 910pF 50V C0G capacitor",
+    "expect": {
+      "param": "Capacitance",
+      "value": 9.1e-10,
+      "pkg": "0402"
+    },
+    "alt": "",
+    "refs": [
+      "C505"
+    ],
+    "dnp": false
+  },
+  {
+    "key": "GRM1555C1H470JA01D|",
+    "value": "47p",
+    "footprint": "Capacitor_SMD:C_0402_1005Metric",
+    "mpn": "GRM1555C1H470JA01D",
+    "query": "0402 47pF 50V C0G capacitor",
+    "expect": {
+      "param": "Capacitance",
+      "value": 4.7e-11,
+      "pkg": "0402"
+    },
+    "alt": "",
+    "refs": [
+      "C506"
+    ],
+    "dnp": false
+  },
+  {
+    "key": "SMF6.5A-TP|",
+    "value": "SMF6.5A",
+    "footprint": "Diode_SMD:D_SOD-123F",
+    "mpn": "SMF6.5A-TP",
+    "query": "",
+    "expect": null,
+    "alt": "",
+    "refs": [
+      "D101"
+    ],
+    "dnp": false
+  },
+  {
+    "key": "LTST-C191KGKT|",
+    "value": "STATUS",
+    "footprint": "LED_SMD:LED_0603_1608Metric",
+    "mpn": "LTST-C191KGKT",
+    "query": "",
+    "expect": null,
+    "alt": "",
+    "refs": [
+      "D201"
+    ],
+    "dnp": false
+  },
+  {
+    "key": "offboard:AANI-AP-0158-1",
+    "value": "GNSS antenna",
+    "footprint": "mates J401",
+    "mpn": "AANI-AP-0158-1",
+    "query": "",
+    "expect": null,
+    "alt": "",
+    "refs": [
+      "J401"
+    ],
+    "dnp": false,
+    "offboard": "active 27x27 mm L1 patch, 28 dB LNA (AT6558R wants 18-35 dB), 100 mm u.FL pigtail - cut the plug off and solder to J401"
+  },
+  {
+    "key": "046844713002846+|",
+    "value": "BMV080",
+    "footprint": "cc1200_balloon:Kyocera_046844713002846_FPC-13_P0.30mm",
+    "mpn": "046844713002846+",
+    "query": "",
+    "expect": null,
+    "alt": "",
+    "refs": [
+      "J501"
+    ],
+    "dnp": false
+  },
+  {
+    "key": "offboard:828-BMV080-10PC-ND",
+    "value": "BMV080",
+    "footprint": "mates J501",
+    "mpn": "828-BMV080-10PC-ND",
+    "query": "",
+    "expect": null,
+    "alt": "",
+    "refs": [
+      "J501"
+    ],
+    "dnp": false,
+    "offboard": "Bosch particulate sensor on flex; sold in boxes of 10"
+  },
+  {
+    "key": "1239AS-H-2R2M=P2|",
+    "value": "2.2u",
+    "footprint": "Inductor_SMD:L_1008_2520Metric",
+    "mpn": "1239AS-H-2R2M=P2",
+    "query": "",
+    "expect": null,
+    "alt": "",
+    "refs": [
+      "L101"
+    ],
+    "dnp": false
+  },
+  {
+    "key": "LQW15AN56NG00D|",
+    "value": "56n",
+    "footprint": "Inductor_SMD:L_0402_1005Metric",
+    "mpn": "LQW15AN56NG00D",
+    "query": "0402 56nH wirewound RF inductor",
+    "expect": {
+      "param": "Inductance",
+      "value": 5.6000000000000005e-8,
+      "pkg": "0402"
+    },
+    "alt": "",
+    "refs": [
+      "L301",
+      "L306"
+    ],
+    "dnp": false
+  },
+  {
+    "key": "LQW15AN15NJ00D|",
+    "value": "15n",
+    "footprint": "Inductor_SMD:L_0402_1005Metric",
+    "mpn": "LQW15AN15NJ00D",
+    "query": "0402 15nH wirewound RF inductor",
+    "expect": {
+      "param": "Inductance",
+      "value": 1.5000000000000002e-8,
+      "pkg": "0402"
+    },
+    "alt": "",
+    "refs": [
+      "L302",
+      "L305"
+    ],
+    "dnp": false
+  },
+  {
+    "key": "LQW15AN43NG00D|",
+    "value": "43n",
+    "footprint": "Inductor_SMD:L_0402_1005Metric",
+    "mpn": "LQW15AN43NG00D",
+    "query": "0402 43nH wirewound RF inductor",
+    "expect": {
+      "param": "Inductance",
+      "value": 4.3e-8,
+      "pkg": "0402"
+    },
+    "alt": "",
+    "refs": [
+      "L303"
+    ],
+    "dnp": false
+  },
+  {
+    "key": "LQW15AN22NG00D|",
+    "value": "22n",
+    "footprint": "Inductor_SMD:L_0402_1005Metric",
+    "mpn": "LQW15AN22NG00D",
+    "query": "0402 22nH wirewound RF inductor",
+    "expect": {
+      "param": "Inductance",
+      "value": 2.2000000000000002e-8,
+      "pkg": "0402"
+    },
+    "alt": "",
+    "refs": [
+      "L304"
+    ],
+    "dnp": false
+  },
+  {
+    "key": "LQW15AN27NG00D|",
+    "value": "27n",
+    "footprint": "Inductor_SMD:L_0402_1005Metric",
+    "mpn": "LQW15AN27NG00D",
+    "query": "0402 27nH wirewound RF inductor",
+    "expect": {
+      "param": "Inductance",
+      "value": 2.7e-8,
+      "pkg": "0402"
+    },
+    "alt": "",
+    "refs": [
+      "L307",
+      "L308"
+    ],
+    "dnp": false
+  },
+  {
+    "key": "LQW15AN33NG00D|",
+    "value": "33n",
+    "footprint": "Inductor_SMD:L_0402_1005Metric",
+    "mpn": "LQW15AN33NG00D",
+    "query": "0402 33nH wirewound RF inductor",
+    "expect": {
+      "param": "Inductance",
+      "value": 3.3000000000000004e-8,
+      "pkg": "0402"
+    },
+    "alt": "",
+    "refs": [
+      "L401"
+    ],
+    "dnp": false
+  },
+  {
+    "key": "LQW15AN4N3C00D|",
+    "value": "4n3",
+    "footprint": "Inductor_SMD:L_0402_1005Metric",
+    "mpn": "LQW15AN4N3C00D",
+    "query": "0402 4.3nH wirewound RF inductor",
+    "expect": {
+      "param": "Inductance",
+      "value": 4.3000000000000005e-9,
+      "pkg": "0402"
+    },
+    "alt": "",
+    "refs": [
+      "L402"
+    ],
+    "dnp": false
+  },
+  {
+    "key": "LQM18PN4R7MFRL|",
+    "value": "4u7",
+    "footprint": "Inductor_SMD:L_0603_1608Metric",
+    "mpn": "LQM18PN4R7MFRL",
+    "query": "",
+    "expect": null,
+    "alt": "",
+    "refs": [
+      "L403"
+    ],
+    "dnp": false
+  },
+  {
+    "key": "78F101J-RC|",
+    "value": "100u",
+    "footprint": "cc1200_balloon:L_Axial_D2.8mm_L7.2mm_P10.16mm_Horizontal",
+    "mpn": "78F101J-RC",
+    "query": "",
+    "expect": null,
+    "alt": "",
+    "refs": [
+      "L501"
+    ],
+    "dnp": false
+  },
+  {
+    "key": "DMG3401LSN-7|",
+    "value": "DMG3401LSN-7",
+    "footprint": "Package_TO_SOT_SMD:SOT-23",
+    "mpn": "DMG3401LSN-7",
+    "query": "",
+    "expect": null,
+    "alt": "",
+    "refs": [
+      "Q101"
+    ],
+    "dnp": false
+  },
+  {
+    "key": "RC0402FR-07100KL|",
+    "value": "100k",
+    "footprint": "Resistor_SMD:R_0402_1005Metric",
+    "mpn": "RC0402FR-07100KL",
+    "query": "0402 100 kohm 1% resistor",
+    "expect": {
+      "param": "Resistance",
+      "value": 100000,
+      "pkg": "0402"
+    },
+    "alt": "",
+    "refs": [
+      "R101",
+      "R103",
+      "R104"
+    ],
+    "dnp": false
+  },
+  {
+    "key": "RC0402FR-07100RL|",
+    "value": "100R",
+    "footprint": "Resistor_SMD:R_0402_1005Metric",
+    "mpn": "RC0402FR-07100RL",
+    "query": "0402 100 ohm 1% resistor",
+    "expect": {
+      "param": "Resistance",
+      "value": 100,
+      "pkg": "0402"
+    },
+    "alt": "",
+    "refs": [
+      "R102"
+    ],
+    "dnp": false
+  },
+  {
+    "key": "RC0402FR-0710KL|",
+    "value": "10k",
+    "footprint": "Resistor_SMD:R_0402_1005Metric",
+    "mpn": "RC0402FR-0710KL",
+    "query": "0402 10 kohm 1% resistor",
+    "expect": {
+      "param": "Resistance",
+      "value": 10000,
+      "pkg": "0402"
+    },
+    "alt": "",
+    "refs": [
+      "R201",
+      "R401",
+      "R402",
+      "R403",
+      "R501"
+    ],
+    "dnp": false
+  },
+  {
+    "key": "RC0402FR-071KL|",
+    "value": "1k",
+    "footprint": "Resistor_SMD:R_0402_1005Metric",
+    "mpn": "RC0402FR-071KL",
+    "query": "0402 1 kohm 1% resistor",
+    "expect": {
+      "param": "Resistance",
+      "value": 1000,
+      "pkg": "0402"
+    },
+    "alt": "",
+    "refs": [
+      "R202"
+    ],
+    "dnp": false
+  },
+  {
+    "key": "RC0402FR-074K7L|",
+    "value": "4k7",
+    "footprint": "Resistor_SMD:R_0402_1005Metric",
+    "mpn": "RC0402FR-074K7L",
+    "query": "0402 4.7 kohm 1% resistor",
+    "expect": {
+      "param": "Resistance",
+      "value": 4700,
+      "pkg": "0402"
+    },
+    "alt": "",
+    "refs": [
+      "R203",
+      "R204"
+    ],
+    "dnp": false
+  },
+  {
+    "key": "RC0402FR-0756KL|",
+    "value": "56k",
+    "footprint": "Resistor_SMD:R_0402_1005Metric",
+    "mpn": "RC0402FR-0756KL",
+    "query": "0402 56 kohm 1% resistor",
+    "expect": {
+      "param": "Resistance",
+      "value": 56000,
+      "pkg": "0402"
+    },
+    "alt": "",
+    "refs": [
+      "R301"
+    ],
+    "dnp": false
+  },
+  {
+    "key": "RC0402FR-0718RL|",
+    "value": "18R",
+    "footprint": "Resistor_SMD:R_0402_1005Metric",
+    "mpn": "RC0402FR-0718RL",
+    "query": "0402 18 ohm 1% resistor",
+    "expect": {
+      "param": "Resistance",
+      "value": 18,
+      "pkg": "0402"
+    },
+    "alt": "",
+    "refs": [
+      "R302"
+    ],
+    "dnp": false
+  },
+  {
+    "key": "RC0402JR-070RL|",
+    "value": "0R",
+    "footprint": "Resistor_SMD:R_0402_1005Metric",
+    "mpn": "RC0402JR-070RL",
+    "query": "0402 0 ohm jumper resistor",
+    "expect": {
+      "param": "Resistance",
+      "value": 0,
+      "pkg": "0402"
+    },
+    "alt": "",
+    "refs": [
+      "R404",
+      "R405"
+    ],
+    "dnp": false
+  },
+  {
+    "key": "JS102011SAQN|",
+    "value": "PWR",
+    "footprint": "Button_Switch_SMD:SW_SPDT_CK_JS102011SAQN",
+    "mpn": "JS102011SAQN",
+    "query": "",
+    "expect": null,
+    "alt": "",
+    "refs": [
+      "SW101"
+    ],
+    "dnp": false
+  },
+  {
+    "key": "TPS63001DRCR|",
+    "value": "TPS63001",
+    "footprint": "Package_SON:VSON-10-1EP_3x3mm_P0.5mm_EP1.65x2.4mm",
+    "mpn": "TPS63001DRCR",
+    "query": "",
+    "expect": null,
+    "alt": "",
+    "refs": [
+      "U101"
+    ],
+    "dnp": false
+  },
+  {
+    "key": "114993120|",
+    "value": "Wio-E5",
+    "footprint": "cc1200_balloon:WIO-E5",
+    "mpn": "114993120",
+    "query": "",
+    "expect": null,
+    "alt": "",
+    "refs": [
+      "U201"
+    ],
+    "dnp": false
+  },
+  {
+    "key": "CC1200RHBR|",
+    "value": "CC1200",
+    "footprint": "Package_DFN_QFN:Texas_RHB0032E_VQFN-32-1EP_5x5mm_P0.5mm_EP3.45x3.45mm",
+    "mpn": "CC1200RHBR",
+    "query": "",
+    "expect": null,
+    "alt": "",
+    "refs": [
+      "U301"
+    ],
+    "dnp": false
+  },
+  {
+    "key": "AT6558R-5N32|",
+    "value": "AT6558R-5N32",
+    "footprint": "cc1200_balloon:AT6558R_QFN-40-1EP_5x5mm_P0.4mm_EP3.4x3.4mm",
+    "mpn": "AT6558R-5N32",
+    "query": "",
+    "expect": null,
+    "alt": "LCSC C500608 / JLCPCB",
+    "refs": [
+      "U401"
+    ],
+    "dnp": false
+  },
+  {
+    "key": "SCD40-D-R2|",
+    "value": "SCD40-D-R2",
+    "footprint": "Sensor:Sensirion_SCD4x-1EP_10.1x10.1mm_P1.25mm_EP4.8x4.8mm",
+    "mpn": "SCD40-D-R2",
+    "query": "",
+    "expect": null,
+    "alt": "",
+    "refs": [
+      "U501"
+    ],
+    "dnp": false
+  },
+  {
+    "key": "AS3935-BQFT|",
+    "value": "AS3935-BQFT",
+    "footprint": "Package_DFN_QFN:QFN-16-1EP_4x4mm_P0.65mm_EP2.7x2.7mm",
+    "mpn": "AS3935-BQFT",
+    "query": "",
+    "expect": null,
+    "alt": "",
+    "refs": [
+      "U502"
+    ],
+    "dnp": false
+  },
+  {
+    "key": "BME688|",
+    "value": "BME688",
+    "footprint": "Package_LGA:Bosch_LGA-8_3x3mm_P0.8mm_ClockwisePinNumbering",
+    "mpn": "BME688",
+    "query": "",
+    "expect": null,
+    "alt": "",
+    "refs": [
+      "U503",
+      "U504"
+    ],
+    "dnp": false
+  },
+  {
+    "key": "CX3225SB40000D0FPLCC|",
+    "value": "40MHz",
+    "footprint": "Crystal:Crystal_SMD_3225-4Pin_3.2x2.5mm",
+    "mpn": "CX3225SB40000D0FPLCC",
+    "query": "",
+    "expect": null,
+    "alt": "",
+    "refs": [
+      "X301"
+    ],
+    "dnp": false
+  },
+  {
+    "key": "UCF4031035LK005000-26MDK|",
+    "value": "TCXO 26MHz",
+    "footprint": "Oscillator:Oscillator_SMD_ECS_2520MV-xxx-xx-4Pin_2.5x2.0mm",
+    "mpn": "UCF4031035LK005000-26MDK",
+    "query": "",
+    "expect": null,
+    "alt": "",
+    "refs": [
+      "X401"
+    ],
+    "dnp": false
+  },
+  {
+    "key": "FC3215AN 32.768K-C5NN60KC5|",
+    "value": "32.768kHz",
+    "footprint": "Crystal:Crystal_SMD_3215-2Pin_3.2x1.5mm",
+    "mpn": "FC3215AN 32.768K-C5NN60KC5",
+    "query": "",
+    "expect": null,
+    "alt": "",
+    "refs": [
+      "X402"
+    ],
+    "dnp": false
+  }
+]

@@ -1,0 +1,128 @@
+{
+  "version": 1,
+  "title": "CC1200 sub-GHz transceiver: 40 MHz XOSC, 434 MHz match, SMA",
+  "paper": "A2",
+  "components": [
+    {"ref": "U301", "lib_id": "cc1200_balloon:CC1200", "value": "CC1200",
+     "footprint": "Package_DFN_QFN:Texas_RHB0032E_VQFN-32-1EP_5x5mm_P0.5mm_EP3.45x3.45mm",
+     "fields": {"MPN": "CC1200RHBR"}},
+
+    {"ref": "C301", "lib_id": "Device:C", "value": "47n", "footprint": "Capacitor_SMD:C_0402_1005Metric"},
+    {"ref": "C302", "lib_id": "Device:C", "value": "47n", "footprint": "Capacitor_SMD:C_0402_1005Metric"},
+    {"ref": "C303", "lib_id": "Device:C", "value": "47n", "footprint": "Capacitor_SMD:C_0402_1005Metric"},
+    {"ref": "C304", "lib_id": "Device:C", "value": "47n", "footprint": "Capacitor_SMD:C_0402_1005Metric"},
+    {"ref": "C305", "lib_id": "Device:C", "value": "47n", "footprint": "Capacitor_SMD:C_0402_1005Metric"},
+    {"ref": "C306", "lib_id": "Device:C", "value": "47n", "footprint": "Capacitor_SMD:C_0402_1005Metric"},
+    {"ref": "C307", "lib_id": "Device:C", "value": "47n", "footprint": "Capacitor_SMD:C_0402_1005Metric"},
+    {"ref": "C308", "lib_id": "Device:C", "value": "47n", "footprint": "Capacitor_SMD:C_0402_1005Metric"},
+    {"ref": "C309", "lib_id": "Device:C", "value": "47n", "footprint": "Capacitor_SMD:C_0402_1005Metric"},
+    {"ref": "C310", "lib_id": "Device:C", "value": "100p", "footprint": "Capacitor_SMD:C_0402_1005Metric"},
+    {"ref": "C311", "lib_id": "Device:C", "value": "10n", "footprint": "Capacitor_SMD:C_0402_1005Metric"},
+    {"ref": "C312", "lib_id": "Device:C", "value": "1u", "footprint": "Capacitor_SMD:C_0402_1005Metric"},
+
+    {"ref": "C313", "lib_id": "Device:C", "value": "220n", "footprint": "Capacitor_SMD:C_0402_1005Metric"},
+    {"ref": "C314", "lib_id": "Device:C", "value": "10n", "footprint": "Capacitor_SMD:C_0402_1005Metric"},
+    {"ref": "C315", "lib_id": "Device:C", "value": "47n", "footprint": "Capacitor_SMD:C_0402_1005Metric"},
+    {"ref": "C316", "lib_id": "Device:C", "value": "47n", "footprint": "Capacitor_SMD:C_0402_1005Metric"},
+    {"ref": "C317", "lib_id": "Device:C", "value": "1n8", "footprint": "Capacitor_SMD:C_0402_1005Metric"},
+    {"ref": "R301", "lib_id": "Device:R", "value": "56k", "footprint": "Resistor_SMD:R_0402_1005Metric"},
+
+    {"ref": "X301", "lib_id": "Device:Crystal_GND24", "value": "40MHz",
+     "footprint": "Crystal:Crystal_SMD_3225-4Pin_3.2x2.5mm",
+     "fields": {"MPN": "CX3225SB40000D0FPLCC"}},
+    {"ref": "C318", "lib_id": "Device:C", "value": "12p", "footprint": "Capacitor_SMD:C_0402_1005Metric"},
+    {"ref": "C319", "lib_id": "Device:C", "value": "12p", "footprint": "Capacitor_SMD:C_0402_1005Metric"},
+
+    {"ref": "R302", "lib_id": "Device:R", "value": "18R", "footprint": "Resistor_SMD:R_0402_1005Metric"},
+    {"ref": "C320", "lib_id": "Device:C", "value": "56p", "footprint": "Capacitor_SMD:C_0402_1005Metric"},
+    {"ref": "L301", "lib_id": "Device:L", "value": "56n", "footprint": "Inductor_SMD:L_0402_1005Metric"},
+    {"ref": "C321", "lib_id": "Device:C", "value": "39p", "footprint": "Capacitor_SMD:C_0402_1005Metric"},
+    {"ref": "L302", "lib_id": "Device:L", "value": "15n", "footprint": "Inductor_SMD:L_0402_1005Metric"},
+    {"ref": "C322", "lib_id": "Device:C", "value": "2p2", "footprint": "Capacitor_SMD:C_0402_1005Metric"},
+    {"ref": "C323", "lib_id": "Device:C", "value": "5p1", "footprint": "Capacitor_SMD:C_0402_1005Metric"},
+    {"ref": "L303", "lib_id": "Device:L", "value": "43n", "footprint": "Inductor_SMD:L_0402_1005Metric"},
+    {"ref": "C324", "lib_id": "Device:C", "value": "6p2", "footprint": "Capacitor_SMD:C_0402_1005Metric"},
+    {"ref": "L304", "lib_id": "Device:L", "value": "22n", "footprint": "Inductor_SMD:L_0402_1005Metric"},
+
+    {"ref": "L305", "lib_id": "Device:L", "value": "15n", "footprint": "Inductor_SMD:L_0402_1005Metric"},
+    {"ref": "C325", "lib_id": "Device:C", "value": "5p1", "footprint": "Capacitor_SMD:C_0402_1005Metric"},
+    {"ref": "L306", "lib_id": "Device:L", "value": "56n", "footprint": "Inductor_SMD:L_0402_1005Metric"},
+    {"ref": "L307", "lib_id": "Device:L", "value": "27n", "footprint": "Inductor_SMD:L_0402_1005Metric"},
+    {"ref": "C326", "lib_id": "Device:C", "value": "5p1", "footprint": "Capacitor_SMD:C_0402_1005Metric"},
+    {"ref": "L308", "lib_id": "Device:L", "value": "27n", "footprint": "Inductor_SMD:L_0402_1005Metric"},
+
+    {"ref": "J301", "lib_id": "Connector:Conn_Coaxial", "value": "434MHz ANT pads",
+     "footprint": "cc1200_balloon:SolderPad_Coax_Pigtail"},
+
+    {"ref": "TP301", "lib_id": "Connector:TestPoint", "value": "GPIO0",
+     "footprint": "TestPoint:TestPoint_Pad_1.0x1.0mm"},
+    {"ref": "TP302", "lib_id": "Connector:TestPoint", "value": "GPIO3",
+     "footprint": "TestPoint:TestPoint_Pad_1.0x1.0mm"}
+  ],
+  "nets": [
+    {"name": "+3V3", "pins": [
+      "U301.1", "U301.5", "U301.12", "U301.13", "U301.15",
+      "U301.22", "U301.25", "U301.27", "U301.28",
+      "C301.1", "C302.1", "C303.1", "C304.1", "C305.1", "C306.1", "C307.1",
+      "C308.1", "C309.1", "C310.1", "C311.1", "C312.1",
+      "R302.1", "C320.1"]},
+    {"name": "GND", "pins": [
+      "U301.32", "U301.33",
+      "C301.2", "C302.2", "C303.2", "C304.2", "C305.2", "C306.2", "C307.2",
+      "C308.2", "C309.2", "C310.2", "C311.2", "C312.2",
+      "C313.2", "C314.2", "C315.2", "C316.2",
+      "R301.2", "C318.2", "C319.2", "X301.2", "X301.4",
+      "C324.1", "L307.2", "C326.2", "J301.2"]},
+
+    {"name": "CC_DCPL", "pins": ["U301.6", "C313.1"]},
+    {"name": "CC_DCPL_VCO", "pins": ["U301.21", "C314.1"]},
+    {"name": "CC_DCPL_PFD", "pins": ["U301.26", "C315.1"]},
+    {"name": "CC_DCPL_XOSC", "pins": ["U301.29", "C316.1"]},
+    {"name": "CC_LPF0", "pins": ["U301.23", "C317.1"]},
+    {"name": "CC_LPF1", "pins": ["U301.24", "C317.2"]},
+    {"name": "CC_RBIAS", "pins": ["U301.14", "R301.1"]},
+
+    {"name": "XOSC_Q1", "pins": ["U301.30", "X301.1", "C318.1"]},
+    {"name": "XOSC_Q2", "pins": ["U301.31", "X301.3", "C319.1"]},
+
+    {"name": "RF_PABIAS", "pins": ["R302.2", "C320.2", "L301.1"]},
+    {"name": "RF_PA", "pins": ["U301.17", "L301.2", "C321.1"]},
+    {"name": "RF_TX1", "pins": ["C321.2", "C322.1", "L302.1"]},
+    {"name": "RF_TX2", "pins": ["C322.2", "L302.2", "C323.1", "L303.1"]},
+    {"name": "RF_TX3", "pins": ["L303.2", "C324.2", "L304.1"]},
+    {"name": "RF_ANT", "pins": ["L304.2", "J301.1"]},
+    {"name": "RF_TRXSW", "pins": ["U301.18", "C323.2", "L305.1"]},
+    {"name": "RF_RX1", "pins": ["L305.2", "C325.2", "L308.2"]},
+    {"name": "RF_LNAP", "pins": ["U301.19", "C325.1", "L306.1", "L307.1"]},
+    {"name": "RF_LNAN", "pins": ["U301.20", "L306.2", "L308.1", "C326.1"]},
+
+    {"name": "SPI_SCK", "pins": ["U301.8"]},
+    {"name": "SPI_MOSI", "pins": ["U301.7"]},
+    {"name": "SPI_MISO", "pins": ["U301.9"]},
+    {"name": "RADIO_CS", "pins": ["U301.11"]},
+    {"name": "RADIO_RST", "pins": ["U301.2"]},
+    {"name": "RADIO_IRQ", "pins": ["U301.4"]},
+    {"name": "RADIO_GPIO0", "pins": ["U301.10", "TP301.1"]},
+    {"name": "RADIO_GPIO3", "pins": ["U301.3", "TP302.1"]}
+  ],
+  "no_connect": ["U301.16"],
+  "groups": [
+    {"name": "supply decoupling", "row": 0,
+     "stages": [["C301", "C302", "C303", "C304", "C305"],
+                ["C306", "C307", "C308", "C309", "C310"],
+                ["C311", "C312"]]},
+    {"name": "transceiver", "row": 0,
+     "stages": [["C313", "C314", "C315", "C316", "C317", "R301"], ["U301"]]},
+    {"name": "40 MHz reference", "row": 0, "stages": [["C318", "C319"], ["X301"]]},
+    {"name": "tx path", "row": 1,
+     "stages": [["R302", "C320"], ["L301"], ["C321", "L302", "C322"],
+                ["C323", "L303"], ["C324", "L304"], ["J301"]]},
+    {"name": "rx path", "row": 1,
+     "stages": [["L305"], ["C325", "L306", "L307"], ["C326", "L308"]]},
+    {"name": "test", "row": 1, "stages": [["TP301", "TP302"]]}
+  ],
+  "power": {
+    "GND": {"style": "symbol"},
+    "+3V3": {"style": "symbol"}
+  }
+}

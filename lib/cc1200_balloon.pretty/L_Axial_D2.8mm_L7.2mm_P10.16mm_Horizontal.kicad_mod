@@ -1,0 +1,192 @@
+(footprint "L_Axial_D2.8mm_L7.2mm_P10.16mm_Horizontal"
+	(version 20240108)
+	(generator "gen_footprints")
+	(generator_version "1.0")
+	(layer "F.Cu")
+	(descr "Axial drum-core inductor, 2.8mm diameter x 7.2mm body, 10.16mm lead pitch, horizontal (Bourns 78F series)")
+	(tags "inductor axial THT 78F AS3935 antenna")
+	(property "Reference" "REF**"
+		(at 0 -0.5 0)
+		(unlocked yes)
+		(layer "F.SilkS")
+		(uuid "a214b4c3-fd77-5f3f-874f-60b27df278c3")
+		(effects
+			(font
+				(size 1 1)
+				(thickness 0.15)
+			)
+		)
+	)
+	(property "Value" "L_Axial_D2.8mm_L7.2mm_P10.16mm_Horizontal"
+		(at 0 1 0)
+		(unlocked yes)
+		(layer "F.Fab")
+		(uuid "1dac93e1-2a05-5eec-8e08-f4eb55c6783f")
+		(effects
+			(font
+				(size 1 1)
+				(thickness 0.15)
+			)
+		)
+	)
+	(attr through_hole)
+	(pad "1" thru_hole circle
+		(at -5.08 0)
+		(size 1.6 1.6)
+		(drill 0.8)
+		(layers "*.Cu" "*.Mask")
+		(uuid "086024f0-6011-5e74-8948-bd4734a918a8")
+	)
+	(pad "2" thru_hole circle
+		(at 5.08 0)
+		(size 1.6 1.6)
+		(drill 0.8)
+		(layers "*.Cu" "*.Mask")
+		(uuid "05290f50-69e4-5f44-8fb3-f966354f7d32")
+	)
+	(fp_line
+		(start -3.6 -1.4)
+		(end 3.6 -1.4)
+		(stroke
+			(width 0.1)
+			(type solid)
+		)
+		(layer "F.Fab")
+		(uuid "e6d0368a-00ec-5dd2-82cb-8be1c473839b")
+	)
+	(fp_line
+		(start 3.6 -1.4)
+		(end 3.6 1.4)
+		(stroke
+			(width 0.1)
+			(type solid)
+		)
+		(layer "F.Fab")
+		(uuid "0a873bcb-63a4-53d1-80bd-19ac24eae707")
+	)
+	(fp_line
+		(start 3.6 1.4)
+		(end -3.6 1.4)
+		(stroke
+			(width 0.1)
+			(type solid)
+		)
+		(layer "F.Fab")
+		(uuid "9d34fef6-6496-5824-830f-eef7cc10dd65")
+	)
+	(fp_line
+		(start -3.6 1.4)
+		(end -3.6 -1.4)
+		(stroke
+			(width 0.1)
+			(type solid)
+		)
+		(layer "F.Fab")
+		(uuid "07a345a3-0522-5c70-8861-ec61e83a57af")
+	)
+	(fp_line
+		(start -3.7 -1.5)
+		(end 3.7 -1.5)
+		(stroke
+			(width 0.12)
+			(type solid)
+		)
+		(layer "F.SilkS")
+		(uuid "a770a6ad-43f9-57c6-8d54-e85f33c1792d")
+	)
+	(fp_line
+		(start 3.7 -1.5)
+		(end 3.7 1.5)
+		(stroke
+			(width 0.12)
+			(type solid)
+		)
+		(layer "F.SilkS")
+		(uuid "7b61ebfc-f7b1-5e8d-8c24-5cf601205f25")
+	)
+	(fp_line
+		(start 3.7 1.5)
+		(end -3.7 1.5)
+		(stroke
+			(width 0.12)
+			(type solid)
+		)
+		(layer "F.SilkS")
+		(uuid "f5aeae5d-8d0d-5993-83b4-bde5884deb75")
+	)
+	(fp_line
+		(start -3.7 1.5)
+		(end -3.7 -1.5)
+		(stroke
+			(width 0.12)
+			(type solid)
+		)
+		(layer "F.SilkS")
+		(uuid "311dbd7c-ba4a-5f75-8d64-cfd6db4d0d56")
+	)
+	(fp_line
+		(start -4.18 0)
+		(end -3.7 0)
+		(stroke
+			(width 0.12)
+			(type solid)
+		)
+		(layer "F.SilkS")
+		(uuid "c1e43f4d-9ba8-520f-83ac-0807cf691b69")
+	)
+	(fp_line
+		(start 4.18 0)
+		(end 3.7 0)
+		(stroke
+			(width 0.12)
+			(type solid)
+		)
+		(layer "F.SilkS")
+		(uuid "8cf3eba7-5849-5004-8766-af7221d43ca2")
+	)
+	(fp_line
+		(start -6.13 -1.75)
+		(end 6.13 -1.75)
+		(stroke
+			(width 0.05)
+			(type solid)
+		)
+		(layer "F.CrtYd")
+		(uuid "db78be7f-d4da-53da-82a3-bf9aa29c2087")
+	)
+	(fp_line
+		(start 6.13 -1.75)
+		(end 6.13 1.75)
+		(stroke
+			(width 0.05)
+			(type solid)
+		)
+		(layer "F.CrtYd")
+		(uuid "6225e422-1764-5d9e-82ac-8670f17753f4")
+	)
+	(fp_line
+		(start 6.13 1.75)
+		(end -6.13 1.75)
+		(stroke
+			(width 0.05)
+			(type solid)
+		)
+		(layer "F.CrtYd")
+		(uuid "6d93aded-dd0a-5f8e-81a6-656896a34b73")
+	)
+	(fp_line
+		(start -6.13 1.75)
+		(end -6.13 -1.75)
+		(stroke
+			(width 0.05)
+			(type solid)
+		)
+		(layer "F.CrtYd")
+		(uuid "e60d94e8-ad01-5534-868e-1271ae33e238")
+	)
+	(model "${KIPRJMOD}/lib/cc1200_balloon.3dshapes/L_Axial_D2.8mm_L7.2mm.wrl"
+		(offset (xyz 0 0 0))
+		(scale (xyz 1 1 1))
+		(rotate (xyz 0 0 0))
+	)
+)

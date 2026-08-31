@@ -1,0 +1,157 @@
+(footprint "SolderPad_Wire_1x02_P3.0mm"
+	(version 20240108)
+	(generator "gen_footprints")
+	(generator_version "1.0")
+	(layer "F.Cu")
+	(descr "Two solder pads for battery leads, 3.0mm pitch, no connector")
+	(tags "solder pad wire battery")
+	(property "Reference" "REF**"
+		(at 0 -0.5 0)
+		(unlocked yes)
+		(layer "F.SilkS")
+		(uuid "44eff6e9-103f-55ea-8fcb-2e851ea61a69")
+		(effects
+			(font
+				(size 1 1)
+				(thickness 0.15)
+			)
+		)
+	)
+	(property "Value" "SolderPad_Wire_1x02_P3.0mm"
+		(at 0 1 0)
+		(unlocked yes)
+		(layer "F.Fab")
+		(uuid "82218b27-3a60-5bfa-82b3-bcf7a4784172")
+		(effects
+			(font
+				(size 1 1)
+				(thickness 0.15)
+			)
+		)
+	)
+	(attr smd)
+	(pad "1" smd roundrect
+		(at -1.5 0)
+		(size 1.6 2.6)
+		(layers "F.Cu" "F.Paste" "F.Mask")
+		(roundrect_rratio 0.25)
+		(uuid "a5a2b078-546f-5387-8d35-f408d65ac77a")
+	)
+	(pad "2" smd roundrect
+		(at 1.5 0)
+		(size 1.6 2.6)
+		(layers "F.Cu" "F.Paste" "F.Mask")
+		(roundrect_rratio 0.25)
+		(uuid "15aafa50-8a8e-5ad4-8de0-e30913ba3c25")
+	)
+	(fp_line
+		(start -2.7 -1.7)
+		(end 2.7 -1.7)
+		(stroke
+			(width 0.1)
+			(type solid)
+		)
+		(layer "F.Fab")
+		(uuid "a91a6bd5-d7a1-5615-8d1b-c8a9d67bc64c")
+	)
+	(fp_line
+		(start 2.7 -1.7)
+		(end 2.7 1.7)
+		(stroke
+			(width 0.1)
+			(type solid)
+		)
+		(layer "F.Fab")
+		(uuid "6311aee9-5477-597f-80dc-be7a21140e58")
+	)
+	(fp_line
+		(start 2.7 1.7)
+		(end -2.7 1.7)
+		(stroke
+			(width 0.1)
+			(type solid)
+		)
+		(layer "F.Fab")
+		(uuid "cfe3488c-d27c-532c-8b55-55658586e1f5")
+	)
+	(fp_line
+		(start -2.7 1.7)
+		(end -2.7 -1.7)
+		(stroke
+			(width 0.1)
+			(type solid)
+		)
+		(layer "F.Fab")
+		(uuid "029c86d7-74eb-5c25-87dd-5dfc2d1b51d0")
+	)
+	(fp_line
+		(start -2.95 -1.95)
+		(end 2.95 -1.95)
+		(stroke
+			(width 0.05)
+			(type solid)
+		)
+		(layer "F.CrtYd")
+		(uuid "a112c3f6-bd88-59a9-8457-95d8cc077ffd")
+	)
+	(fp_line
+		(start 2.95 -1.95)
+		(end 2.95 1.95)
+		(stroke
+			(width 0.05)
+			(type solid)
+		)
+		(layer "F.CrtYd")
+		(uuid "cd6e9c1d-30da-53de-86ab-8e5f9f349e16")
+	)
+	(fp_line
+		(start 2.95 1.95)
+		(end -2.95 1.95)
+		(stroke
+			(width 0.05)
+			(type solid)
+		)
+		(layer "F.CrtYd")
+		(uuid "39849174-2111-595d-8682-0e447f57f8c0")
+	)
+	(fp_line
+		(start -2.95 1.95)
+		(end -2.95 -1.95)
+		(stroke
+			(width 0.05)
+			(type solid)
+		)
+		(layer "F.CrtYd")
+		(uuid "ae6415a6-e375-5321-8422-65d258eff1b1")
+	)
+	(fp_line
+		(start -2 -2.3)
+		(end -1 -2.3)
+		(stroke
+			(width 0.15)
+			(type solid)
+		)
+		(layer "F.SilkS")
+		(uuid "5202d7bc-0fc7-5edd-8410-8653aa7e6f3d")
+	)
+	(fp_line
+		(start -1.5 -2.8)
+		(end -1.5 -1.8)
+		(stroke
+			(width 0.15)
+			(type solid)
+		)
+		(layer "F.SilkS")
+		(uuid "21c49ed3-ed9a-5ad7-8aaf-a3c8ce406605")
+	)
+	(fp_line
+		(start 1 -2.3)
+		(end 2 -2.3)
+		(stroke
+			(width 0.15)
+			(type solid)
+		)
+		(layer "F.SilkS")
+		(uuid "b104a05d-ba3d-571a-836a-6aad8ae1fc20")
+	)
+)

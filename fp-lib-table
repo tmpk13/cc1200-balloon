@@ -1,0 +1,4 @@
+(fp_lib_table
+  (version 7)
+  (lib (name "cc1200_balloon") (type "KiCad") (uri "${KIPRJMOD}/lib/cc1200_balloon.pretty") (options "") (descr "Land patterns with no stock KiCad equivalent"))
+)

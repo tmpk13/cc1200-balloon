@@ -1,0 +1,74 @@
+{
+  "version": 1,
+  "title": "Power: battery input, reverse protection, 3V3 buck-boost",
+  "paper": "A3",
+  "components": [
+    {"ref": "J101", "lib_id": "Connector_Generic:Conn_01x02", "value": "BATT pads",
+     "footprint": "cc1200_balloon:SolderPad_Wire_1x02_P3.0mm"},
+    {"ref": "D101", "lib_id": "Device:D_TVS", "value": "SMF6.5A",
+     "footprint": "Diode_SMD:D_SOD-123F", "fields": {"MPN": "SMF6.5A-TP"}},
+    {"ref": "Q101", "lib_id": "Transistor_FET:Q_PMOS_GSD", "value": "DMG3401LSN-7",
+     "footprint": "Package_TO_SOT_SMD:SOT-23", "fields": {"MPN": "DMG3401LSN-7"}},
+    {"ref": "SW101", "lib_id": "Switch:SW_SPDT", "value": "PWR",
+     "footprint": "Button_Switch_SMD:SW_SPDT_CK_JS102011SAQN",
+     "fields": {"MPN": "JS102011SAQN"}},
+    {"ref": "R101", "lib_id": "Device:R", "value": "100k", "footprint": "Resistor_SMD:R_0402_1005Metric"},
+
+    {"ref": "C101", "lib_id": "Device:C", "value": "22u", "footprint": "Capacitor_SMD:C_0805_2012Metric"},
+    {"ref": "C102", "lib_id": "Device:C", "value": "10u", "footprint": "Capacitor_SMD:C_0603_1608Metric"},
+    {"ref": "R102", "lib_id": "Device:R", "value": "100R", "footprint": "Resistor_SMD:R_0402_1005Metric"},
+    {"ref": "C103", "lib_id": "Device:C", "value": "100n", "footprint": "Capacitor_SMD:C_0402_1005Metric"},
+    {"ref": "U101", "lib_id": "Regulator_Switching:TPS63001", "value": "TPS63001",
+     "footprint": "Package_SON:VSON-10-1EP_3x3mm_P0.5mm_EP1.65x2.4mm",
+     "fields": {"MPN": "TPS63001DRCR"}},
+    {"ref": "L101", "lib_id": "Device:L", "value": "2.2u", "footprint": "Inductor_SMD:L_1008_2520Metric",
+     "fields": {"MPN": "1239AS-H-2R2M=P2"}},
+    {"ref": "C104", "lib_id": "Device:C", "value": "10u", "footprint": "Capacitor_SMD:C_0603_1608Metric"},
+    {"ref": "C105", "lib_id": "Device:C", "value": "10u", "footprint": "Capacitor_SMD:C_0603_1608Metric"},
+    {"ref": "C106", "lib_id": "Device:C", "value": "22u", "footprint": "Capacitor_SMD:C_0805_2012Metric"},
+
+    {"ref": "R103", "lib_id": "Device:R", "value": "100k", "footprint": "Resistor_SMD:R_0402_1005Metric"},
+    {"ref": "R104", "lib_id": "Device:R", "value": "100k", "footprint": "Resistor_SMD:R_0402_1005Metric"},
+    {"ref": "C107", "lib_id": "Device:C", "value": "100n", "footprint": "Capacitor_SMD:C_0402_1005Metric"},
+
+    {"ref": "H101", "lib_id": "Mechanical:MountingHole", "value": "M2.5",
+     "footprint": "MountingHole:MountingHole_2.7mm_M2.5_ISO7380"},
+    {"ref": "H102", "lib_id": "Mechanical:MountingHole", "value": "M2.5",
+     "footprint": "MountingHole:MountingHole_2.7mm_M2.5_ISO7380"},
+    {"ref": "H103", "lib_id": "Mechanical:MountingHole", "value": "M2.5",
+     "footprint": "MountingHole:MountingHole_2.7mm_M2.5_ISO7380"},
+    {"ref": "H104", "lib_id": "Mechanical:MountingHole", "value": "M2.5",
+     "footprint": "MountingHole:MountingHole_2.7mm_M2.5_ISO7380"}
+  ],
+  "nets": [
+    {"name": "VBAT_IN", "pins": ["J101.1", "D101.1", "Q101.3"]},
+    {"name": "GND", "pins": ["J101.2", "D101.2", "Q101.1", "SW101.3", "R101.2",
+      "C101.2", "C102.2", "C103.2",
+      "U101.3", "U101.9", "U101.11",
+      "C104.2", "C105.2", "C106.2", "R104.2", "C107.2"]},
+    {"name": "VBATT", "pins": ["Q101.2", "C101.1", "C102.1", "R102.1", "U101.5",
+      "SW101.1", "R103.1"]},
+    {"name": "VINA", "pins": ["R102.2", "C103.1", "U101.8", "U101.7"]},
+    {"name": "EN_3V3", "pins": ["SW101.2", "R101.1", "U101.6"]},
+    {"name": "SW_L1", "pins": ["U101.4", "L101.1"]},
+    {"name": "SW_L2", "pins": ["U101.2", "L101.2"]},
+    {"name": "+3V3", "pins": ["U101.1", "U101.10", "C104.1", "C105.1", "C106.1"]},
+    {"name": "VBAT_SENSE", "pins": ["R103.2", "R104.1", "C107.1"]}
+  ],
+  "groups": [
+    {"name": "battery input", "row": 0, "stages": [["J101"], ["D101", "Q101"], ["SW101", "R101"]]},
+    {"name": "3V3 buck-boost", "row": 0,
+     "stages": [["C101", "C102", "R102", "C103"], ["U101"], ["L101"], ["C104", "C105", "C106"]]},
+    {"name": "battery sense", "row": 1, "stages": [["R103"], ["R104", "C107"]]},
+    {"name": "mounting", "row": 1, "stages": [["H101", "H102", "H103", "H104"]]}
+  ],
+  "power": {
+    "GND": {"style": "symbol"},
+    "+3V3": {"style": "symbol"},
+    "VBATT": {"style": "label"},
+    "VBAT_IN": {"style": "label"},
+    "VINA": {"style": "label"},
+    "EN_3V3": {"style": "label"},
+    "VBAT_SENSE": {"style": "label"}
+  }
+}

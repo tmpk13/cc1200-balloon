@@ -1,0 +1,50 @@
+#VRML V2.0 utf8
+# Generated from models/wio_e5.scad by tools/gen_3d.ts (OpenSCAD -> STL -> VRML).
+# Coordinates are millimetres divided by 2.54, the unit KiCad expects.
+
+Shape {
+  appearance Appearance {
+    material Material {
+      diffuseColor 0.75 0.76 0.78
+      specularColor 0.1 0.1 0.1
+      ambientIntensity 0.3
+      shininess 0.2
+    }
+  }
+  geometry IndexedFaceSet {
+    solid TRUE
+    creaseAngle 0.7
+    coord Coordinate {
+      point [
+        -2.362205 -2.362205 0.039370,
+        -2.362205 1.694071 1.023622,
+        -2.362205 1.694071 0.039370,
+        2.362205 -2.362205 1.023622,
+        -2.362205 -2.362205 1.023622,
+        -1.694071 2.362205 1.023622,
+        -1.694071 2.362205 0.039370,
+        2.362205 -2.362205 0.039370,
+        2.362205 2.362205 1.023622,
+        2.362205 2.362205 0.039370
+      ]
+    }
+    coordIndex [
+        0 1 2 -1,
+        0 3 4 -1,
+        2 5 6 -1,
+        2 7 0 -1,
+        1 0 4 -1,
+        1 3 5 -1,
+        5 2 1 -1,
+        5 3 8 -1,
+        5 9 6 -1,
+        7 2 6 -1,
+        7 6 9 -1,
+        3 0 7 -1,
+        3 1 4 -1,
+        3 9 8 -1,
+        9 5 8 -1,
+        9 3 7 -1
+    ]
+  }
+}

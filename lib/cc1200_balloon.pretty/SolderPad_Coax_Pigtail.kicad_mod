@@ -1,0 +1,141 @@
+(footprint "SolderPad_Coax_Pigtail"
+	(version 20240108)
+	(generator "gen_footprints")
+	(generator_version "1.0")
+	(layer "F.Cu")
+	(descr "Coax pigtail solder pads: centre conductor, coplanar grounds and a braid pad; replaces an SMA or u.FL connector")
+	(tags "solder pad coax pigtail RF antenna")
+	(property "Reference" "REF**"
+		(at 0 -0.5 0)
+		(unlocked yes)
+		(layer "F.SilkS")
+		(uuid "94154839-600b-5ae1-8bd8-95aa0d098903")
+		(effects
+			(font
+				(size 1 1)
+				(thickness 0.15)
+			)
+		)
+	)
+	(property "Value" "SolderPad_Coax_Pigtail"
+		(at 0 1 0)
+		(unlocked yes)
+		(layer "F.Fab")
+		(uuid "1b1e721a-5b9e-58ae-85d1-b7adfb6fc2b7")
+		(effects
+			(font
+				(size 1 1)
+				(thickness 0.15)
+			)
+		)
+	)
+	(attr smd)
+	(pad "1" smd roundrect
+		(at 0 0)
+		(size 1.2 1.6)
+		(layers "F.Cu" "F.Paste" "F.Mask")
+		(roundrect_rratio 0.25)
+		(uuid "33085bfc-3d55-512f-8f55-a4fdc3a7f573")
+	)
+	(pad "2" smd roundrect
+		(at -1.6 0)
+		(size 1.6 1.6)
+		(layers "F.Cu" "F.Paste" "F.Mask")
+		(roundrect_rratio 0.25)
+		(uuid "2e66ad0e-7684-59da-8163-6e3b4c07ee0c")
+	)
+	(pad "2" smd roundrect
+		(at 1.6 0)
+		(size 1.6 1.6)
+		(layers "F.Cu" "F.Paste" "F.Mask")
+		(roundrect_rratio 0.25)
+		(uuid "e235ec92-5345-521e-860c-83d752296678")
+	)
+	(pad "2" smd roundrect
+		(at 0 2.6)
+		(size 3.6 1.6)
+		(layers "F.Cu" "F.Paste" "F.Mask")
+		(roundrect_rratio 0.25)
+		(uuid "13f71787-7c04-5b91-8e73-1b6ec994ebf9")
+	)
+	(fp_line
+		(start -2.4 -0.8)
+		(end 2.4 -0.8)
+		(stroke
+			(width 0.1)
+			(type solid)
+		)
+		(layer "F.Fab")
+		(uuid "a52b13c7-32ff-58fa-8190-b4ff4c1e5f5c")
+	)
+	(fp_line
+		(start 2.4 -0.8)
+		(end 2.4 3.4)
+		(stroke
+			(width 0.1)
+			(type solid)
+		)
+		(layer "F.Fab")
+		(uuid "358f7703-050c-59c4-8806-82e0f5184d35")
+	)
+	(fp_line
+		(start 2.4 3.4)
+		(end -2.4 3.4)
+		(stroke
+			(width 0.1)
+			(type solid)
+		)
+		(layer "F.Fab")
+		(uuid "fcad19e4-b30e-5df4-8970-3b6e19edb66a")
+	)
+	(fp_line
+		(start -2.4 3.4)
+		(end -2.4 -0.8)
+		(stroke
+			(width 0.1)
+			(type solid)
+		)
+		(layer "F.Fab")
+		(uuid "c523efad-bcc6-576e-8a7f-685d55641100")
+	)
+	(fp_line
+		(start -2.65 -1.05)
+		(end 2.65 -1.05)
+		(stroke
+			(width 0.05)
+			(type solid)
+		)
+		(layer "F.CrtYd")
+		(uuid "e3821c82-0a84-5b97-8d97-f839a477b55b")
+	)
+	(fp_line
+		(start 2.65 -1.05)
+		(end 2.65 3.65)
+		(stroke
+			(width 0.05)
+			(type solid)
+		)
+		(layer "F.CrtYd")
+		(uuid "6714486f-74a9-53bc-898e-e91e01bf3e22")
+	)
+	(fp_line
+		(start 2.65 3.65)
+		(end -2.65 3.65)
+		(stroke
+			(width 0.05)
+			(type solid)
+		)
+		(layer "F.CrtYd")
+		(uuid "b7c0ca92-594e-50cc-82bf-ac1f14038649")
+	)
+	(fp_line
+		(start -2.65 3.65)
+		(end -2.65 -1.05)
+		(stroke
+			(width 0.05)
+			(type solid)
+		)
+		(layer "F.CrtYd")
+		(uuid "8d687ab6-91da-55fc-8dc0-e748cb0378b7")
+	)
+)

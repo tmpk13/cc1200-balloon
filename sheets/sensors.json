@@ -1,0 +1,88 @@
+{
+  "version": 1,
+  "title": "Sensors: SCD40 CO2, AS3935 lightning, 2x BME688, BMV080 particulate",
+  "paper": "A2",
+  "components": [
+    {"ref": "U501", "lib_id": "Sensor_Gas:SCD40-D-R2", "value": "SCD40-D-R2",
+     "footprint": "Sensor:Sensirion_SCD4x-1EP_10.1x10.1mm_P1.25mm_EP4.8x4.8mm",
+     "fields": {"MPN": "SCD40-D-R2"}},
+    {"ref": "C501", "lib_id": "Device:C", "value": "100n", "footprint": "Capacitor_SMD:C_0402_1005Metric"},
+    {"ref": "C502", "lib_id": "Device:C", "value": "22u", "footprint": "Capacitor_SMD:C_0805_2012Metric"},
+
+    {"ref": "U502", "lib_id": "Sensor:AS3935", "value": "AS3935-BQFT",
+     "footprint": "Package_DFN_QFN:QFN-16-1EP_4x4mm_P0.65mm_EP2.7x2.7mm",
+     "fields": {"MPN": "AS3935-BQFT"}},
+    {"ref": "C503", "lib_id": "Device:C", "value": "10u", "footprint": "Capacitor_SMD:C_0603_1608Metric"},
+    {"ref": "C504", "lib_id": "Device:C", "value": "1u", "footprint": "Capacitor_SMD:C_0402_1005Metric"},
+    {"ref": "L501", "lib_id": "Device:L", "value": "100u",
+     "footprint": "cc1200_balloon:L_Axial_D2.8mm_L7.2mm_P10.16mm_Horizontal",
+     "fields": {"MPN": "78F101J-RC"}},
+    {"ref": "C505", "lib_id": "Device:C", "value": "910p", "footprint": "Capacitor_SMD:C_0402_1005Metric"},
+    {"ref": "C506", "lib_id": "Device:C", "value": "47p", "footprint": "Capacitor_SMD:C_0402_1005Metric"},
+    {"ref": "R501", "lib_id": "Device:R", "value": "10k", "footprint": "Resistor_SMD:R_0402_1005Metric"},
+
+    {"ref": "U503", "lib_id": "Sensor:BME680", "value": "BME688",
+     "footprint": "Package_LGA:Bosch_LGA-8_3x3mm_P0.8mm_ClockwisePinNumbering",
+     "fields": {"MPN": "BME688", "I2C address": "0x76"}},
+    {"ref": "C507", "lib_id": "Device:C", "value": "100n", "footprint": "Capacitor_SMD:C_0402_1005Metric"},
+    {"ref": "C508", "lib_id": "Device:C", "value": "100n", "footprint": "Capacitor_SMD:C_0402_1005Metric"},
+
+    {"ref": "U504", "lib_id": "Sensor:BME680", "value": "BME688",
+     "footprint": "Package_LGA:Bosch_LGA-8_3x3mm_P0.8mm_ClockwisePinNumbering",
+     "fields": {"MPN": "BME688", "I2C address": "0x77"}},
+    {"ref": "C509", "lib_id": "Device:C", "value": "100n", "footprint": "Capacitor_SMD:C_0402_1005Metric"},
+    {"ref": "C510", "lib_id": "Device:C", "value": "100n", "footprint": "Capacitor_SMD:C_0402_1005Metric"},
+
+    {"ref": "J501", "lib_id": "cc1200_balloon:BMV080", "value": "BMV080", "orientation": 0,
+     "footprint": "cc1200_balloon:Kyocera_046844713002846_FPC-13_P0.30mm",
+     "fields": {"MPN": "046844713002846+"}},
+    {"ref": "C511", "lib_id": "Device:C", "value": "1u", "footprint": "Capacitor_SMD:C_0402_1005Metric"},
+    {"ref": "C512", "lib_id": "Device:C", "value": "1u", "footprint": "Capacitor_SMD:C_0402_1005Metric"},
+    {"ref": "C513", "lib_id": "Device:C", "value": "1u", "footprint": "Capacitor_SMD:C_0402_1005Metric"},
+    {"ref": "C514", "lib_id": "Device:C", "value": "100n", "footprint": "Capacitor_SMD:C_0402_1005Metric"}
+  ],
+  "nets": [
+    {"name": "+3V3", "pins": [
+      "U501.7", "U501.19", "C501.1", "C502.1",
+      "U502.5", "U502.6", "U502.8", "U502.9", "U502.15", "U502.16", "C504.1",
+      "U503.2", "U503.6", "U503.8", "C507.1", "C508.1",
+      "U504.2", "U504.5", "U504.6", "U504.8", "C509.1", "C510.1",
+      "J501.1", "J501.3", "J501.8", "J501.10",
+      "C511.1", "C512.1", "C513.1", "C514.1"]},
+    {"name": "GND", "pins": [
+      "U501.6", "U501.20", "U501.21", "C501.2", "C502.2",
+      "U502.4", "U502.7", "U502.17", "C503.2", "C504.2",
+      "U503.1", "U503.5", "U503.7", "C507.2", "C508.2",
+      "U504.1", "U504.7", "C509.2", "C510.2",
+      "J501.2", "J501.7", "J501.9",
+      "C511.2", "C512.2", "C513.2", "C514.2"]},
+
+    {"name": "SCL", "pins": ["U501.9", "U502.11", "U503.4", "U504.4"]},
+    {"name": "SDA", "pins": ["U501.10", "U502.13", "U503.3", "U504.3"]},
+
+    {"name": "AS_ACG", "pins": ["U502.1", "C503.1"]},
+    {"name": "AS_ANT_P", "pins": ["U502.3", "L501.1", "C505.1", "C506.1", "R501.1"]},
+    {"name": "AS_ANT_N", "pins": ["U502.2", "L501.2", "C505.2", "C506.2", "R501.2"]},
+    {"name": "LIGHTNING_IRQ", "pins": ["U502.10"]},
+
+    {"name": "SPI_SCK", "pins": ["J501.6"]},
+    {"name": "SPI_MOSI", "pins": ["J501.5"]},
+    {"name": "SPI_MISO", "pins": ["J501.11"]},
+    {"name": "PM_CS", "pins": ["J501.4"]},
+    {"name": "PM_IRQ", "pins": ["J501.12"]}
+  ],
+  "no_connect": ["U502.12", "J501.13"],
+  "groups": [
+    {"name": "co2", "row": 0, "stages": [["C501", "C502"], ["U501"]]},
+    {"name": "lightning", "row": 0,
+     "stages": [["C503", "C504"], ["U502"], ["C505", "C506", "R501"], ["L501"]]},
+    {"name": "gas 0x76", "row": 1, "stages": [["C507", "C508"], ["U503"]]},
+    {"name": "gas 0x77", "row": 1, "stages": [["C509", "C510"], ["U504"]]},
+    {"name": "particulate", "row": 2,
+     "stages": [["C511", "C512", "C513", "C514"], ["J501"]]}
+  ],
+  "power": {
+    "GND": {"style": "symbol"},
+    "+3V3": {"style": "symbol"}
+  }
+}
