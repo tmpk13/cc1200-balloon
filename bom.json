@@ -19,6 +19,36 @@
     "dnp": false
   },
   {
+    "key": "GRM155R61A105KE15D|",
+    "value": "1u",
+    "footprint": "Capacitor_SMD:C_0402_1005Metric",
+    "mpn": "GRM155R61A105KE15D",
+    "query": "0402 1uF 10V X5R capacitor",
+    "expect": {
+      "param": "Capacitance",
+      "value": 0.000001,
+      "pkg": "0402"
+    },
+    "alt": "",
+    "refs": [
+      "C102",
+      "C202",
+      "C312",
+      "C402",
+      "C405",
+      "C409",
+      "C412",
+      "C417",
+      "C418",
+      "C419",
+      "C504",
+      "C511",
+      "C512",
+      "C513"
+    ],
+    "dnp": false
+  },
+  {
     "key": "GRM188R60J106ME84D|",
     "value": "10u",
     "footprint": "Capacitor_SMD:C_0603_1608Metric",
@@ -31,9 +61,7 @@
     },
     "alt": "",
     "refs": [
-      "C102",
       "C104",
-      "C105",
       "C203",
       "C411",
       "C503"
@@ -53,7 +81,6 @@
     },
     "alt": "",
     "refs": [
-      "C103",
       "C107",
       "C201",
       "C204",
@@ -72,35 +99,6 @@
       "C509",
       "C510",
       "C514"
-    ],
-    "dnp": false
-  },
-  {
-    "key": "GRM155R61A105KE15D|",
-    "value": "1u",
-    "footprint": "Capacitor_SMD:C_0402_1005Metric",
-    "mpn": "GRM155R61A105KE15D",
-    "query": "0402 1uF 10V X5R capacitor",
-    "expect": {
-      "param": "Capacitance",
-      "value": 0.000001,
-      "pkg": "0402"
-    },
-    "alt": "",
-    "refs": [
-      "C202",
-      "C312",
-      "C402",
-      "C405",
-      "C409",
-      "C412",
-      "C417",
-      "C418",
-      "C419",
-      "C504",
-      "C511",
-      "C512",
-      "C513"
     ],
     "dnp": false
   },
@@ -456,19 +454,6 @@
     "offboard": "Bosch particulate sensor on flex; sold in boxes of 10"
   },
   {
-    "key": "1239AS-H-2R2M=P2|",
-    "value": "2.2u",
-    "footprint": "Inductor_SMD:L_1008_2520Metric",
-    "mpn": "1239AS-H-2R2M=P2",
-    "query": "",
-    "expect": null,
-    "alt": "",
-    "refs": [
-      "L101"
-    ],
-    "dnp": false
-  },
-  {
     "key": "LQW15AN56NG00D|",
     "value": "56n",
     "footprint": "Inductor_SMD:L_0402_1005Metric",
@@ -625,7 +610,8 @@
     "expect": null,
     "alt": "",
     "refs": [
-      "Q101"
+      "Q101",
+      "Q102"
     ],
     "dnp": false
   },
@@ -649,23 +635,6 @@
     "dnp": false
   },
   {
-    "key": "RC0402FR-07100RL|",
-    "value": "100R",
-    "footprint": "Resistor_SMD:R_0402_1005Metric",
-    "mpn": "RC0402FR-07100RL",
-    "query": "0402 100 ohm 1% resistor",
-    "expect": {
-      "param": "Resistance",
-      "value": 100,
-      "pkg": "0402"
-    },
-    "alt": "",
-    "refs": [
-      "R102"
-    ],
-    "dnp": false
-  },
-  {
     "key": "RC0402FR-0710KL|",
     "value": "10k",
     "footprint": "Resistor_SMD:R_0402_1005Metric",
@@ -678,6 +647,7 @@
     },
     "alt": "",
     "refs": [
+      "R102",
       "R201",
       "R401",
       "R402",
@@ -783,19 +753,6 @@
     "alt": "",
     "refs": [
       "SW101"
-    ],
-    "dnp": false
-  },
-  {
-    "key": "TPS63001DRCR|",
-    "value": "TPS63001",
-    "footprint": "Package_SON:VSON-10-1EP_3x3mm_P0.5mm_EP1.65x2.4mm",
-    "mpn": "TPS63001DRCR",
-    "query": "",
-    "expect": null,
-    "alt": "",
-    "refs": [
-      "U101"
     ],
     "dnp": false
   },

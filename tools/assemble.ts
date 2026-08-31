@@ -108,7 +108,7 @@ const rootSch = `(kicad_sch
 		(title "cc1200-balloon: high altitude balloon telemetry and air quality payload")
 		(comment 1 "Wio-E5 (STM32WLE5JC) host, CC1200 sub-GHz telemetry downlink,")
 		(comment 2 "AT6558R GNSS, SCD40 CO2, AS3935 lightning, 2x BME688, BMV080 PM")
-		(comment 3 "1.8-5.5 V battery input via TPS63001 buck-boost")
+		(comment 3 "Unregulated 3.6 V max battery, P-FET reverse block and load switch")
 	)
 	(lib_symbols)
 ${sheetBlocks}
@@ -148,7 +148,43 @@ const pro = {
   sheets: [],
   text_variables: {},
 };
-await Bun.write(`${ROOT}/${PROJECT}.kicad_pro`, JSON.stringify(pro, null, 2) + "\n");
+/**
+ * The template above is only a bootstrap for a fresh checkout. Everything
+ * KiCad adds the first time the project is opened - board design settings,
+ * net classes, ERC severities and exclusions, BOM presets - belongs to the
+ * project, not to the generator, and rewriting the file from the template
+ * every build silently reset all of it. So an existing file wins key by
+ * key, and the template only fills in what is missing.
+ */
+function fillMissing(into: Record<string, unknown>, from: Record<string, unknown>) {
+  for (const [k, v] of Object.entries(from)) {
+    if (!(k in into)) into[k] = v;
+    else if (isPlainObject(into[k]) && isPlainObject(v))
+      fillMissing(into[k] as Record<string, unknown>, v as Record<string, unknown>);
+  }
+}
+function isPlainObject(v: unknown): v is Record<string, unknown> {
+  return typeof v === "object" && v !== null && !Array.isArray(v);
+}
+
+const proPath = `${ROOT}/${PROJECT}.kicad_pro`;
+const existing: Record<string, unknown> | null = await Bun.file(proPath)
+  .json()
+  .catch(() => null);
+const project = existing ?? (pro as unknown as Record<string, unknown>);
+if (existing) {
+  const before = JSON.stringify(project);
+  fillMissing(project, pro as unknown as Record<string, unknown>);
+  // Nothing to add: leave the file alone rather than round-tripping it
+  // through JSON.stringify, which would rewrite every "1.0" as "1".
+  if (JSON.stringify(project) === before) {
+    console.log("  project file already complete, left as is");
+  } else {
+    await Bun.write(proPath, JSON.stringify(project, null, 2) + "\n");
+  }
+} else {
+  await Bun.write(proPath, JSON.stringify(project, null, 2) + "\n");
+}
 
 await Bun.write(
   `${ROOT}/sym-lib-table`,

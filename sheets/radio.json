@@ -60,7 +60,7 @@
      "footprint": "TestPoint:TestPoint_Pad_1.0x1.0mm"}
   ],
   "nets": [
-    {"name": "+3V3", "pins": [
+    {"name": "+BATT", "pins": [
       "U301.1", "U301.5", "U301.12", "U301.13", "U301.15",
       "U301.22", "U301.25", "U301.27", "U301.28",
       "C301.1", "C302.1", "C303.1", "C304.1", "C305.1", "C306.1", "C307.1",
@@ -123,6 +123,6 @@
   ],
   "power": {
     "GND": {"style": "symbol"},
-    "+3V3": {"style": "symbol"}
+    "+BATT": {"style": "symbol"}
   }
 }

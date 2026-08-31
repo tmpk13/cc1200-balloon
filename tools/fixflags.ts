@@ -3,8 +3,7 @@
  * flag per sheet for any undriven power net; once sheets merge through
  * global labels those flags collide (a flag is a power-output pin, and two
  * of them on one net is itself an ERC error). Policy: the Power sheet owns
- * the shared rails' flags, and +3V3 needs none anywhere because the
- * TPS63001 VOUT pin already drives it.
+ * the shared rails' flags.
  */
 
 import { absolutePins, key, parseSexpr, readSheet, traceConnectivity } from "./schlib";
@@ -13,8 +12,11 @@ import { SHEETS } from "./intersheet";
 const ROOT = `${import.meta.dir}/..`;
 
 const POWER_SHEET = "power.kicad_sch";
-const SHARED_RAILS = new Set(["GND", "VBATT", "VBAT_IN"]);
-const DRIVEN_RAILS = new Set(["+3V3"]);
+const SHARED_RAILS = new Set(["GND", "VBATT", "VBAT_IN", "+BATT"]);
+// Rails an active pin already drives, which must not carry a flag at all.
+// Empty since the buck-boost came out: the board runs straight off the cell,
+// so every rail on it is passive and wants exactly one flag.
+const DRIVEN_RAILS = new Set<string>();
 
 function removeSymbolBlock(src: string, uuid: string): string {
   const uuidIdx = src.indexOf(`(uuid "${uuid}")`);

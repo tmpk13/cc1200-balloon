@@ -61,7 +61,7 @@
      "footprint": "TestPoint:TestPoint_Pad_1.0x1.0mm"}
   ],
   "nets": [
-    {"name": "+3V3", "pins": [
+    {"name": "+BATT", "pins": [
       "U401.3", "U401.14", "U401.22", "U401.27",
       "C403.1", "C407.1", "C408.1", "C410.1",
       "X401.4", "C413.1", "R404.1", "R405.1"]},
@@ -124,7 +124,7 @@
   ],
   "power": {
     "GND": {"style": "symbol"},
-    "+3V3": {"style": "symbol"},
+    "+BATT": {"style": "symbol"},
     "GNSS_VDX": {"style": "label"},
     "GNSS_V1P2BB": {"style": "label"}
   }

@@ -1,19 +1,21 @@
 # cc1200-balloon bill of materials
 
-55 lines, 120 placements.
+52 lines, 117 placements.
 
 **Quantities are for 1 board. Set the multiplier in DigiKey's BOM Manager rather than scaling this file** - per-line quantities here are one board's worth, and nothing is rounded up to a pack or a reel.
 
 DigiKey stock and pricing read live; totals are indicative, not a quote.
 
-**Board total (excluding DNP): $121.64**
+Offers below were read on 2026-08-25 and carried forward: the sourcing pass cannot run on this machine (`/home/tmpk/digi-mouse-search` is gone), so quantities and designators are current but stock and price are not. Re-run `tools/source_bom.py` before ordering.
+
+**Board total (excluding DNP): $118.98**
 
 | Refs | Value | MPN | Manufacturer | Package | Qty | DigiKey | Packaging | Stock | Unit | Source |
 | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
 | C101 C106 C502 | 22u | LMK212BBJ226MD-T | Taiyo Yuden | C_0805_2012Metric | 3 | 587-5917-1-ND | Cut Tape (CT) | 7124 | $0.3000 | substituted |
-| C102 C104 C105 C203 C411 C503 | 10u | GRM188R60J106KE47D | Murata Electronics | C_0603_1608Metric | 6 | 490-12538-1-ND | Cut Tape (CT) | 49549 | $0.1200 | substituted |
-| C103 C107 C201 C204 C403 C404 C406 C407 C408 C410 C413 C420 C421 C501 C507 C508 C509 C510 C514 | 100n | CL05B104KO5NNNC | Samsung Electro-Mechanics | C_0402_1005Metric | 19 | 1276-1001-1-ND | Cut Tape (CT) | 3698775 | $0.0170 | substituted |
-| C202 C312 C402 C405 C409 C412 C417 C418 C419 C504 C511 C512 C513 | 1u | LMK105BJ105KVHF | Taiyo Yuden | C_0402_1005Metric | 13 | 587-3712-1-ND | Cut Tape (CT) | 754503 | $0.0560 | substituted |
+| C102 C202 C312 C402 C405 C409 C412 C417 C418 C419 C504 C511 C512 C513 | 1u | LMK105BJ105KVHF | Taiyo Yuden | C_0402_1005Metric | 14 | 587-3712-1-ND | Cut Tape (CT) | 754503 | $0.0560 | substituted |
+| C104 C203 C411 C503 | 10u | GRM188R60J106KE47D | Murata Electronics | C_0603_1608Metric | 4 | 490-12538-1-ND | Cut Tape (CT) | 49549 | $0.1200 | substituted |
+| C107 C201 C204 C403 C404 C406 C407 C408 C410 C413 C420 C421 C501 C507 C508 C509 C510 C514 | 100n | CL05B104KO5NNNC | Samsung Electro-Mechanics | C_0402_1005Metric | 18 | 1276-1001-1-ND | Cut Tape (CT) | 3698775 | $0.0170 | substituted |
 | C301 C302 C303 C304 C305 C306 C307 C308 C309 C315 C316 | 47n | GRM155R71H473KE14D | Murata Electronics | C_0402_1005Metric | 11 | 490-10702-1-ND | Cut Tape (CT) | 990298 | $0.0230 | preferred |
 | C310 C414 | 100p | GRM1555C1H101JA01D | Murata Electronics | C_0402_1005Metric | 2 | 490-5922-1-ND | Cut Tape (CT) | 504137 | $0.1100 | preferred |
 | C311 C314 | 10n | GRM155R71H103KA88D | Murata Electronics | C_0402_1005Metric | 2 | 490-4516-1-ND | Cut Tape (CT) | 3203045 | $0.1000 | preferred |
@@ -35,7 +37,6 @@ DigiKey stock and pricing read live; totals are indicative, not a quote.
 | J401 | GNSS antenna | AANI-AP-0158-1 | Abracon LLC | mates J401 | 1 | 535-AANI-AP-0158-1-ND | Bulk | 465 | $7.2600 | off-board |
 | J501 | BMV080 | 046844713002846+ | KYOCERA AVX | Kyocera_046844713002846_FPC-13_P0.30mm | 1 | 478-046844713002846+CT-ND | Cut Tape (CT) | 27269 | $0.8000 | preferred |
 | J501 | BMV080 | BMV080 | Bosch Sensortec | mates J501 | 1 | 828-BMV080-10PC-ND | Box | 610 | $37.8680 | off-board |
-| L101 | 2.2u | 1239AS-H-2R2M=P2 | Murata Electronics | L_1008_2520Metric | 1 | 490-10566-1-ND | Cut Tape (CT) | 141163 | $0.2800 | preferred |
 | L301 L306 | 56n | LQW15AN56NG00D | Murata Electronics | L_0402_1005Metric | 2 | 490-6830-1-ND | Cut Tape (CT) | 59 | $0.1200 | preferred |
 | L302 L305 | 15n | LQW15AN15NJ00D | Murata Electronics | L_0402_1005Metric | 2 | 490-1148-1-ND | Cut Tape (CT) | 112566 | $0.1100 | preferred |
 | L303 | 43n | LQW15AN43NG00D | Murata Electronics | L_0402_1005Metric | 1 | 490-6817-1-ND | Cut Tape (CT) | 15740 | $0.1200 | preferred |
@@ -45,17 +46,15 @@ DigiKey stock and pricing read live; totals are indicative, not a quote.
 | L402 | 4n3 | LQW15AN4N3C00D | Murata Electronics | L_0402_1005Metric | 1 | 490-1138-1-ND | Cut Tape (CT) | 24339 | $0.1100 | preferred |
 | L403 | 4u7 | LQM18PN4R7MFRL | Murata Electronics | L_0603_1608Metric | 1 | 490-12065-1-ND | Cut Tape (CT) | 243007 | $0.1700 | preferred |
 | L501 | 100u | 78F101J-RC | Bourns Inc. | L_Axial_D2.8mm_L7.2mm_P10.16mm_Horizontal | 1 | M10136-ND | Bulk | 10421 | $0.2200 | preferred |
-| Q101 | DMG3401LSN-7 | DMG3401LSN-7 | Diodes Incorporated | SOT-23 | 1 | DMG3401LSN-7DICT-ND | Cut Tape (CT) | 152236 | $0.5600 | preferred |
+| Q101 Q102 | DMG3401LSN-7 | DMG3401LSN-7 | Diodes Incorporated | SOT-23 | 2 | DMG3401LSN-7DICT-ND | Cut Tape (CT) | 152236 | $0.5600 | preferred |
 | R101 R103 R104 | 100k | RC0402FR-07100KL | YAGEO | R_0402_1005Metric | 3 | 311-100KLRCT-ND | Cut Tape (CT) | 7885509 | $0.1000 | preferred |
-| R102 | 100R | RC0402FR-07100RL | YAGEO | R_0402_1005Metric | 1 | 311-100LRCT-ND | Cut Tape (CT) | 3403511 | $0.1000 | preferred |
-| R201 R401 R402 R403 R501 | 10k | RC0402FR-0710KL | YAGEO | R_0402_1005Metric | 5 | 311-10.0KLRCT-ND | Cut Tape (CT) | 14582185 | $0.1000 | preferred |
+| R102 R201 R401 R402 R403 R501 | 10k | RC0402FR-0710KL | YAGEO | R_0402_1005Metric | 6 | 311-10.0KLRCT-ND | Cut Tape (CT) | 14582185 | $0.1000 | preferred |
 | R202 | 1k | RC0402FR-071KL | YAGEO | R_0402_1005Metric | 1 | 311-1.00KLRCT-ND | Cut Tape (CT) | 8230169 | $0.1000 | preferred |
 | R203 R204 | 4k7 | RC0402FR-074K7L | YAGEO | R_0402_1005Metric | 2 | 311-4.7KLRCT-ND | Cut Tape (CT) | 1184846 | $0.1000 | preferred |
 | R301 | 56k | RC0402FR-0756KL | YAGEO | R_0402_1005Metric | 1 | 311-56.0KLRCT-ND | Cut Tape (CT) | 716428 | $0.1000 | preferred |
 | R302 | 18R | RC0402FR-0718RL | YAGEO | R_0402_1005Metric | 1 | YAG3021CT-ND | Cut Tape (CT) | 279481 | $0.1000 | preferred |
 | R404 R405 | 0R | RC0402JR-070RL | YAGEO | R_0402_1005Metric | 2 | 311-0.0JRCT-ND | Cut Tape (CT) | 11522810 | $0.1000 | preferred |
 | SW101 | PWR | JS102011SAQN | C&K | SW_SPDT_CK_JS102011SAQN | 1 | 401-1999-1-ND | Cut Tape (CT) | 57487 | $0.9000 | preferred |
-| U101 | TPS63001 | TPS63001DRCR | Texas Instruments | VSON-10-1EP_3x3mm_P0.5mm_EP1.65x2.4mm | 1 | 296-19643-1-ND | Cut Tape (CT) | 21758 | $2.7400 | preferred |
 | U201 | Wio-E5 | 114993120 | Seeed Technology Co., Ltd | WIO-E5 | 1 | 1597-114993120-ND | Box | 682 | $7.1100 | preferred |
 | U301 | CC1200 | CC1200RHBR | Texas Instruments | Texas_RHB0032E_VQFN-32-1EP_5x5mm_P0.5mm_EP3.45x3.45mm | 1 | 296-38892-1-ND | Cut Tape (CT) | 5460 | $5.4300 | preferred |
 | U401 | AT6558R-5N32 | AT6558R-5N32 |  | AT6558R_QFN-40-1EP_5x5mm_P0.4mm_EP3.4x3.4mm | 1 | - | - | - | - |  |
@@ -71,9 +70,9 @@ DigiKey stock and pricing read live; totals are indicative, not a quote.
 The preferred part was out of stock or not orderable at this quantity, so the cheapest in-stock equivalent was taken instead.
 
 - `GRM21BR61A226ME51L` -> `LMK212BBJ226MD-T` (22u, C101 C106 C502)
-- `GRM188R60J106ME84D` -> `GRM188R60J106KE47D` (10u, C102 C104 C105 C203 C411 C503)
-- `GRM155R71C104KA88D` -> `CL05B104KO5NNNC` (100n, C103 C107 C201 C204 C403 C404 C406 C407 C408 C410 C413 C420 C421 C501 C507 C508 C509 C510 C514)
-- `GRM155R61A105KE15D` -> `LMK105BJ105KVHF` (1u, C202 C312 C402 C405 C409 C412 C417 C418 C419 C504 C511 C512 C513)
+- `GRM155R61A105KE15D` -> `LMK105BJ105KVHF` (1u, C102 C202 C312 C402 C405 C409 C412 C417 C418 C419 C504 C511 C512 C513)
+- `GRM188R60J106ME84D` -> `GRM188R60J106KE47D` (10u, C104 C203 C411 C503)
+- `GRM155R71C104KA88D` -> `CL05B104KO5NNNC` (100n, C107 C201 C204 C403 C404 C406 C407 C408 C410 C413 C420 C421 C501 C507 C508 C509 C510 C514)
 - `GRM1555C1H390JA01D` -> `CC0402JRNPO9BN390` (39p, C321)
 - `GRM1555C1H5R1CA01D` -> `GJM1555C1H5R1CB01D` (5p1, C323 C325 C326)
 - `GRM1555C1H6R2CA01D` -> `GJM1555C1H6R2BB01D` (6p2, C324)

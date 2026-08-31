@@ -27,11 +27,11 @@ classDiagram
         RFIO to J201 coax pads
     }
     class Power["Power"] {
-        J101 battery pads 1.8-5.5 V
+        J101 battery pads 3.6 V max
         Q101 reverse block
-        SW101 on/off on EN
-        U101 TPS63001 buck-boost
-        +3V3 at up to 1.2 A
+        Q102 P-FET load switch
+        SW101 on/off on the gate
+        +BATT unregulated
     }
     class Radio["U301 CC1200"] {
         40 MHz X301
@@ -63,11 +63,11 @@ classDiagram
         500 kHz resonant
     }
 
-    Power --> WioE5 : +3V3
-    Power --> Radio : +3V3
-    Power --> GNSS : +3V3
-    Power --> I2CBus : +3V3
-    Power --> SPIBus : +3V3
+    Power --> WioE5 : +BATT
+    Power --> Radio : +BATT
+    Power --> GNSS : +BATT
+    Power --> I2CBus : +BATT
+    Power --> SPIBus : +BATT
     Power --> WioE5 : VBAT_SENSE
     WioE5 --> SPIBus : SPI_SCK MISO MOSI
     WioE5 --> Radio : RADIO_CS RST IRQ
@@ -126,11 +126,57 @@ flowchart LR
 
 | Sheet | Contents |
 | --- | --- |
-| `power.kicad_sch` | battery solder pads, P-FET reverse block, SPDT switch on the regulator enable, TPS63001 buck-boost to 3V3, battery sense divider, 4 mounting holes |
+| `power.kicad_sch` | battery solder pads, P-FET reverse block, SPDT switch driving a second P-FET as a soft-start load switch, battery sense divider, 4 mounting holes |
 | `mcu.kicad_sch` | Wio-E5 module, decoupling, reset, coax pads for the module's own LoRa radio, SWD + console pads, status LED, I2C pull-ups |
 | `radio.kicad_sch` | CC1200, 40 MHz crystal, per-pin decoupling, loop filter, the v1 TX/RX matching network, coax pads |
 | `gnss.kicad_sch` | AT6558R-5N32, 26 MHz TCXO, 32.768 kHz RTC crystal, internal DCDC/LDO passives, active-antenna bias-T, coax pads, optional RTC backup supercapacitor |
 | `sensors.kicad_sch` | SCD40, AS3935 with its 500 kHz loop antenna, two BME688 at different addresses, BMV080 ZIF connector |
+
+## Power
+
+There is no regulator. The battery drives the whole board through two
+P-channel FETs in series:
+
+```
+J101 -- VBAT_IN -- Q101 (reverse block) -- VBATT -- Q102 (load switch) -- +BATT
+          |                                  |            |
+        D101 TVS                           C101 22u    C104 10u + C106 22u
+```
+
+`Q101` blocks a reversed battery: its source is on the load side, so the
+body diode conducts battery to load and the channel shorts it out. That is
+also why `Q101` cannot double as the on/off switch - the body diode keeps
+the load powered whatever the gate does.
+
+`Q102` is the switch, oriented the other way round (source on the battery
+side), so its body diode blocks in the forward direction and an open channel
+really does disconnect the load. `SW101` drives its gate: pole to `SW_ON`,
+one throw to GND (on), the other to `VBATT` (off), so the gate is defined in
+both positions. `R101` 100k holds the gate at the source - off - while the
+switch is between contacts.
+
+`R102` 10k and `C102` 1u slow the turn-on to about 9 ms, which holds the
+inrush to roughly 30 mA. Without them the switch would connect about 70 uF
+of rail and IC decoupling straight across the cell; a bobbin lithium cell
+with ohms of internal resistance would collapse and the board would sit in
+a brownout loop. The regulator's own soft start used to do this job.
+
+The 10k has to stay small against the 100k pull-up or the gate never gets
+there: on, the two divide `VBATT` and leave the gate at 9 % of it, so
+Vgs is -3.3 V at a full cell and still -2.3 V at 2.5 V.
+
+The `+BATT` rail is the battery, minus two Rds(on) drops - about 100 mR
+total, so a few tens of millivolts at the currents this board draws.
+Everything runs from it directly, so the supply follows the cell all the way
+from full charge to cutoff.
+
+| | |
+| --- | --- |
+| Rail | `+BATT`, unregulated |
+| Maximum | 3.6 V |
+| Off-state drain | `Q102` and `Q101` leakage only; the sense divider is on the switched side |
+| On-state overhead | 33 uA in the `R101`/`R102` gate divider, 18 uA in the `R103`/`R104` sense divider |
+
 
 ## Wio-E5 pin map
 
@@ -155,7 +201,7 @@ the debug header.
 | 27 PA10 | `GNSS_PPS` | 1PPS |
 | 13 PC0 | `GNSS_ONOFF` | receiver shutdown control |
 | 12 PC1 | `DBG_TX` | LPUART1 console out, on the debug header |
-| 24 PB13 | `VBAT_SENSE` | ADC_IN0, 1:2 divider off the battery |
+| 24 PB13 | `VBAT_SENSE` | ADC_IN0, 1:2 divider off the switched `+BATT` rail |
 | 21 PA9 | `STATUS_LED` | green LED through 1 k |
 | 15 RFIO | `LORA_RF` | u.FL, the module's own sub-GHz radio |
 
@@ -205,12 +251,15 @@ from `VDD_POR` through its own internal circuit - no diode or series
 resistor needed.
 
 **`R405` and `C422` are mutually exclusive.** `R405` (0R, fitted by
-default) ties `VDD_BK` to +3V3, which keeps the backup domain alive only
+default) ties `VDD_BK` to +BATT, which keeps the backup domain alive only
 while the board is powered. To use the supercapacitor, fit `C422` and
 **remove `R405`**: leaving both fitted would put a 100 mF capacitor across
-the 3V3 rail through zero ohms, which is a short until it charges.
+the +BATT rail through zero ohms, which is a short until it charges.
 
-The named part is a KEMET FCS0V104ZFTBR24, 100 mF at 3.5 V. That holds the
+The named part is a KEMET FCS0V104ZFTBR24, 100 mF at **3.5 V**, which is
+below the 3.6 V the `+BATT` rail can now reach. It was chosen when the rail
+was a regulated 3.3 V; pick a higher-voltage part before fitting it. That
+holds the
 RTC and backup RAM for roughly three hours, and costs about 1 g and a
 10.7 mm circle of board - which is why it is optional on a mass-limited
 payload.
@@ -233,6 +282,12 @@ equivalent in-stock part when the preferred one has run out - checking the
 parametric value and package first, so a request for 1 uF cannot come back
 as 0.1 uF.
 
+`tools/source_bom.py` needs `digi-mouse-search` and its virtualenv, which is
+not installed on this machine, so `build.sh` reports the missing interpreter
+and stops short of the sourcing pass. `bom.json` is still regenerated; the
+stock and price columns in `BOM.md` are whatever the last successful run
+read. Re-run the sourcing pass before ordering.
+
 ## Verification
 
 `build.sh` fails on any of these:
@@ -243,13 +298,13 @@ as 0.1 uF.
 | flow-wire routing | 5/5 sheets, DRC 0 violations |
 | cross-sheet global labels | no undeclared names shared between sheets |
 | shorted rails | no electrical group carries two power symbols |
-| footprint resolution | 29 distinct footprints, all present |
+| footprint resolution | 27 distinct footprints, all present |
 | frame fit | no sheet's content runs off its page |
-| netlist vs `sheets/*.json` | 388 endpoints, 77 nets, exact match |
+| netlist vs `sheets/*.json` | 378 endpoints, 76 nets, exact match |
 | full-hierarchy ERC | 0 errors, 2 warnings |
 
 The two ERC warnings are the BME688 address straps: `U503.SDO` to GND and
-`U504.SDO` to +3V3 put a bidirectional pin on a power net, which is what
+`U504.SDO` to +BATT put a bidirectional pin on a power net, which is what
 setting an I2C address on that part looks like.
 
 The netlist comparison is the gate that matters. Placement and routing are
@@ -258,7 +313,7 @@ which is exactly what happened once during this design (see `NOTES.md`).
 
 ## Ordering
 
-`digikey_bom.csv` holds **one board's worth**: 52 lines, three columns,
+`digikey_bom.csv` holds **one board's worth**: 49 lines, three columns,
 every line cut tape or bulk. Upload it to DigiKey's BOM Manager and set the
 multiplier there rather than scaling the file - that way the pack and reel
 rounding happens once, in DigiKey's hands, instead of being baked in here.
@@ -270,13 +325,27 @@ fulfil them as uploaded:
 - **C422** (supercapacitor) - do not populate; `399-13093-1-ND` if you want it.
 - **U401 AT6558R-5N32** - not stocked at DigiKey at all. LCSC C500608.
 
-Cost is $121.64 per board, of which $45 is off-board (the BMV080 module and
+Cost is $118.98 per board, of which $45 is off-board (the BMV080 module and
 the GNSS antenna). Checked against an 8-board run, two lines are tight:
 the BMV080 comes in packs of 10 and is discontinued at DigiKey, and the
 56 nH match inductor has 59 in stock against the 16 the run needs.
 
 ## Known limitations
 
+- **The rail is unregulated and can touch 3.6 V.** That is the absolute
+  maximum operating supply for both the Wio-E5's STM32WLE5 and the CC1200,
+  so there is no headroom left: a cell that rests above 3.6 V, or a charger
+  left connected, is over the limit. Confirm the cell's open-circuit voltage
+  before connecting it.
+- **No brownout floor either.** With the regulator gone the rail falls with
+  the cell instead of holding 3.3 V to cutoff, so the RF output power, the
+  ADC reference and the sensor readings all drift over a flight. `VBAT_SENSE`
+  measures the rail itself, which at least makes the drift observable.
+- **`D101` no longer protects the ICs.** The SMF6.5A was sized for the old
+  1.8-5.5 V regulator input; it does not start conducting until about 7 V,
+  well past the 3.9 V absolute maximum of the parts now sitting directly on
+  the rail. It is a gross-overvoltage guard, not IC protection, and no
+  standoff low enough to help would sit safely above a fresh cell.
 - **GNSS altitude limit.** The AT6558R data sheet says nothing about COCOM
   limits. Most consumer receivers stop reporting above 18 km or 515 m/s,
   which is below balloon float altitude. Confirm the firmware's behaviour

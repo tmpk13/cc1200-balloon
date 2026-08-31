@@ -42,7 +42,7 @@
     {"ref": "C514", "lib_id": "Device:C", "value": "100n", "footprint": "Capacitor_SMD:C_0402_1005Metric"}
   ],
   "nets": [
-    {"name": "+3V3", "pins": [
+    {"name": "+BATT", "pins": [
       "U501.7", "U501.19", "C501.1", "C502.1",
       "U502.5", "U502.6", "U502.8", "U502.9", "U502.15", "U502.16", "C504.1",
       "U503.2", "U503.6", "U503.8", "C507.1", "C508.1",
@@ -83,6 +83,6 @@
   ],
   "power": {
     "GND": {"style": "symbol"},
-    "+3V3": {"style": "symbol"}
+    "+BATT": {"style": "symbol"}
   }
 }
