@@ -6,7 +6,7 @@
 
 DigiKey stock and pricing read live; totals are indicative, not a quote.
 
-Offers below were read on 2026-08-25 and carried forward: the sourcing pass cannot run on this machine (`/home/tmpk/digi-mouse-search` is gone), so quantities and designators are current but stock and price are not. Re-run `tools/source_bom.py` before ordering.
+**STALE - do not order from this file.** It still describes the GNSS sheet as it was before the 2026-09-06 AT6558R rewiring, so its designators, quantities and line count are all wrong (`C415`-`C422`, `R404`, `R405` no longer exist; `C414`, `R402`, `R403` and the new inductor and oscillator part numbers are missing). Offers were read on 2026-08-25 and the sourcing pass cannot run on this machine (`/home/tmpk/digi-mouse-search` is gone), so nothing here can be refreshed until it is reinstalled. `bom.json` is current and correct. Re-run `tools/source_bom.py` before ordering.
 
 **Board total (excluding DNP): $118.98**
 

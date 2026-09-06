@@ -138,80 +138,137 @@ function ladder(count: number, step = 2.54): number[] {
 }
 
 // --- AT6558R ------------------------------------------------------------
-// QFN-40 5x5 mm, pin names from the AT6558 data sheet section 2.2. Pin 41
-// is the exposed pad, which the data sheet names GND.
-const at6558Left: [string, string, ElecType][] = [
-  ["1", "LNA_IN", "passive"],
-  ["40", "LNA_OUT", "passive"],
-  ["38", "RFA_IN", "passive"],
-  ["2", "ANT_BIAS", "passive"],
-  ["3", "VANT_IN", "power_in"],
-  ["30", "XREF", "input"],
-  ["34", "RTC_XI", "input"],
-  ["33", "RTC_XO", "output"],
-  ["23", "nRST", "input"],
-  ["29", "ON_OFF", "input"],
-  ["28", "TEST", "input"],
-  ["5", "TST_ANA", "passive"],
-  ["7", "TST_DIG", "passive"],
-];
-const at6558Right: [string, string, ElecType][] = [
-  ["19", "GPIO0/TXD1", "bidirectional"],
-  ["20", "GPIO1/RXD1", "bidirectional"],
-  ["11", "GPIO2/SCL", "bidirectional"],
-  ["12", "GPIO3/SDA", "bidirectional"],
-  ["15", "GPIO4/TXD2", "bidirectional"],
-  ["16", "GPIO5/RXD2", "bidirectional"],
-  ["21", "GPIO6/1PPS", "bidirectional"],
-  ["9", "GPIO7", "bidirectional"],
-  ["8", "GPIO8", "bidirectional"],
-  ["10", "GPIO9", "bidirectional"],
-  ["17", "TMS", "bidirectional"],
-  ["18", "TCK", "input"],
-];
+// Pin numbers, names and directions are the AT6558R data sheet section 2.2
+// table; the package is QFN-40 5x5 mm and pin 41 is the exposed pad, which
+// the table names GND.
+//
+// Layout follows one rule set, so a reader can find any pin without
+// hunting: every supply pin is on the top edge and ground on the bottom,
+// both in pin-number order. The signal pins take the sides, in functional
+// groups separated by a blank slot - analog, clocks and the three control
+// inputs on the left, the host-facing digital interfaces on the right -
+// and within each group they are again in pin-number order.
+//
+// The GPIOs carry their data sheet default function in the name because
+// that is how the board uses them; they are all remappable in firmware.
 const at6558Top: [string, string, ElecType][] = [
-  ["27", "DCDC_IN", "power_in"],
-  ["25", "VDD_BBLDO", "power_in"],
-  ["14", "VDD_IO", "power_in"],
-  ["22", "VDD_POR", "power_in"],
-  ["31", "VDD_BK", "power_in"],
-  ["4", "VDD_RFLDO", "power_in"],
-  ["35", "VDD_PLDO", "power_in"],
-  ["13", "VDD12_BB", "power_in"],
-  ["39", "VDD_RF", "passive"],
+  ["1", "VDD_ANA", "power_out"],
+  ["2", "VX_OUT", "power_out"],
+  ["5", "VDD12BK", "power_out"],
+  ["6", "VDD_BK", "power_in"],
+  ["7", "VDD_IO", "power_in"],
+  ["21", "DX_IN", "power_in"],
+  ["22", "DX_OUT", "power_out"],
+  ["23", "VCORE", "power_in"],
+  ["24", "VDD12BB", "power_out"],
+  ["38", "VDD_PLL", "power_out"],
+  ["39", "VDD_RF", "power_out"],
 ];
 const at6558Bottom: [string, string, ElecType][] = [
-  ["26", "DCDC_OUT", "passive"],
-  ["24", "BBLDO_OUT", "power_out"],
-  ["6", "AVDD", "power_out"],
-  ["32", "VDD12_BK", "passive"],
-  ["36", "DVDD", "passive"],
-  ["37", "VDD_PLL", "passive"],
   ["41", "GND", "power_in"],
 ];
+// NC pins are drawn `passive` rather than `no_connect`: KiCad drops
+// no_connect pins from the netlist, which would leave their pads
+// unreachable from the board. The sheet marks them no-connect instead.
+const at6558Left: [string, string, ElecType][][] = [
+  [
+    ["4", "TST_RF", "passive"],
+    ["10", "ANT_BIAS", "passive"],
+    ["40", "RF_IN", "passive"],
+  ],
+  [
+    ["3", "XREF", "input"],
+  ],
+  [
+    ["11", "RTC_O", "output"],
+    ["12", "RTC_I", "input"],
+  ],
+  [
+    ["17", "nRST", "input"],
+    ["29", "TEST", "input"],
+    ["30", "ON_OFF", "input"],
+  ],
+  [
+    ["9", "NC", "passive"],
+    ["25", "NC", "passive"],
+    ["26", "NC", "passive"],
+    ["27", "NC", "passive"],
+    ["28", "NC", "passive"],
+  ],
+];
+const at6558Right: [string, string, ElecType][][] = [
+  [
+    ["18", "GPIO1/RXD0", "bidirectional"],
+    ["19", "GPIO0/TXD0", "bidirectional"],
+  ],
+  [
+    ["13", "GPIO4/TXD1", "bidirectional"],
+    ["14", "GPIO5/RXD1", "bidirectional"],
+  ],
+  [
+    ["31", "GPIO10/SCL", "bidirectional"],
+    ["32", "GPIO11/SDA", "bidirectional"],
+  ],
+  [
+    ["15", "TCK", "input"],
+    ["16", "TMS", "bidirectional"],
+  ],
+  [
+    ["8", "GPIO8", "bidirectional"],
+    ["20", "GPIO6", "bidirectional"],
+    ["33", "GPIO16", "bidirectional"],
+    ["34", "GPIO12", "bidirectional"],
+    ["35", "GPIO13/1PPS", "bidirectional"],
+    ["36", "GPIO14", "bidirectional"],
+    ["37", "GPIO15", "bidirectional"],
+  ],
+];
+
+/**
+ * `ladder` for grouped pins: one blank slot between groups, the whole
+ * stack centered on the grid the same way.
+ */
+function groupLadder<T>(groups: T[][], step = 2.54): { item: T; y: number }[] {
+  const slots = groups.reduce((a, g) => a + g.length, 0) + groups.length - 1;
+  const start = Math.floor((slots - 1) / 2) * step;
+  const out: { item: T; y: number }[] = [];
+  let slot = 0;
+  for (const g of groups) {
+    for (const item of g) {
+      out.push({ item, y: Number((start - slot * step).toFixed(2)) });
+      slot++;
+    }
+    slot++; // blank slot between groups
+  }
+  return out;
+}
 
 const at6558: SymbolSpec = {
   name: "AT6558R",
   reference: "U",
   value: "AT6558R-5N32",
-  footprint: "Package_DFN_QFN:QFN-40-1EP_5x5mm_P0.4mm_EP3.6x3.6mm",
+  footprint: "cc1200_balloon:AT6558R_QFN-40-1EP_5x5mm_P0.4mm_EP3.4x3.4mm",
   datasheet: "https://www.lcsc.com/datasheet/lcsc_datasheet_2208031800_ZHONGKEWEI-AT6558R-5N32_C500608.pdf",
-  description: "BDS/GNSS multi-constellation receiver SoC, QFN-40 5x5mm",
+  description: "BDS/GPS/GLONASS multi-constellation receiver SoC, QFN-40 5x5mm",
   keywords: "GNSS GPS BeiDou GLONASS receiver",
   fpFilters: "QFN*5x5mm*P0.4mm*",
-  body: { x0: -20.32, y0: 20.32, x1: 20.32, y1: -20.32 },
+  body: { x0: -20.32, y0: 27.94, x1: 20.32, y1: -27.94 },
   pins: [
-    ...at6558Left.map(([number, name, etype], i) => ({
-      number, name, etype, x: -22.86, y: ladder(at6558Left.length)[i], angle: 0 as const,
+    ...groupLadder(at6558Left).map(({ item: [number, name, etype], y }) => ({
+      number, name, etype, x: -22.86, y, angle: 0 as const,
     })),
-    ...at6558Right.map(([number, name, etype], i) => ({
-      number, name, etype, x: 22.86, y: ladder(at6558Right.length)[i], angle: 180 as const,
+    ...groupLadder(at6558Right).map(({ item: [number, name, etype], y }) => ({
+      number, name, etype, x: 22.86, y, angle: 180 as const,
     })),
-    ...at6558Top.map(([number, name, etype], i) => ({
-      number, name, etype, x: ladder(at6558Top.length)[i], y: 22.86, angle: 270 as const,
+    // `ladder` runs high to low, which on a horizontal edge would put pin 1
+    // on the right; reversed so the row reads in pin order left to right.
+    ...at6558Top.map(([number, name, etype], i, a) => ({
+      number, name, etype,
+      x: ladder(a.length)[a.length - 1 - i], y: 30.48, angle: 270 as const,
     })),
-    ...at6558Bottom.map(([number, name, etype], i) => ({
-      number, name, etype, x: ladder(at6558Bottom.length)[i], y: -22.86, angle: 90 as const,
+    ...at6558Bottom.map(([number, name, etype], i, a) => ({
+      number, name, etype,
+      x: ladder(a.length)[a.length - 1 - i], y: -30.48, angle: 90 as const,
     })),
   ],
 };

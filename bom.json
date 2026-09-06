@@ -34,13 +34,11 @@
       "C102",
       "C202",
       "C312",
-      "C402",
-      "C405",
+      "C407",
+      "C408",
       "C409",
-      "C412",
-      "C417",
-      "C418",
-      "C419",
+      "C410",
+      "C411",
       "C504",
       "C511",
       "C512",
@@ -63,7 +61,6 @@
     "refs": [
       "C104",
       "C203",
-      "C411",
       "C503"
     ],
     "dnp": false
@@ -84,15 +81,11 @@
       "C107",
       "C201",
       "C204",
+      "C401",
       "C403",
-      "C404",
-      "C406",
-      "C407",
-      "C408",
-      "C410",
+      "C405",
+      "C412",
       "C413",
-      "C420",
-      "C421",
       "C501",
       "C507",
       "C508",
@@ -143,7 +136,7 @@
     "alt": "",
     "refs": [
       "C310",
-      "C414"
+      "C402"
     ],
     "dnp": false
   },
@@ -305,39 +298,22 @@
     "dnp": false
   },
   {
-    "key": "GRM1555C1H471JA01D|",
-    "value": "470p",
-    "footprint": "Capacitor_SMD:C_0402_1005Metric",
-    "mpn": "GRM1555C1H471JA01D",
-    "query": "0402 470pF 50V C0G capacitor",
+    "key": "GRM188R61A475KE15D|",
+    "value": "4u7",
+    "footprint": "Capacitor_SMD:C_0603_1608Metric",
+    "mpn": "GRM188R61A475KE15D",
+    "query": "0603 4.7uF 10V X5R capacitor",
     "expect": {
       "param": "Capacitance",
-      "value": 4.7e-10,
-      "pkg": "0402"
+      "value": 0.0000047,
+      "pkg": "0603"
     },
     "alt": "",
     "refs": [
-      "C401"
+      "C404",
+      "C406"
     ],
     "dnp": false
-  },
-  {
-    "key": "GRM1555C1H100JA01D|dnp",
-    "value": "10p",
-    "footprint": "Capacitor_SMD:C_0402_1005Metric",
-    "mpn": "GRM1555C1H100JA01D",
-    "query": "0402 10pF 50V C0G capacitor",
-    "expect": {
-      "param": "Capacitance",
-      "value": 1e-11,
-      "pkg": "0402"
-    },
-    "alt": "",
-    "refs": [
-      "C415",
-      "C416"
-    ],
-    "dnp": true
   },
   {
     "key": "FCS0V104ZFTBR24|dnp",
@@ -348,7 +324,7 @@
     "expect": null,
     "alt": "",
     "refs": [
-      "C422"
+      "C414"
     ],
     "dnp": true
   },
@@ -542,10 +518,10 @@
     "dnp": false
   },
   {
-    "key": "LQW15AN33NG00D|",
+    "key": "LQW15AN33NH00D|",
     "value": "33n",
     "footprint": "Inductor_SMD:L_0402_1005Metric",
-    "mpn": "LQW15AN33NG00D",
+    "mpn": "LQW15AN33NH00D",
     "query": "0402 33nH wirewound RF inductor",
     "expect": {
       "param": "Inductance",
@@ -559,14 +535,14 @@
     "dnp": false
   },
   {
-    "key": "LQW15AN4N3C00D|",
-    "value": "4n3",
+    "key": "LQW15AN6N8H00D|",
+    "value": "6n8",
     "footprint": "Inductor_SMD:L_0402_1005Metric",
-    "mpn": "LQW15AN4N3C00D",
-    "query": "0402 4.3nH wirewound RF inductor",
+    "mpn": "LQW15AN6N8H00D",
+    "query": "0402 6.8nH wirewound RF inductor",
     "expect": {
       "param": "Inductance",
-      "value": 4.3000000000000005e-9,
+      "value": 6.8000000000000005e-9,
       "pkg": "0402"
     },
     "alt": "",
@@ -650,8 +626,6 @@
       "R102",
       "R201",
       "R401",
-      "R402",
-      "R403",
       "R501"
     ],
     "dnp": false
@@ -726,20 +700,20 @@
     "dnp": false
   },
   {
-    "key": "RC0402JR-070RL|",
-    "value": "0R",
+    "key": "RC0402FR-0722RL|",
+    "value": "22R",
     "footprint": "Resistor_SMD:R_0402_1005Metric",
-    "mpn": "RC0402JR-070RL",
-    "query": "0402 0 ohm jumper resistor",
+    "mpn": "RC0402FR-0722RL",
+    "query": "0402 22 ohm 1% resistor",
     "expect": {
       "param": "Resistance",
-      "value": 0,
+      "value": 22,
       "pkg": "0402"
     },
     "alt": "",
     "refs": [
-      "R404",
-      "R405"
+      "R402",
+      "R403"
     ],
     "dnp": false
   },
@@ -849,10 +823,10 @@
     "dnp": false
   },
   {
-    "key": "UCF4031035LK005000-26MDK|",
+    "key": "KT2520K26000ACW33T|",
     "value": "TCXO 26MHz",
     "footprint": "Oscillator:Oscillator_SMD_ECS_2520MV-xxx-xx-4Pin_2.5x2.0mm",
-    "mpn": "UCF4031035LK005000-26MDK",
+    "mpn": "KT2520K26000ACW33T",
     "query": "",
     "expect": null,
     "alt": "",
@@ -862,10 +836,10 @@
     "dnp": false
   },
   {
-    "key": "FC3215AN 32.768K-C5NN60KC5|",
+    "key": "FC-135 32.768KA-A5|",
     "value": "32.768kHz",
     "footprint": "Crystal:Crystal_SMD_3215-2Pin_3.2x1.5mm",
-    "mpn": "FC3215AN 32.768K-C5NN60KC5",
+    "mpn": "FC-135 32.768KA-A5",
     "query": "",
     "expect": null,
     "alt": "",

@@ -42,10 +42,11 @@ classDiagram
     class GNSS["U401 AT6558R-5N32"] {
         26 MHz TCXO X401
         32.768 kHz X402
+        internal DCDC L403
         active antenna bias-T
         J401 coax pads
-        UART + 1PPS + ON_OFF
-        C422 optional supercap
+        UART0 + 1PPS + ON_OFF
+        C414 optional supercap
     }
     class I2CBus["I2C1 at 100 kHz"] {
         U501 SCD40 CO2 0x62
@@ -240,31 +241,31 @@ Three RF ports, all separate, all soldered:
 - `J301` - CC1200, matched for 434 MHz by the v1 network.
 - `J401` - GNSS. Expects an **active** antenna: the AT6558R data sheet asks
   for 18-35 dB of external gain, and `L401`/`C401` form the bias-T that
-  feeds it from `ANT_BIAS`. The BOM names an Abracon AANI-AP-0158-1, a
+  feeds it from `ANT_BIAS`, with `C402` blocking the feed DC out of `RF_IN`
+  and `L402` the series match into it. The BOM names an Abracon AANI-AP-0158-1, a
   27 x 27 mm adhesive patch with a 28 dB LNA and a 100 mm pigtail; cut its
   u.FL plug off and solder the coax to the pads.
 - `J201` - the Wio-E5's own LoRa radio, independent of the CC1200 link.
 
 ## Optional RTC backup
 
-`C422` is an unpopulated supercapacitor across the AT6558R's backup domain,
-for GNSS hot start after a power interruption. The chip trickle-charges it
-from `VDD_POR` through its own internal circuit - no diode or series
-resistor needed.
+`C414` is an unpopulated supercapacitor on the AT6558R's `VDD_BK` pin, for
+GNSS hot start after a power interruption. The chip trickle-charges it
+through its own internal circuit, and blocks it from discharging back into
+the rail - no diode or series resistor needed, so it wires straight to the
+pin.
 
-**`R405` and `C422` are mutually exclusive.** `R405` (0R, fitted by
-default) ties `VDD_BK` to +BATT, which keeps the backup domain alive only
-while the board is powered. To use the supercapacitor, fit `C422` and
-**remove `R405`**: leaving both fitted would put a 100 mF capacitor across
-the +BATT rail through zero ohms, which is a short until it charges.
+`VDD_BK` is left floating when `C414` is not fitted, which is what the data
+sheet asks for. The backup domain is still powered whenever the board is:
+the chip feeds it internally from `VDD_IO` through a diode. Only the
+*unpowered* hold needs the supercapacitor.
 
 The named part is a KEMET FCS0V104ZFTBR24, 100 mF at **3.5 V**, which is
-below the 3.6 V the `+BATT` rail can now reach. It was chosen when the rail
-was a regulated 3.3 V; pick a higher-voltage part before fitting it. That
-holds the
-RTC and backup RAM for roughly three hours, and costs about 1 g and a
-10.7 mm circle of board - which is why it is optional on a mass-limited
-payload.
+below the 3.6 V the `+BATT` rail can reach. The data sheet wants a backup
+cell rated above `VDD_IO` + 0.3 V, so above 3.9 V here; pick a
+higher-voltage part before fitting it. 100 mF holds the RTC and backup RAM
+for roughly three hours, and costs about 1 g and a 10.7 mm circle of board
+- which is why it is optional on a mass-limited payload.
 
 ## Regenerating
 
@@ -302,7 +303,7 @@ read. Re-run the sourcing pass before ordering.
 | shorted rails | no electrical group carries two power symbols |
 | footprint resolution | 27 distinct footprints, all present |
 | frame fit | no sheet's content runs off its page |
-| netlist vs `sheets/*.json` | 378 endpoints, 76 nets, exact match |
+| netlist vs `sheets/*.json` | 352 endpoints, 74 nets, exact match |
 | full-hierarchy ERC | 0 errors, 2 warnings |
 
 The two ERC warnings are the BME688 address straps: `U503.SDO` to GND and
@@ -320,11 +321,10 @@ every line cut tape or bulk. Upload it to DigiKey's BOM Manager and set the
 multiplier there rather than scaling the file - that way the pack and reel
 rounding happens once, in DigiKey's hands, instead of being baked in here.
 
-Three lines are deliberately absent from the CSV, because DigiKey cannot
+Two lines are deliberately absent from the CSV, because DigiKey cannot
 fulfil them as uploaded:
 
-- **C415, C416** (10 pF RTC load caps) - do not populate.
-- **C422** (supercapacitor) - do not populate; `399-13093-1-ND` if you want it.
+- **C414** (supercapacitor) - do not populate; `399-13093-1-ND` if you want it.
 - **U401 AT6558R-5N32** - not stocked at DigiKey at all. LCSC C500608.
 
 Cost is $118.98 per board, of which $45 is off-board (the BMV080 module and
@@ -343,6 +343,11 @@ the BMV080 comes in packs of 10 and is discontinued at DigiKey, and the
   the cell instead of holding 3.3 V to cutoff, so the RF output power, the
   ADC reference and the sensor readings all drift over a flight. `VBAT_SENSE`
   measures the rail itself, which at least makes the drift observable.
+- **The GNSS goes out of spec before the rest of the board.** `VDD_IO` and
+  `DX_IN` on the AT6558R are specified 2.7-3.6 V, and its power-on reset
+  releases at about 2.45 V. The receiver is therefore the first thing to
+  stop as the cell sags, and it stops without warning the MCU - budget the
+  flight on the 2.7 V point, not on the cell's cutoff.
 - **`D101` no longer protects the ICs.** The SMF6.5A was sized for the old
   1.8-5.5 V regulator input; it does not start conducting until about 7 V,
   well past the 3.9 V absolute maximum of the parts now sitting directly on

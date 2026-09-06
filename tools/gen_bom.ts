@@ -76,6 +76,7 @@ const CAP_0402_X7R: Record<string, Generic> = {
 const RES_0402: Record<string, Generic> = {
   "0R": { mpn: "RC0402JR-070RL", query: "0402 0 ohm jumper resistor" },
   "18R": { mpn: "RC0402FR-0718RL", query: "0402 18 ohm 1% resistor" },
+  "22R": { mpn: "RC0402FR-0722RL", query: "0402 22 ohm 1% resistor" },
   "100R": { mpn: "RC0402FR-07100RL", query: "0402 100 ohm 1% resistor" },
   "1k": { mpn: "RC0402FR-071KL", query: "0402 1 kohm 1% resistor" },
   "4k7": { mpn: "RC0402FR-074K7L", query: "0402 4.7 kohm 1% resistor" },
@@ -88,10 +89,11 @@ const RES_0402: Record<string, Generic> = {
 // Q that a multilayer chip inductor does not have at these frequencies.
 const IND_0402: Record<string, Generic> = {
   "4n3": { mpn: "LQW15AN4N3C00D", query: "0402 4.3nH wirewound RF inductor" },
+  "6n8": { mpn: "LQW15AN6N8H00D", query: "0402 6.8nH wirewound RF inductor" },
   "15n": { mpn: "LQW15AN15NJ00D", query: "0402 15nH wirewound RF inductor" },
   "22n": { mpn: "LQW15AN22NG00D", query: "0402 22nH wirewound RF inductor" },
   "27n": { mpn: "LQW15AN27NG00D", query: "0402 27nH wirewound RF inductor" },
-  "33n": { mpn: "LQW15AN33NG00D", query: "0402 33nH wirewound RF inductor" },
+  "33n": { mpn: "LQW15AN33NH00D", query: "0402 33nH wirewound RF inductor" },
   "43n": { mpn: "LQW15AN43NG00D", query: "0402 43nH wirewound RF inductor" },
   "56n": { mpn: "LQW15AN56NG00D", query: "0402 56nH wirewound RF inductor" },
 };
@@ -99,6 +101,7 @@ const IND_0402: Record<string, Generic> = {
 // A blank query means "no automatic substitute": nothing about an LED
 // reduces to one parameter the sourcing step could check.
 const OTHER: Record<string, Generic> = {
+  "4u7|C_0603_1608Metric": { mpn: "GRM188R61A475KE15D", query: "0603 4.7uF 10V X5R capacitor" },
   "10u|C_0603_1608Metric": { mpn: "GRM188R60J106ME84D", query: "0603 10uF 6.3V X5R capacitor" },
   "22u|C_0805_2012Metric": { mpn: "GRM21BR61A226ME51L", query: "0805 22uF 10V X5R capacitor" },
   "STATUS|LED_0603_1608Metric": { mpn: "LTST-C191KGKT", query: "" },

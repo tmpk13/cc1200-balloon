@@ -30,16 +30,23 @@ interface PadSpec {
   /** SMD pads default to the front copper stack; through-hole needs a drill. */
   drill?: number;
   shape?: "rect" | "roundrect" | "oval" | "circle";
+  /** Overrides the default front copper stack, for paste-only apertures. */
+  layers?: string;
+  /** Extra pad tokens, already indented, e.g. the thermal-land properties. */
+  extra?: string[];
 }
 
 function smdPad(p: PadSpec, seed: string): string {
   const shape = p.shape ?? "roundrect";
-  const extra = shape === "roundrect" ? "\n\t\t(roundrect_rratio 0.25)" : "";
+  const tokens = [
+    ...(shape === "roundrect" ? ["\t\t(roundrect_rratio 0.25)"] : []),
+    ...(p.extra ?? []),
+  ];
   return `\t(pad "${p.number}" smd ${shape}
 \t\t(at ${n(p.x)} ${n(p.y)})
 \t\t(size ${n(p.w)} ${n(p.h)})
-\t\t(layers "F.Cu" "F.Paste" "F.Mask")${extra}
-\t\t(uuid "${uuid(seed + p.number)}")
+\t\t(layers ${p.layers ?? '"F.Cu" "F.Paste" "F.Mask"'})
+${tokens.join("\n")}${tokens.length ? "\n" : ""}\t\t(uuid "${uuid(seed + p.number + (p.number ? "" : `${p.x},${p.y}`))}")
 \t)`;
 }
 
@@ -81,6 +88,35 @@ function box(
   ];
 }
 
+/** Closed outline through `pts`, drawn as individual segments. */
+function polyline(
+  pts: [number, number][], layer: string, width: number, seed: string,
+): string[] {
+  return pts.map((a, i) => {
+    const b = pts[(i + 1) % pts.length];
+    return line(a[0], a[1], b[0], b[1], layer, width, seed + i);
+  });
+}
+
+/** Filled polygon, for the pin-1 marker. */
+function poly(
+  pts: [number, number][], layer: string, width: number, seed: string,
+): string {
+  const xy = pts.map(([x, y]) => `\t\t\t(xy ${n(x)} ${n(y)})`).join("\n");
+  return `\t(fp_poly
+\t\t(pts
+${xy}
+\t\t)
+\t\t(stroke
+\t\t\t(width ${width})
+\t\t\t(type solid)
+\t\t)
+\t\t(fill yes)
+\t\t(layer "${layer}")
+\t\t(uuid "${uuid(seed)}")
+\t)`;
+}
+
 function text(kind: string, value: string, y: number, layer: string, seed: string): string {
   return `\t(property "${kind}" "${value}"
 \t\t(at 0 ${n(y)} 0)
@@ -98,6 +134,7 @@ function text(kind: string, value: string, y: number, layer: string, seed: strin
 
 function footprint(
   name: string, descr: string, tags: string, model: string, body: string[],
+  textY: { ref: number; value: number } = { ref: -0.5, value: 1 },
 ): string {
   const seed = `fp-${name}`;
   return [
@@ -108,8 +145,8 @@ function footprint(
     '\t(layer "F.Cu")',
     `\t(descr "${descr}")`,
     `\t(tags "${tags}")`,
-    text("Reference", "REF**", -0.5, "F.SilkS", seed),
-    text("Value", name, 1, "F.Fab", seed),
+    text("Reference", "REF**", textY.ref, "F.SilkS", seed),
+    text("Value", name, textY.value, "F.Fab", seed),
     "\t(attr smd)",
     ...body,
     // Bare solder pads have no body to model.
@@ -195,32 +232,118 @@ function fpc13(): string {
 }
 
 // --- 3. AT6558R QFN-40 --------------------------------------------------
-// The stock QFN-40 5x5 P0.4 land patterns come with a 3.6 or 3.8 mm thermal
-// land; the AT6558 data sheet gives D1/E1 = 3.30..3.50 mm, so the pad is
-// resized to the 3.4 mm nominal rather than overhanging the die pad.
-async function at6558(): Promise<string> {
-  const stock = `${KICAD_FP}/Package_DFN_QFN.pretty/QFN-40-1EP_5x5mm_P0.4mm_EP3.6x3.6mm.kicad_mod`;
-  let src = await Bun.file(stock).text();
+// Built from the AT6558R data sheet package drawing (section 10.2,
+// QFN5x5-40L P0.4 T0.8) rather than patched from a stock pattern:
+//   D = E = 5.00 (4.924..5.076)   e = 0.40 typ     b = 0.20 (0.15..0.25)
+//   D1 = E1 = 3.40 (3.30..3.50)   L = 0.40 (0.324..0.476)
+//
+// Perimeter lands are IPC-7351 nominal density: 0.25 mm across the terminal
+// (b + 0.05) and 0.825 mm long, reaching 0.35 mm past the body edge so the
+// toe fillet is visible for inspection and 0.075 mm inside the terminal
+// heel. Pin 1 is the top-left land, numbering counter-clockwise.
+//
+// The thermal land is the 3.40 mm nominal D1/E1. The nearest stock KiCad
+// pattern is 3.6 mm, which overhangs the die pad. Its paste is a 3x3
+// aperture grid at 63% coverage; a single full-size aperture floats the
+// part on 11.6 mm2 of molten solder and it tilts.
+//
+// The data sheet (section 8.7) requires the thermal land to be very well
+// grounded, with generous trace width and via count. Vias are left to the
+// board rather than baked into the footprint so they can be tented against
+// solder wicking; see README.
+function at6558(): string {
   const name = "AT6558R_QFN-40-1EP_5x5mm_P0.4mm_EP3.4x3.4mm";
-  src = src.replace(
-    /^\(footprint "[^"]*"/,
-    `(footprint "${name}"`,
+  const seed = `fp-${name}`;
+  const PER_SIDE = 10;
+  const PITCH = 0.4;
+  const PAD_L = 0.825;   // radial, body edge +0.35 out and terminal +0.075 in
+  const PAD_W = 0.25;    // across the terminal
+  const PAD_C = 2.4375;  // land center, measured from the body center
+  const EP = 3.4;        // D1 = E1 nominal
+  const BODY = 5.0;      // D = E nominal
+
+  // Lands run down the left edge, along the bottom, up the right and back
+  // along the top: the QFN counter-clockwise convention, pin 1 top-left.
+  const first = (-(PER_SIDE - 1) * PITCH) / 2;
+  const pads: string[] = [];
+  for (let i = 0; i < PER_SIDE; i++) {
+    const o = first + i * PITCH;
+    const p = (number: number, x: number, y: number, w: number, h: number) =>
+      pads.push(smdPad({ number: String(number), x, y, w, h }, seed));
+    p(1 + i, -PAD_C, o, PAD_L, PAD_W);
+    p(11 + i, o, PAD_C, PAD_W, PAD_L);
+    p(21 + i, PAD_C, -o, PAD_L, PAD_W);
+    p(31 + i, -o, -PAD_C, PAD_W, PAD_L);
+  }
+
+  // Thermal land: copper and mask only. Paste comes from the aperture grid
+  // below, and zone_connect 2 lets a ground pour flood it solid.
+  pads.push(smdPad({
+    number: "41", x: 0, y: 0, w: EP, h: EP, shape: "rect",
+    layers: '"F.Cu" "F.Mask"',
+    extra: ["\t\t(property pad_prop_heatsink)", "\t\t(zone_connect 2)"],
+  }, seed));
+
+  // 3 x 3 apertures, 0.9 mm square on a 1.15 mm pitch: 63% paste coverage
+  // and 0.1 mm clear of the land edge.
+  const APERTURE = 0.9;
+  const AP_PITCH = 1.15;
+  for (const ax of [-AP_PITCH, 0, AP_PITCH]) {
+    for (const ay of [-AP_PITCH, 0, AP_PITCH]) {
+      pads.push(smdPad({
+        number: "", x: ax, y: ay, w: APERTURE, h: APERTURE,
+        layers: '"F.Paste"',
+      }, seed));
+    }
+  }
+
+  // Silkscreen: corner ticks only, since the lands occupy the edges. The
+  // ticks start clear of the outermost land (+/-1.925) and stop at the body
+  // outline plus 0.11 mm.
+  const SILK = BODY / 2 + 0.11;
+  const TICK = 2.185;
+  const silk: string[] = [];
+  for (const sx of [-1, 1]) {
+    for (const sy of [-1, 1]) {
+      silk.push(line(sx * SILK, sy * SILK, sx * TICK, sy * SILK, "F.SilkS", 0.12, `${seed}sh${sx}${sy}`));
+      silk.push(line(sx * SILK, sy * SILK, sx * SILK, sy * TICK, "F.SilkS", 0.12, `${seed}sv${sx}${sy}`));
+    }
+  }
+  // Pin-1 arrow, outboard of the left edge so it survives assembly.
+  silk.push(poly(
+    [[-3.11, -1.8], [-3.44, -1.56], [-3.44, -2.04]],
+    "F.SilkS", 0.12, `${seed}p1`,
+  ));
+
+  // Fabrication outline: the 5 x 5 body with a 1 mm chamfer on the pin-1
+  // corner.
+  const B = BODY / 2;
+  const CH = 1.0;
+  const fab = polyline(
+    [[-B + CH, -B], [B, -B], [B, B], [-B, B], [-B, -B + CH]],
+    "F.Fab", 0.1, `${seed}fab`,
   );
-  src = src.replace(/\(generator "[^"]*"\)/, '(generator "gen_footprints")');
-  src = src.replace(
-    /\(descr "[^"]*"\)/,
-    '(descr "QFN, 40 pin, 5x5mm body, 0.4mm pitch, 3.4x3.4mm thermal pad (ZHONGKEWEI AT6558R data sheet section 8.2)")',
+
+  // Courtyard: 0.25 mm beyond the lands along each edge, stepping in at the
+  // four corners where there are none.
+  const OUT = 3.1;
+  const IN = 2.75;
+  const BAND = 2.18;
+  const crtyd = polyline([
+    [-OUT, -BAND], [-IN, -BAND], [-IN, -IN], [-BAND, -IN], [-BAND, -OUT],
+    [BAND, -OUT], [BAND, -IN], [IN, -IN], [IN, -BAND], [OUT, -BAND],
+    [OUT, BAND], [IN, BAND], [IN, IN], [BAND, IN], [BAND, OUT],
+    [-BAND, OUT], [-BAND, IN], [-IN, IN], [-IN, BAND], [-OUT, BAND],
+  ], "F.CrtYd", 0.05, `${seed}cy`);
+
+  return footprint(
+    name,
+    "QFN, 40 pin, 5x5mm body, 0.4mm pitch, 3.4x3.4mm thermal pad (ZHONGKEWEI AT6558R data sheet section 10.2)",
+    "QFN NoLead GNSS",
+    "AT6558R_QFN-40_5x5mm.wrl",
+    [...pads, ...silk, ...fab, ...crtyd],
+    { ref: -3.7, value: 3.7 },
   );
-  // Thermal land: pad 41 is the only 3.6 x 3.6 pad in the file.
-  const before = src;
-  src = src.replace(/\(size 3\.6 3\.6\)/, "(size 3.4 3.4)");
-  if (src === before) throw new Error("AT6558R: thermal pad 3.6x3.6 not found");
-  src = src.replace(/\(property "Value" "[^"]*"/, `(property "Value" "${name}"`);
-  src = src.replace(
-    /\(model "[^"]*"/,
-    `(model "${MODEL_DIR}/AT6558R_QFN-40_5x5mm.wrl"`,
-  );
-  return src;
 }
 
 // --- 4. AS3935 antenna coil ---------------------------------------------
@@ -369,7 +492,7 @@ function superCap(): string {
 const files: [string, string][] = [
   ["WIO-E5.kicad_mod", await wioE5()],
   ["Kyocera_046844713002846_FPC-13_P0.30mm.kicad_mod", fpc13()],
-  ["AT6558R_QFN-40-1EP_5x5mm_P0.4mm_EP3.4x3.4mm.kicad_mod", await at6558()],
+  ["AT6558R_QFN-40-1EP_5x5mm_P0.4mm_EP3.4x3.4mm.kicad_mod", at6558()],
   ["L_Axial_D2.8mm_L7.2mm_P10.16mm_Horizontal.kicad_mod", antennaCoil()],
   ["SolderPad_Wire_1x02_P3.0mm.kicad_mod", batteryPads()],
   ["SolderPad_Coax_Pigtail.kicad_mod", coaxPads()],
