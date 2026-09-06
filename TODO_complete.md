@@ -1,5 +1,27 @@
 # Completed
 
+## 2026-09-05 - Demote sheet-local global labels
+
+- Added `tools/localize.ts`: any global label that is not a declared
+  inter-sheet net, does not name a power symbol, and appears on exactly one
+  sheet becomes a plain local label. Runs after `assemble.ts`.
+- Demoted 40 labels over 31 nets: 4 on MCU (SWDIO, SWCLK, STATUS_LED,
+  DBG_TX), 8 on the radio sheet (XOSC_Q1/Q2, RF_PA, RF_LNAP, RF_LNAN,
+  RF_TRXSW, RADIO_GPIO0/3), 28 on GNSS (the AT6558R internal supply and
+  test pins). Power and Sensors had none to demote.
+- `+BATT` on the radio sheet stayed global: it names a power symbol, and a
+  local label of that name would split off the rail without an ERC error.
+- Extended `tools/checkglobals.ts` to fail on a single-sheet global label
+  as well as on an undeclared multi-sheet one, so the demotion cannot
+  regress.
+- Extended `tools/fixlabels.ts` to normalize local label justification too,
+  since flow-wire can rotate a label without updating it.
+- Updated the `README.md` pipeline diagram and `build.sh`.
+
+Verified by netlist partition compare: 96 nets before and after with
+identical pin membership, 30 net names gained a sheet prefix, ERC output
+unchanged.
+
 ## 2026-08-30 - Remove the buck-boost, run straight off the cell
 
 - Deleted `U101` TPS63001 and `L101` 2.2 uH from `sheets/power.json`.

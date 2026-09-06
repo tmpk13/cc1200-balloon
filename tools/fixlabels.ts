@@ -1,5 +1,5 @@
 /**
- * Normalize global label text justification.
+ * Normalize label text justification.
  *
  * A global label draws its name inside a flag outline and centers the text
  * vertically in it, so KiCad writes a horizontal justify only. kicad-vis
@@ -8,10 +8,10 @@
  * global label it shoves the name up against the top of the flag border.
  *
  * The horizontal side is derived from the rotation rather than preserved,
- * so the name still reads outward from the anchor after flow-wire has had
- * a chance to reorient a label.
+ * because flow-wire re-anchors a label onto its pin and rewrites only the
+ * (at ...) token, leaving whatever justify the label had. Rederiving it
+ * here keeps every name reading outward from its anchor.
  *
- * Local labels are left alone: "left bottom" is correct for those.
  * Idempotent.
  */
 
@@ -54,11 +54,16 @@ for (const { file } of SHEETS) {
   // Right to left, so a rewrite never shifts an index not yet visited.
   const heads = [
     ...src.matchAll(
-      /\(global_label "(?:[^"\\]|\\.)*"\s*\(shape \w+\)\s*\(at [-0-9.]+ [-0-9.]+ ([-0-9.]+)\)/g,
+      /\((global_)?label "(?:[^"\\]|\\.)*"\s*(?:\(shape \w+\)\s*)?\(at [-0-9.]+ [-0-9.]+ ([-0-9.]+)\)/g,
     ),
   ];
   for (const head of heads.reverse()) {
-    const want = `(justify ${horizontalFor(parseFloat(head[1]))})`;
+    const horizontal = horizontalFor(parseFloat(head[2]));
+    // A local label's text sits above its wire, so it keeps the vertical
+    // token; a global label's is centered in the flag and must not.
+    const want = head[1]
+      ? `(justify ${horizontal})`
+      : `(justify ${horizontal} bottom)`;
     const end = blockEnd(src, head.index!);
     // The label's own effects is the first one in the block; anything later
     // belongs to the nested Intersheetrefs property.
@@ -75,7 +80,7 @@ for (const { file } of SHEETS) {
   }
 
   if (changed) await Bun.write(path, src);
-  console.log(`  ${file}: ${changed} global label(s) normalized`);
+  console.log(`  ${file}: ${changed} label(s) normalized`);
   total += changed;
 }
 console.log(`  ${total} total`);

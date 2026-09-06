@@ -95,9 +95,11 @@ flowchart LR
     subgraph gen[generation]
         kv[kicad-vis<br/>placement]
         asm[assemble.ts<br/>hierarchy + root sheet]
+        loc[localize.ts<br/>demote sheet-local globals]
         flags[fixflags.ts]
         patch[patchnets.ts]
         flow[flowbridge.ts<br/>flow-wire routing]
+        lbl[fixlabels.ts<br/>label justification]
     end
     subgraph check[gates]
         cg[checkglobals.ts]
@@ -116,7 +118,7 @@ flowchart LR
     fp --> kv
     scad --> d3
     d3 --> fp
-    kv --> asm --> flags --> patch --> flow --> sch
+    kv --> asm --> loc --> flags --> patch --> flow --> lbl --> sch
     sch --> cg & cs & cf & vn & erc
     parts --> bom
     sheets --> bom

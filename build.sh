@@ -31,6 +31,9 @@ done
 echo "== hierarchy (globalize inter-sheet labels, root sheet, project)"
 bun run tools/assemble.ts
 
+echo "== demote sheet-local global labels"
+bun run tools/localize.ts
+
 echo "== power flag dedupe"
 bun run tools/fixflags.ts
 
