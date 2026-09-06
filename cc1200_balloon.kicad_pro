@@ -668,7 +668,7 @@
         "uuid": "5283d11e-ccf0-51c0-83df-1e782a317298"
       }
     ],
-    "used_designators": "X402,C415-416,#PWR4027-4028,J1",
+    "used_designators": "R404,TP401-402,X401-402,C314,C414-416,#PWR1014,#PWR3038,#PWR4009,#PWR4011,#PWR4027-4028,#PWR4035,J1",
     "variants": []
   },
   "sheets": [
