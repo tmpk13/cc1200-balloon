@@ -1934,30 +1934,27 @@
 		)
 		(uuid "c879b19e-cdbc-50f9-b11c-db22c2bb28b1")
 	)
-	(global_label "SWDIO"
-		(shape passive)
+	(label "SWDIO"
 		(at 63.5 154.94 0)
 		(effects
 			(font (size 1.27 1.27))
-			(justify left)
+			(justify left bottom)
 		)
 		(uuid "5d8e7aab-f078-5b47-820f-f863ad394c94")
 	)
-	(global_label "SWCLK"
-		(shape passive)
+	(label "SWCLK"
 		(at 72.39 93.98 0)
 		(effects
 			(font (size 1.27 1.27))
-			(justify left)
+			(justify left bottom)
 		)
 		(uuid "f23e7f88-dafe-5395-b3ef-155d3f41925d")
 	)
-	(global_label "DBG_TX"
-		(shape passive)
+	(label "DBG_TX"
 		(at 63.5 147.32 0)
 		(effects
 			(font (size 1.27 1.27))
-			(justify left)
+			(justify left bottom)
 		)
 		(uuid "e93b0e9a-a94c-5d53-ab15-3b46813755c8")
 	)
@@ -1979,12 +1976,11 @@
 		)
 		(uuid "8ba9e2da-1f72-51bf-8e26-29eabefb6cfc")
 	)
-	(global_label "STATUS_LED"
-		(shape passive)
+	(label "STATUS_LED"
 		(at 44.45 86.36 180)
 		(effects
 			(font (size 1.27 1.27))
-			(justify right)
+			(justify right bottom)
 		)
 		(uuid "72fc4acd-e8bd-5cd7-985e-03a2fbd2c0ed")
 	)

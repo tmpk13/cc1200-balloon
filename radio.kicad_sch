@@ -2183,21 +2183,19 @@
 		)
 		(uuid "50014a1b-cccf-541b-9273-6d653ffe7fd9")
 	)
-	(global_label "XOSC_Q1"
-		(shape passive)
+	(label "XOSC_Q1"
 		(at 144.78 116.84 180)
 		(effects
 			(font (size 1.27 1.27))
-			(justify right)
+			(justify right bottom)
 		)
 		(uuid "39610322-447c-52c0-943e-3bb26fb5a08d")
 	)
-	(global_label "XOSC_Q2"
-		(shape passive)
+	(label "XOSC_Q2"
 		(at 144.78 119.38 180)
 		(effects
 			(font (size 1.27 1.27))
-			(justify right)
+			(justify right bottom)
 		)
 		(uuid "cfe1cabd-3efe-5f64-acf3-109438c1fd1f")
 	)
@@ -2241,39 +2239,35 @@
 		)
 		(uuid "60e0e97e-4242-54a6-bc45-c1132b024bd2")
 	)
-	(global_label "RF_PA"
-		(shape passive)
+	(label "RF_PA"
 		(at 180.34 139.7 0)
 		(effects
 			(font (size 1.27 1.27))
-			(justify left)
+			(justify left bottom)
 		)
 		(uuid "4785a588-88a7-5d90-8f0b-fd17c5992787")
 	)
-	(global_label "RF_TRXSW"
-		(shape passive)
+	(label "RF_TRXSW"
 		(at 180.34 134.62 0)
 		(effects
 			(font (size 1.27 1.27))
-			(justify left)
+			(justify left bottom)
 		)
 		(uuid "9d2e99f8-c616-5c6e-a36f-feb058765404")
 	)
-	(global_label "RF_LNAP"
-		(shape passive)
+	(label "RF_LNAP"
 		(at 180.34 129.54 0)
 		(effects
 			(font (size 1.27 1.27))
-			(justify left)
+			(justify left bottom)
 		)
 		(uuid "e4a7d9a5-2aad-550c-84c1-b41c075879d8")
 	)
-	(global_label "RF_LNAN"
-		(shape passive)
+	(label "RF_LNAN"
 		(at 180.34 132.08 0)
 		(effects
 			(font (size 1.27 1.27))
-			(justify left)
+			(justify left bottom)
 		)
 		(uuid "2c9337f8-58a0-5722-bcdd-d774854136b5")
 	)
@@ -2331,21 +2325,19 @@
 		)
 		(uuid "4b244698-b580-50e8-a558-ad67514f178c")
 	)
-	(global_label "RADIO_GPIO0"
-		(shape passive)
+	(label "RADIO_GPIO0"
 		(at 144.78 106.68 180)
 		(effects
 			(font (size 1.27 1.27))
-			(justify right)
+			(justify right bottom)
 		)
 		(uuid "082255b4-0649-5683-803d-8aa0596c466e")
 	)
-	(global_label "RADIO_GPIO3"
-		(shape passive)
+	(label "RADIO_GPIO3"
 		(at 144.78 111.76 180)
 		(effects
 			(font (size 1.27 1.27))
-			(justify right)
+			(justify right bottom)
 		)
 		(uuid "29d4b20d-cab1-5d38-bfd3-740bb603ee51")
 	)

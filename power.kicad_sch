@@ -1607,7 +1607,7 @@
 		(at 208.28 55.88 180)
 		(effects
 			(font (size 1.27 1.27))
-			(justify left bottom)
+			(justify right bottom)
 		)
 		(uuid "cc698617-8a88-5aa9-8230-8a7e50d66c3b")
 	)
