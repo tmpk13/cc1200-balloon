@@ -52,8 +52,8 @@
         "zones": {
           "border_display_style": 2,
           "border_hatch_pitch": 0.5,
-          "corner_radius": 1.0,
-          "corner_smoothing": 2,
+          "corner_radius": 0.0,
+          "corner_smoothing": 0,
           "fill_mode": 0,
           "hatch_gap": 1.5,
           "hatch_orientation": 0.0,
@@ -668,7 +668,7 @@
         "uuid": "5283d11e-ccf0-51c0-83df-1e782a317298"
       }
     ],
-    "used_designators": "R404,TP401-402,X401-402,C314,C414-416,#PWR1014,#PWR3038,#PWR4009,#PWR4011,#PWR4027-4028,#PWR4035,J1",
+    "used_designators": "Q101,J1,J101,J301,#PWR1001,#PWR1003,#PWR1008-1009,#PWR1012,#PWR1014,#PWR2006-2007,#PWR3038,#PWR3042-3043,#PWR3048,#PWR4009,#PWR4011,#PWR4027-4028,#PWR4035,#PWR5009,#PWR5050,C107,C314,C318-319,C326,C414-416,H101-104,X301,X401-402,TP302,TP401-402,R103-104,R203-204,R404",
     "variants": []
   },
   "sheets": [
