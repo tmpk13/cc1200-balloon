@@ -1,5 +1,13 @@
 # Completed
 
+## 2026-09-15 board review pass
+
+- Full review of the routed board against the data sheets: `BOARD_REVIEW.md`.
+- Pinouts of the Wio-E5, CC1200, AT6558R, AS3935, BME688, SCD40 and BMV080 verified pin by pin.
+- Datasheet, MPN and Manufacturer fields written on every bought symbol and mirrored onto the board (`tools/set_part_fields.py`, `tools/parts.json`).
+- DigiKey BOM regenerated from the schematic (`tools/gen_digikey_bom.py`): 48 lines, cut tape throughout, substitutes for eight end-of-life passives, TCXO and RTC crystal re-sourced.
+- README brought back in line with the files (no power switch, SMA connectors, BMV080 on I2C, generator stale).
+
 ## 2026-09-06 - Rewire the GNSS to the real AT6558R-5N32 pinout
 
 The receiver had been wired from an invented pinout. Pin names the part does

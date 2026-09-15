@@ -489,11 +489,33 @@
 				)
 			)
 		)
-		(property "Datasheet" ""
+		(property "Datasheet" "https://www.murata.com/en-us/products/productdetail?partno=GRM1555C1H101JA01D%23"
 			(at 0 0 90)
 			(layer "F.Fab")
 			(hide yes)
 			(uuid "88225093-a740-4cd8-88ca-d1a98af17b24")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Manufacturer" "Murata Electronics"
+			(at 0 0 90)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "9f3bc6bf-6d8a-4601-b13e-2f786524549c")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "MPN" "GRM1555C1H101JA01D"
+			(at 0 0 90)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "2abd556e-f90d-4832-8e0b-bbecc2ca897a")
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -733,11 +755,33 @@
 				)
 			)
 		)
-		(property "Datasheet" ""
+		(property "Datasheet" "https://yageogroup.com/content/datasheet/asset/file/PYU-RC_GROUP_51_ROHS_L"
 			(at 0 0 0)
 			(layer "F.Fab")
 			(hide yes)
 			(uuid "ad7c0475-85bd-4fc1-9647-fa203e2585ac")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Manufacturer" "YAGEO"
+			(at 0 0 0)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "af60f517-dcc8-459c-9bca-c3545768e937")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "MPN" "RC0402FR-0718RL"
+			(at 0 0 0)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "3ed3ec93-0b8f-438d-9a0e-c73170e5b9ab")
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -969,11 +1013,33 @@
 				)
 			)
 		)
-		(property "Datasheet" ""
+		(property "Datasheet" "https://mm.digikey.com/Volume0/opasdata/d220001/medias/docus/609/CL05B104KO5NNNC.pdf"
 			(at 0 0 90)
 			(layer "F.Fab")
 			(hide yes)
 			(uuid "8be1ab8d-341f-4422-9598-656675f0992f")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Manufacturer" "Samsung Electro-Mechanics"
+			(at 0 0 90)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "2e134318-af82-4c9c-b2d9-e902931d14b1")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "MPN" "CL05B104KO5NNNC"
+			(at 0 0 90)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "a6964326-fb5c-4f06-9762-404dce3fb1cb")
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -1191,12 +1257,38 @@
 				)
 			)
 		)
-		(property "Datasheet" ""
+		(property "Datasheet" "https://mm.digikey.com/Volume0/opasdata/d220001/medias/docus/6129/sma-j-p-x-st-em1-mkt.pdf"
 			(at 0 0 90)
 			(unlocked yes)
 			(layer "F.Fab")
 			(hide yes)
 			(uuid "ee495e69-bb33-4e68-9dc1-587140b0191d")
+			(effects
+				(font
+					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "Manufacturer" "Samtec Inc."
+			(at 0 0 90)
+			(unlocked yes)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "0583d7ba-1b45-4451-97a8-c1d9d98fcca4")
+			(effects
+				(font
+					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "MPN" "SMA-J-P-H-ST-EM1"
+			(at 0 0 90)
+			(unlocked yes)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "c29d9333-d1c0-40fd-a9bc-44c3a8317f79")
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -1811,11 +1903,33 @@
 				)
 			)
 		)
-		(property "Datasheet" ""
+		(property "Datasheet" "https://www.murata.com/en-us/products/productdetail?partno=GRM155R71H473KE14D%23"
 			(at 0 0 0)
 			(layer "F.Fab")
 			(hide yes)
 			(uuid "c65cf0b8-d626-44a9-847d-9369b4c51d5f")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Manufacturer" "Murata Electronics"
+			(at 0 0 0)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "287061d6-227b-480a-b9eb-43df3d5c67a5")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "MPN" "GRM155R71H473KE14D"
+			(at 0 0 0)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "f0e32a6c-a068-439d-a5ad-88bea6a62a50")
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2027,11 +2141,33 @@
 				)
 			)
 		)
-		(property "Datasheet" ""
+		(property "Datasheet" "https://yageogroup.com/content/datasheet/asset/file/PYU-RC_GROUP_51_ROHS_L"
 			(at 0 0 0)
 			(layer "F.Fab")
 			(hide yes)
 			(uuid "a7b24d8c-92af-4c80-81e1-062f3b422191")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Manufacturer" "YAGEO"
+			(at 0 0 0)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "6a3ffe64-d6c3-433c-bce9-8d0c97c69fd3")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "MPN" "RC0402FR-07100KL"
+			(at 0 0 0)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "4fe4d7ae-da33-435c-ab21-e61b943325c1")
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2271,11 +2407,33 @@
 				)
 			)
 		)
-		(property "Datasheet" ""
+		(property "Datasheet" "https://yageogroup.com/content/datasheet/asset/file/PYU-RC_GROUP_51_ROHS_L"
 			(at 0 0 0)
 			(layer "F.Fab")
 			(hide yes)
 			(uuid "8a28a2ca-5b30-42e4-8fb6-6f95bb1398fb")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Manufacturer" "YAGEO"
+			(at 0 0 0)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "9ae1b7ea-19a9-489d-bf36-381c0d58495f")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "MPN" "RC0402FR-074K7L"
+			(at 0 0 0)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "c32552b1-725f-4986-b69b-0d1846cd3417")
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2506,11 +2664,33 @@
 				)
 			)
 		)
-		(property "Datasheet" ""
+		(property "Datasheet" "https://mm.digikey.com/Volume0/opasdata/d220001/medias/docus/609/CL05B104KO5NNNC.pdf"
 			(at 0 0 90)
 			(layer "F.Fab")
 			(hide yes)
 			(uuid "6112f612-964b-455b-86a8-775e3ab4758d")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Manufacturer" "Samsung Electro-Mechanics"
+			(at 0 0 90)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "33403e32-dfac-4258-a0a8-941ff9d5dffa")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "MPN" "CL05B104KO5NNNC"
+			(at 0 0 90)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "89d7c855-7413-4678-844d-2bae2c38a669")
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2750,11 +2930,33 @@
 				)
 			)
 		)
-		(property "Datasheet" ""
+		(property "Datasheet" "https://www.murata.com/en-us/products/productdetail?partno=GRM155R71H473KE14D%23"
 			(at 0 0 0)
 			(layer "F.Fab")
 			(hide yes)
 			(uuid "8cfb1bcd-45da-44d3-b2c9-a27769296f75")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Manufacturer" "Murata Electronics"
+			(at 0 0 0)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "1d5b200f-1538-4fb4-a4e3-95e157c2ab69")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "MPN" "GRM155R71H473KE14D"
+			(at 0 0 0)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "19179544-c45a-422c-aac7-54f39d8e5a41")
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3016,11 +3218,33 @@
 				)
 			)
 		)
-		(property "Datasheet" ""
+		(property "Datasheet" "https://mm.digikey.com/Volume0/opasdata/d220001/medias/docus/609/CL05B104KO5NNNC.pdf"
 			(at 0 0 90)
 			(layer "F.Fab")
 			(hide yes)
 			(uuid "c6aa7fd1-941e-47d8-bb47-31fbe6800d27")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Manufacturer" "Samsung Electro-Mechanics"
+			(at 0 0 90)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "d81b9ca4-5bdb-445b-b4fe-8079daf24955")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "MPN" "CL05B104KO5NNNC"
+			(at 0 0 90)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "5fe70d09-7bfa-470b-bece-6eb7dd1c0a34")
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3245,11 +3469,22 @@
 				)
 			)
 		)
-		(property "Datasheet" ""
+		(property "Datasheet" "https://www.bosch-sensortec.com/media/boschsensortec/downloads/datasheets/bst-bme688-ds000.pdf"
 			(at 0 0 90)
 			(layer "F.Fab")
 			(hide yes)
 			(uuid "220126c0-86ff-447b-b0e7-33ccd5e1ebb2")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Manufacturer" "Bosch Sensortec"
+			(at 0 0 90)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "20014442-a667-4d65-beb4-50572c9c56f7")
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3572,11 +3807,22 @@
 				)
 			)
 		)
-		(property "Datasheet" "https://www.bosch-sensortec.com/media/boschsensortec/downloads/datasheets/bst-bmv080-ds000.pdf"
+		(property "Datasheet" "https://ele.kyocera.com/assets/products/connector/6844.pdf"
 			(at 0 0 90)
 			(layer "F.Fab")
 			(hide yes)
 			(uuid "5ed30036-8e75-4620-83fc-7567928b89c9")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Manufacturer" "KYOCERA AVX"
+			(at 0 0 90)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "d832ee6f-81e6-467a-91ca-f43067894b51")
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4016,11 +4262,33 @@
 				)
 			)
 		)
-		(property "Datasheet" ""
+		(property "Datasheet" "https://mm.digikey.com/Volume0/opasdata/d220001/medias/docus/609/CL05B104KO5NNNC.pdf"
 			(at 0 0 90)
 			(layer "F.Fab")
 			(hide yes)
 			(uuid "5ba66314-b290-4a50-9d61-12efe42e13d4")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Manufacturer" "Samsung Electro-Mechanics"
+			(at 0 0 90)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "bfc3cda9-0bf9-450a-a064-9f2b095a1d9d")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "MPN" "CL05B104KO5NNNC"
+			(at 0 0 90)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "ef45451f-98bc-4daa-b3f8-6d0359e5786f")
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4272,11 +4540,33 @@
 				)
 			)
 		)
-		(property "Datasheet" ""
+		(property "Datasheet" "https://www.murata.com/en-us/products/productdetail?partno=GRM188R60J106KE47D%23"
 			(at 0 0 0)
 			(layer "F.Fab")
 			(hide yes)
 			(uuid "bd9f5879-8735-4c97-a6a0-5aee082ac23a")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Manufacturer" "Murata Electronics"
+			(at 0 0 0)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "ebd0543b-6170-47b0-8186-a80f6fc45149")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "MPN" "GRM188R60J106KE47D"
+			(at 0 0 0)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "be78c530-546c-4050-b38d-cd1a990d9c12")
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4524,11 +4814,33 @@
 				)
 			)
 		)
-		(property "Datasheet" ""
+		(property "Datasheet" "https://www.murata.com/en-us/products/productdetail?partno=GJM1555C1H5R1CB01D%23"
 			(at 0 0 90)
 			(layer "F.Fab")
 			(hide yes)
 			(uuid "36869c2a-035c-4e54-ac72-74d279ccdb87")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Manufacturer" "Murata Electronics"
+			(at 0 0 90)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "c77df51a-2576-4f4b-a033-e1a33206c6d9")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "MPN" "GJM1555C1H5R1CB01D"
+			(at 0 0 90)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "b0e4e808-36aa-4864-ab2f-32349369a3d6")
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4767,11 +5079,33 @@
 				)
 			)
 		)
-		(property "Datasheet" ""
+		(property "Datasheet" "https://www.murata.com/en-us/products/productdetail?partno=GRM155R71H473KE14D%23"
 			(at 0 0 90)
 			(layer "F.Fab")
 			(hide yes)
 			(uuid "999f45ed-31a1-4306-b841-db5c816957d2")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Manufacturer" "Murata Electronics"
+			(at 0 0 90)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "67fcf260-7ae9-4c14-ac20-2006856e0900")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "MPN" "GRM155R71H473KE14D"
+			(at 0 0 90)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "fae4c2b0-f688-4066-ae60-a2e250d69022")
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -5003,11 +5337,33 @@
 				)
 			)
 		)
-		(property "Datasheet" ""
+		(property "Datasheet" "https://yageogroup.com/content/datasheet/asset/file/PYU-RC_GROUP_51_ROHS_L"
 			(at 0 0 0)
 			(layer "F.Fab")
 			(hide yes)
 			(uuid "05225b17-a108-46a8-9005-460b049c32be")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Manufacturer" "YAGEO"
+			(at 0 0 0)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "dd154a5b-2c4b-4223-95c4-8e6b72bbc460")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "MPN" "RC0402FR-0722RL"
+			(at 0 0 0)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "1f559613-666e-4d12-850e-8610bc707def")
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -5247,11 +5603,33 @@
 				)
 			)
 		)
-		(property "Datasheet" ""
+		(property "Datasheet" "https://mm.digikey.com/Volume0/opasdata/d220001/medias/docus/2615/CL05C120JB5NNNC_Spec.pdf"
 			(at 0 0 0)
 			(layer "F.Fab")
 			(hide yes)
 			(uuid "cd4d7215-4be4-40e0-ab7b-62ac6326a59e")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Manufacturer" "Samsung Electro-Mechanics"
+			(at 0 0 0)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "4e9a4b19-0bff-484e-9787-0d96f2f9d83f")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "MPN" "CL05C120JB5NNNC"
+			(at 0 0 0)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "600040d9-9b40-4c5f-ad3b-ef6074303c50")
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -5489,11 +5867,33 @@
 				)
 			)
 		)
-		(property "Datasheet" ""
+		(property "Datasheet" "https://www.murata.com/en-us/products/productdetail?partno=GRM155R71H473KE14D%23"
 			(at 0 0 0)
 			(layer "F.Fab")
 			(hide yes)
 			(uuid "1487cebc-1752-4149-9f1a-edeafc5b2605")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Manufacturer" "Murata Electronics"
+			(at 0 0 0)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "3ffe8698-af80-4299-8535-39a9cb5497f2")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "MPN" "GRM155R71H473KE14D"
+			(at 0 0 0)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "ef2cd7ab-75b3-48b5-9dcc-bf9ea5196bbe")
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -5702,11 +6102,33 @@
 				)
 			)
 		)
-		(property "Datasheet" ""
+		(property "Datasheet" "https://www.murata.com/en-us/products/productdetail?partno=LQW15AN6N8H00D%23"
 			(at 0 0 90)
 			(layer "F.Fab")
 			(hide yes)
 			(uuid "a5ad32bd-7783-46f8-bf55-48e938fb4f43")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Manufacturer" "Murata Electronics"
+			(at 0 0 90)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "945d21b3-cdd0-4896-9b28-cc633464c9bb")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "MPN" "LQW15AN6N8H00D"
+			(at 0 0 90)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "7fe0cfcf-323f-486e-801a-45e4485dd1b0")
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -5929,11 +6351,33 @@
 				)
 			)
 		)
-		(property "Datasheet" ""
+		(property "Datasheet" "https://www.murata.com/en-us/products/productdetail?partno=GRM155R71H473KE14D%23"
 			(at 0 0 0)
 			(layer "F.Fab")
 			(hide yes)
 			(uuid "8c335ed5-8970-425b-97c6-b769bd7a8a7f")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Manufacturer" "Murata Electronics"
+			(at 0 0 0)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "bbc45228-b091-4237-9811-96672219acff")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "MPN" "GRM155R71H473KE14D"
+			(at 0 0 0)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "c4e342ea-0193-484b-8977-40eea9320871")
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -6162,11 +6606,33 @@
 				)
 			)
 		)
-		(property "Datasheet" ""
+		(property "Datasheet" "https://www.murata.com/en-us/products/productdetail?partno=LQW15AN15NJ00D%23"
 			(at 0 0 0)
 			(layer "F.Fab")
 			(hide yes)
 			(uuid "c10468b5-3804-4817-b7da-bd41f974476f")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Manufacturer" "Murata Electronics"
+			(at 0 0 0)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "c0fdc473-6b32-4014-8499-c47dea0a534a")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "MPN" "LQW15AN15NJ00D"
+			(at 0 0 0)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "43254e86-977c-42fe-afcc-da61874a0ea7")
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -6366,11 +6832,33 @@
 				)
 			)
 		)
-		(property "Datasheet" ""
+		(property "Datasheet" "https://mm.digikey.com/Volume0/opasdata/d220001/medias/docus/536/LMK105BJ105KVHF_SS.pdf"
 			(at 0 0 0)
 			(layer "F.Fab")
 			(hide yes)
 			(uuid "1b39ad2e-5b6f-4c26-af85-c8fd4a7e37c6")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Manufacturer" "Taiyo Yuden"
+			(at 0 0 0)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "e74c6152-c2f8-4e22-ba19-78f3bcbd131b")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "MPN" "LMK105BJ105KVHF"
+			(at 0 0 0)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "37a94e50-9d76-4945-98e0-98f91e55521e")
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -6622,11 +7110,33 @@
 				)
 			)
 		)
-		(property "Datasheet" ""
+		(property "Datasheet" "https://mm.digikey.com/Volume0/opasdata/d220001/medias/docus/609/CL05B104KO5NNNC.pdf"
 			(at 0 0 90)
 			(layer "F.Fab")
 			(hide yes)
 			(uuid "02ab5f7c-860f-4e92-9d44-0c6956def5a6")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Manufacturer" "Samsung Electro-Mechanics"
+			(at 0 0 90)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "d5e907e0-f9d0-4fbe-9cf4-dd0fcdb3690b")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "MPN" "CL05B104KO5NNNC"
+			(at 0 0 90)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "44065339-53c6-425e-bfe9-59ba80dc183a")
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -7028,11 +7538,22 @@
 				)
 			)
 		)
-		(property "Datasheet" ""
+		(property "Datasheet" "https://www.ti.com/lit/ds/symlink/cc1200.pdf"
 			(at 0 0 90)
 			(layer "F.Fab")
 			(hide yes)
 			(uuid "b1d338e6-6c7e-4711-882e-9aa6ae50eaf2")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Manufacturer" "Texas Instruments"
+			(at 0 0 90)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "24d6ddd0-e679-4477-9b5a-3019bef63c9c")
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -7917,11 +8438,33 @@
 				)
 			)
 		)
-		(property "Datasheet" ""
+		(property "Datasheet" "https://yageogroup.com/content/datasheet/asset/file/PYU-RC_GROUP_51_ROHS_L"
 			(at 0 0 0)
 			(layer "F.Fab")
 			(hide yes)
 			(uuid "5abadc53-913f-437b-ac7b-d59c7a5fa921")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Manufacturer" "YAGEO"
+			(at 0 0 0)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "a54c0e5b-439a-48b3-8f7b-09cde58df489")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "MPN" "RC0402FR-07100KL"
+			(at 0 0 0)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "48f8a617-0a5c-451b-b7ef-025787263355")
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -8148,11 +8691,33 @@
 				)
 			)
 		)
-		(property "Datasheet" ""
+		(property "Datasheet" "https://yageogroup.com/download/specsheet/CC0402JRNPO9BN390"
 			(at 0 0 90)
 			(layer "F.Fab")
 			(hide yes)
 			(uuid "20b0c979-1395-4956-86c4-a165f2dbfe64")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Manufacturer" "YAGEO"
+			(at 0 0 90)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "d366298b-5cf5-48ac-91d5-83974aacaa21")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "MPN" "CC0402JRNPO9BN390"
+			(at 0 0 90)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "72587fd6-bf6c-4bc8-b347-dcd6cfe9e6f5")
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -8388,11 +8953,33 @@
 				)
 			)
 		)
-		(property "Datasheet" ""
+		(property "Datasheet" "https://www.murata.com/en-us/products/productdetail?partno=GRM1555C1H2R2BA01D%23"
 			(at 0 0 0)
 			(layer "F.Fab")
 			(hide yes)
 			(uuid "f7aaecee-63f4-40c7-b3d2-b01e10aa31eb")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Manufacturer" "Murata Electronics"
+			(at 0 0 0)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "4fe5c80c-287b-4b1d-bb7b-d60caad3f9f9")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "MPN" "GRM1555C1H2R2BA01D"
+			(at 0 0 0)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "0ff8ae89-0769-4ad9-a80d-1087a2e49b6f")
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -8628,11 +9215,33 @@
 				)
 			)
 		)
-		(property "Datasheet" ""
+		(property "Datasheet" "https://www.murata.com/en-us/products/productdetail?partno=GRM153R60J475ME15D%23"
 			(at 0 0 90)
 			(layer "F.Fab")
 			(hide yes)
 			(uuid "ab0c92ce-2c46-4fdb-ad32-e434ace91991")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Manufacturer" "Murata Electronics"
+			(at 0 0 90)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "14bfc322-27dc-4b6b-a83a-e7339f73b735")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "MPN" "GRM153R60J475ME15D"
+			(at 0 0 90)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "31c022ec-c6a2-48da-b7fb-aa2fee54a8cc")
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -8870,6 +9479,17 @@
 			(layer "F.Fab")
 			(hide yes)
 			(uuid "752a14ab-84bc-45e4-816b-209012e833e4")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Manufacturer" "ScioSense"
+			(at 0 0 90)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "1d7c5b18-4ff2-4fd0-9639-739f23c9129d")
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -9583,11 +10203,33 @@
 				)
 			)
 		)
-		(property "Datasheet" ""
+		(property "Datasheet" "https://www.murata.com/en-us/products/productdetail?partno=GRM1555C1H560JA01D%23"
 			(at 0 0 0)
 			(layer "F.Fab")
 			(hide yes)
 			(uuid "0178f86b-a8a1-4468-8a84-355aa418f561")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Manufacturer" "Murata Electronics"
+			(at 0 0 0)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "dc8a2639-5a5c-422f-b34c-c23ee00997e3")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "MPN" "GRM1555C1H560JA01D"
+			(at 0 0 0)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "58ab229a-f752-4119-9891-e9b2e1b5459c")
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -9814,11 +10456,33 @@
 				)
 			)
 		)
-		(property "Datasheet" ""
+		(property "Datasheet" "https://mm.digikey.com/Volume0/opasdata/d220001/medias/docus/536/LMK105BJ105KVHF_SS.pdf"
 			(at 0 0 0)
 			(layer "F.Fab")
 			(hide yes)
 			(uuid "401e9006-11a8-46e1-b162-4d487b004803")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Manufacturer" "Taiyo Yuden"
+			(at 0 0 0)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "748af782-13f2-4227-ae20-45d8211d5d6a")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "MPN" "LMK105BJ105KVHF"
+			(at 0 0 0)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "90a29351-6b33-4c20-8331-5303b28ac663")
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -10062,11 +10726,33 @@
 				)
 			)
 		)
-		(property "Datasheet" ""
+		(property "Datasheet" "https://www.murata.com/en-us/products/productdetail?partno=GCM1555C1H911FA16J%23"
 			(at 0 0 90)
 			(layer "F.Fab")
 			(hide yes)
 			(uuid "498f0b3b-5f24-4300-a839-c126d5e1ce41")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Manufacturer" "Murata Electronics"
+			(at 0 0 90)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "6704390a-b649-4c07-ac8a-d823b738dbba")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "MPN" "GCM1555C1H911FA16J"
+			(at 0 0 90)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "3ff23ca5-bd12-46e8-9b95-872fef638781")
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -10286,11 +10972,33 @@
 				)
 			)
 		)
-		(property "Datasheet" ""
+		(property "Datasheet" "https://www.murata.com/en-us/products/productdetail?partno=LQW15AN22NG00D%23"
 			(at 0 0 90)
 			(layer "F.Fab")
 			(hide yes)
 			(uuid "3b3c57c5-68b0-4fef-87ea-fefca3f81c57")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Manufacturer" "Murata Electronics"
+			(at 0 0 90)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "5007d473-6814-4d80-a22c-6cf00dd610ec")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "MPN" "LQW15AN22NG00D"
+			(at 0 0 90)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "58d49604-a707-4cdd-85fc-4befdd2b07c1")
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -10540,11 +11248,33 @@
 				)
 			)
 		)
-		(property "Datasheet" ""
+		(property "Datasheet" "https://www.murata.com/en-us/products/productdetail?partno=GRM155R71H473KE14D%23"
 			(at 0 0 0)
 			(layer "F.Fab")
 			(hide yes)
 			(uuid "6df35324-cbac-4b7a-8c0f-27ad0e3dd6ab")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Manufacturer" "Murata Electronics"
+			(at 0 0 0)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "e978d582-dd19-4d34-b71c-6707b30ab5d4")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "MPN" "GRM155R71H473KE14D"
+			(at 0 0 0)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "b96aee5b-29d0-4c53-ae3a-4de1e60f778b")
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -10742,11 +11472,33 @@
 				)
 			)
 		)
-		(property "Datasheet" ""
+		(property "Datasheet" "https://mm.digikey.com/Volume0/opasdata/d220001/medias/docus/536/LMK105BJ105KVHF_SS.pdf"
 			(at 0 0 0)
 			(layer "F.Fab")
 			(hide yes)
 			(uuid "06c51732-1c03-4cea-b5f6-0a79d15b883c")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Manufacturer" "Taiyo Yuden"
+			(at 0 0 0)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "188b0ed6-f5a8-461d-89b2-c8ad197a2b37")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "MPN" "LMK105BJ105KVHF"
+			(at 0 0 0)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "a2c48fa3-0374-4a94-b13b-1abec13e75af")
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -10979,11 +11731,33 @@
 				)
 			)
 		)
-		(property "Datasheet" ""
+		(property "Datasheet" "https://www.murata.com/en-us/products/productdetail?partno=LQW15AN15NJ00D%23"
 			(at 0 0 90)
 			(layer "F.Fab")
 			(hide yes)
 			(uuid "2b3436a6-75a7-4f43-9c47-b2662d5dba9d")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Manufacturer" "Murata Electronics"
+			(at 0 0 90)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "c57da564-f87c-4907-95d0-70bf5c221c4b")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "MPN" "LQW15AN15NJ00D"
+			(at 0 0 90)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "91ec5731-58df-4e53-81cd-8e95a4439229")
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -11212,11 +11986,33 @@
 				)
 			)
 		)
-		(property "Datasheet" ""
+		(property "Datasheet" "https://www.murata.com/en-us/products/productdetail?partno=GRM155R71H473KE14D%23"
 			(at 0 0 90)
 			(layer "F.Fab")
 			(hide yes)
 			(uuid "69796738-640f-4b69-b2f0-0ff5888dcd2f")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Manufacturer" "Murata Electronics"
+			(at 0 0 90)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "9f73a85d-da93-4b44-b640-444e014de070")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "MPN" "GRM155R71H473KE14D"
+			(at 0 0 90)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "eb7664fc-dfe4-415d-80ef-0c46a9b988ae")
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -11447,11 +12243,33 @@
 				)
 			)
 		)
-		(property "Datasheet" ""
+		(property "Datasheet" "https://mm.digikey.com/Volume0/opasdata/d220001/medias/docus/536/LMK105BJ105KVHF_SS.pdf"
 			(at 0 0 90)
 			(layer "F.Fab")
 			(hide yes)
 			(uuid "8fe28f92-b861-4c21-989a-2191c8d28a02")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Manufacturer" "Taiyo Yuden"
+			(at 0 0 90)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "9e9dc7ba-db34-4ab8-b39f-dd7733b844a2")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "MPN" "LMK105BJ105KVHF"
+			(at 0 0 90)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "410fd1c8-670a-45de-82dd-f635682174ff")
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -11701,11 +12519,33 @@
 				)
 			)
 		)
-		(property "Datasheet" ""
+		(property "Datasheet" "https://mm.digikey.com/Volume0/opasdata/d220001/medias/docus/536/LMK105BJ105KVHF_SS.pdf"
 			(at 0 0 90)
 			(layer "F.Fab")
 			(hide yes)
 			(uuid "b6257a08-e487-4c73-af93-4e10272d458d")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Manufacturer" "Taiyo Yuden"
+			(at 0 0 90)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "b763fe23-21d7-4373-b775-aab31e759bb0")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "MPN" "LMK105BJ105KVHF"
+			(at 0 0 90)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "28abd858-432e-461a-a130-151ebab911d8")
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -11943,11 +12783,33 @@
 				)
 			)
 		)
-		(property "Datasheet" ""
+		(property "Datasheet" "https://www.murata.com/en-us/products/productdetail?partno=GRM1555C1H101JA01D%23"
 			(at 0 0 0)
 			(layer "F.Fab")
 			(hide yes)
 			(uuid "b36661b3-9a12-4cfd-8b32-3b54ac0e2049")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Manufacturer" "Murata Electronics"
+			(at 0 0 0)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "9fadbbcb-87ba-4498-a2dd-457b75208cec")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "MPN" "GRM1555C1H101JA01D"
+			(at 0 0 0)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "3051d937-94bb-43ff-805f-69c6b2e7a599")
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -12169,12 +13031,25 @@
 				)
 			)
 		)
-		(property "Datasheet" ""
+		(property "Datasheet" "https://files.seeedstudio.com/products/317990687/res/LoRa-E5%20module%20datasheet_V1.0.pdf"
 			(at 0 0 0)
 			(unlocked yes)
 			(layer "F.Fab")
 			(hide yes)
 			(uuid "68d89dc6-85ee-4127-aa63-c8573a352a14")
+			(effects
+				(font
+					(size 1 1)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "Manufacturer" "Seeed Technology Co., Ltd"
+			(at 0 0 0)
+			(unlocked yes)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "73b1cfe0-05ed-4c45-ac5b-23142d179ff8")
 			(effects
 				(font
 					(size 1 1)
@@ -12755,6 +13630,17 @@
 			(layer "F.Fab")
 			(hide yes)
 			(uuid "d565fc9e-5360-4da9-ace8-0d311ec85469")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Manufacturer" "Sensirion AG"
+			(at 0 0 0)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "9db962be-507f-4d12-9986-1a8af5d67fa1")
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -13458,11 +14344,33 @@
 				)
 			)
 		)
-		(property "Datasheet" ""
+		(property "Datasheet" "https://mm.digikey.com/Volume0/opasdata/d220001/medias/docus/609/CL05B104KO5NNNC.pdf"
 			(at 0 0 90)
 			(layer "F.Fab")
 			(hide yes)
 			(uuid "6490aa90-4238-4cc6-a1a7-b73af91188ff")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Manufacturer" "Samsung Electro-Mechanics"
+			(at 0 0 90)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "e1f997e1-dd60-40a8-8bac-82579bbc4cc6")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "MPN" "CL05B104KO5NNNC"
+			(at 0 0 90)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "3b35de63-dba8-4963-b3c8-2864d6d2125b")
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -13689,11 +14597,33 @@
 				)
 			)
 		)
-		(property "Datasheet" ""
+		(property "Datasheet" "https://mm.digikey.com/Volume0/opasdata/d220001/medias/docus/609/CL05B104KO5NNNC.pdf"
 			(at 0 0 90)
 			(layer "F.Fab")
 			(hide yes)
 			(uuid "3cf1de51-c6da-4fe9-af04-f8d9d2765389")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Manufacturer" "Samsung Electro-Mechanics"
+			(at 0 0 90)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "b36daf60-c07e-4e04-9b7a-b67d066a6348")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "MPN" "CL05B104KO5NNNC"
+			(at 0 0 90)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "6c081212-0080-41b6-bd02-bc6487e0c601")
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -13894,12 +14824,25 @@
 				)
 			)
 		)
-		(property "Datasheet" ""
+		(property "Datasheet" "https://www.pletronics.com/wp-content/uploads/2023/04/ucf4_revd.pdf"
 			(at 0 0 90)
 			(unlocked yes)
 			(layer "F.Fab")
 			(hide yes)
 			(uuid "e900d166-871c-462d-871f-2fbbf0fc5fdd")
+			(effects
+				(font
+					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "Manufacturer" "Pletronics, Inc"
+			(at 0 0 90)
+			(unlocked yes)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "f115d62f-8ac1-4ef3-ba1b-31b429f44357")
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -13920,7 +14863,7 @@
 				)
 			)
 		)
-		(property "MPN" "KT2520K26000ACW33T"
+		(property "MPN" "UCF4031035LK005000-26MDK"
 			(at 0 0 90)
 			(unlocked yes)
 			(layer "F.Fab")
@@ -14276,11 +15219,33 @@
 				)
 			)
 		)
-		(property "Datasheet" ""
+		(property "Datasheet" "https://mm.digikey.com/Volume0/opasdata/d220001/medias/docus/609/CL05B104KO5NNNC.pdf"
 			(at 0 0 0)
 			(layer "F.Fab")
 			(hide yes)
 			(uuid "d783f5d1-f25e-4408-b528-18ba9d0ed38f")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Manufacturer" "Samsung Electro-Mechanics"
+			(at 0 0 0)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "0fe7b780-400e-4a7a-9579-f5bdac2a077e")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "MPN" "CL05B104KO5NNNC"
+			(at 0 0 0)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "1a0ef7ec-60c5-40dc-b8b5-0e76abf3f124")
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -14494,11 +15459,22 @@
 				)
 			)
 		)
-		(property "Datasheet" ""
+		(property "Datasheet" "https://www.bourns.com/docs/Product-Datasheets/78f_series.pdf"
 			(at 0 0 0)
 			(layer "F.Fab")
 			(hide yes)
 			(uuid "84d7879d-a033-42b1-a222-88cd940c42bc")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Manufacturer" "Bourns Inc."
+			(at 0 0 0)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "0e678d76-005a-4d41-9013-5894f638eb6b")
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -14823,11 +15799,22 @@
 				)
 			)
 		)
-		(property "Datasheet" ""
+		(property "Datasheet" "https://www.murata.com/en-us/products/productdetail?partno=LQM18PN4R7MFRL%23"
 			(at 0 0 90)
 			(layer "F.Fab")
 			(hide yes)
 			(uuid "2e6bf9de-cbc3-45c7-a7a5-e1a84030b9be")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Manufacturer" "Murata Electronics"
+			(at 0 0 90)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "8cc27010-9784-4a8a-84a1-ae466f5c3c3b")
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -15052,12 +16039,25 @@
 				)
 			)
 		)
-		(property "Datasheet" ""
+		(property "Datasheet" "https://support.epson.biz/td/api/doc_check.php?dl=app_FC3215AN&lang=en"
 			(at 0 0 90)
 			(unlocked yes)
 			(layer "F.Fab")
 			(hide yes)
 			(uuid "4bbaa66a-2c1a-46c7-a680-9afed8426ec5")
+			(effects
+				(font
+					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "Manufacturer" "EPSON"
+			(at 0 0 90)
+			(unlocked yes)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "92ac1fbb-a330-4a3b-9e0e-f68ff4ddce2c")
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -15078,7 +16078,7 @@
 				)
 			)
 		)
-		(property "MPN" "FC-135 32.768KA-A5"
+		(property "MPN" "FC3215AN 32.768K-90NN60KC5"
 			(at 0 0 90)
 			(unlocked yes)
 			(layer "F.Fab")
@@ -15373,11 +16373,33 @@
 				)
 			)
 		)
-		(property "Datasheet" ""
+		(property "Datasheet" "https://mm.digikey.com/Volume0/opasdata/d220001/medias/docus/8902/Multi-Layer-Ceramic-Capacitors-Datasheet.pdf"
 			(at 0 0 0)
 			(layer "F.Fab")
 			(hide yes)
 			(uuid "9d67161b-7a10-432a-b6c4-cb4f590440f7")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Manufacturer" "Taiyo Yuden"
+			(at 0 0 0)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "4126012d-9b62-4018-98b0-067190de4f12")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "MPN" "LMK107BJ475KAHT"
+			(at 0 0 0)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "7fd57854-c080-4073-8bdc-f13b1b125743")
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -15584,11 +16606,33 @@
 				)
 			)
 		)
-		(property "Datasheet" ""
+		(property "Datasheet" "https://mm.digikey.com/Volume0/opasdata/d220001/medias/docus/609/CL05B104KO5NNNC.pdf"
 			(at 0 0 0)
 			(layer "F.Fab")
 			(hide yes)
 			(uuid "06e3fcc0-224c-4b39-952d-9f3125f87280")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Manufacturer" "Samsung Electro-Mechanics"
+			(at 0 0 0)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "435ca071-52ee-454d-8865-cec384fb4fb3")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "MPN" "CL05B104KO5NNNC"
+			(at 0 0 0)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "76257e70-5494-4244-94fc-a3689fee0883")
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -15839,11 +16883,33 @@
 				)
 			)
 		)
-		(property "Datasheet" ""
+		(property "Datasheet" "https://www.murata.com/en-us/products/productdetail?partno=GRM155R71H473KE14D%23"
 			(at 0 0 0)
 			(layer "F.Fab")
 			(hide yes)
 			(uuid "91eb8b25-158a-43d7-9a3f-73ee5a6dd2b9")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Manufacturer" "Murata Electronics"
+			(at 0 0 0)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "2656a04d-99da-49b9-8eea-2f556c1e3846")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "MPN" "GRM155R71H473KE14D"
+			(at 0 0 0)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "e8a64669-f32e-4ab4-8184-85f39c7c8435")
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -16203,12 +17269,38 @@
 				)
 			)
 		)
-		(property "Datasheet" ""
+		(property "Datasheet" "https://mm.digikey.com/Volume0/opasdata/d220001/medias/docus/6129/sma-j-p-x-st-em1-mkt.pdf"
 			(at 0 0 270)
 			(unlocked yes)
 			(layer "F.Fab")
 			(hide yes)
 			(uuid "1f2c5036-fdb6-4f68-8b84-ee7589599cb4")
+			(effects
+				(font
+					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "Manufacturer" "Samtec Inc."
+			(at 0 0 270)
+			(unlocked yes)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "1cb3ac4e-181a-4e36-84e8-e4453e6f9199")
+			(effects
+				(font
+					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "MPN" "SMA-J-P-H-ST-EM1"
+			(at 0 0 270)
+			(unlocked yes)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "c1506ca7-b928-4505-b84f-ffc1856415b8")
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -16805,11 +17897,33 @@
 				)
 			)
 		)
-		(property "Datasheet" ""
+		(property "Datasheet" "https://www.murata.com/en-us/products/productdetail?partno=LQW15AN56NH00D%23"
 			(at 0 0 0)
 			(layer "F.Fab")
 			(hide yes)
 			(uuid "8ba62937-b8fe-4b6a-b6aa-46ba1d3ac9f7")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Manufacturer" "Murata Electronics"
+			(at 0 0 0)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "d09fc32d-d9ac-4ec6-aad5-9a3a55af7874")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "MPN" "LQW15AN56NH00D"
+			(at 0 0 0)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "b72a27dc-b424-49af-b35f-44cc694a2b0c")
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -16991,11 +18105,33 @@
 				)
 			)
 		)
-		(property "Datasheet" ""
+		(property "Datasheet" "https://www.murata.com/en-us/products/productdetail?partno=LQW15AN33NG00D%23"
 			(at 0 0 0)
 			(layer "F.Fab")
 			(hide yes)
 			(uuid "d6f7dcaa-331f-489a-8148-9da3022810f9")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Manufacturer" "Murata Electronics"
+			(at 0 0 0)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "dbedf7ae-0dac-448c-b8be-ae7169414d70")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "MPN" "LQW15AN33NG00D"
+			(at 0 0 0)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "3426e387-fb34-4ea1-b4cb-d42ebd5d5d01")
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -17195,11 +18331,33 @@
 				)
 			)
 		)
-		(property "Datasheet" ""
+		(property "Datasheet" "https://www.murata.com/en-us/products/productdetail?partno=GRM1555C1H182JA01D%23"
 			(at 0 0 90)
 			(layer "F.Fab")
 			(hide yes)
 			(uuid "334ad89b-29cb-4a67-84e6-6795d4f9c01b")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Manufacturer" "Murata Electronics"
+			(at 0 0 90)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "4d9d281f-b49d-414d-9de3-59c76ce75ca9")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "MPN" "GRM1555C1H182JA01D"
+			(at 0 0 90)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "c8d82d3f-c8b7-49f8-8019-0c3fdcb2d2b2")
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -17447,11 +18605,33 @@
 				)
 			)
 		)
-		(property "Datasheet" ""
+		(property "Datasheet" "https://mm.digikey.com/Volume0/opasdata/d220001/medias/docus/2615/CL05C120JB5NNNC_Spec.pdf"
 			(at 0 0 0)
 			(layer "F.Fab")
 			(hide yes)
 			(uuid "f771d1eb-72cc-43f9-968a-77a2dbd32411")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Manufacturer" "Samsung Electro-Mechanics"
+			(at 0 0 0)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "a74dbda5-6b91-4de5-979b-c4f2e99a22be")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "MPN" "CL05C120JB5NNNC"
+			(at 0 0 0)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "72041f41-f29d-4c8d-a2aa-7f226a67ca24")
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -17690,11 +18870,33 @@
 				)
 			)
 		)
-		(property "Datasheet" ""
+		(property "Datasheet" "https://mm.digikey.com/Volume0/opasdata/d220001/medias/docus/965/CL05A224KA5NNNC_Spec.pdf"
 			(at 0 0 90)
 			(layer "F.Fab")
 			(hide yes)
 			(uuid "b35b72ef-7dc1-4ac4-a3e2-d493e6f86d07")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Manufacturer" "Samsung Electro-Mechanics"
+			(at 0 0 90)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "1766108b-f512-46ff-91af-61dc3e04381d")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "MPN" "CL05A224KA5NNNC"
+			(at 0 0 90)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "183d2fad-013d-419b-b832-817d329847f5")
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -17925,11 +19127,33 @@
 				)
 			)
 		)
-		(property "Datasheet" ""
+		(property "Datasheet" "https://mm.digikey.com/Volume0/opasdata/d220001/medias/docus/609/CL05B104KO5NNNC.pdf"
 			(at 0 0 90)
 			(layer "F.Fab")
 			(hide yes)
 			(uuid "de90b01c-5628-4f32-87af-3cf4a307249d")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Manufacturer" "Samsung Electro-Mechanics"
+			(at 0 0 90)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "c996f4bf-bd6e-482e-93d4-02ba9ff0eb9d")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "MPN" "CL05B104KO5NNNC"
+			(at 0 0 90)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "634c4660-faef-402d-b0ef-50363b2fc64a")
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -18182,11 +19406,33 @@
 				)
 			)
 		)
-		(property "Datasheet" ""
+		(property "Datasheet" "https://yageogroup.com/download/specsheet/CC0402JRNPO9BN470"
 			(at 0 0 90)
 			(layer "F.Fab")
 			(hide yes)
 			(uuid "a3b24e86-9b52-4bd3-896c-276e2e5f82c9")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Manufacturer" "YAGEO"
+			(at 0 0 90)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "684372a7-d8db-470c-b506-86406fd495e8")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "MPN" "CC0402JRNPO9BN470"
+			(at 0 0 90)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "0dff55ba-a625-4825-a73d-d6162c3e30a8")
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -18396,11 +19642,33 @@
 				)
 			)
 		)
-		(property "Datasheet" ""
+		(property "Datasheet" "https://mm.digikey.com/Volume0/opasdata/d220001/medias/docus/536/LMK105BJ105KVHF_SS.pdf"
 			(at 0 0 90)
 			(layer "F.Fab")
 			(hide yes)
 			(uuid "299c4e2a-2efd-4947-8e07-9fe9502696f9")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Manufacturer" "Taiyo Yuden"
+			(at 0 0 90)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "5fd60ef1-0125-4921-9423-c5edac44f608")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "MPN" "LMK105BJ105KVHF"
+			(at 0 0 90)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "963ece5f-ca33-4090-89fd-2bb0c49b95c1")
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -18620,11 +19888,33 @@
 				)
 			)
 		)
-		(property "Datasheet" ""
+		(property "Datasheet" "https://www.murata.com/en-us/products/productdetail?partno=LQW15AN27NG00D%23"
 			(at 0 0 0)
 			(layer "F.Fab")
 			(hide yes)
 			(uuid "c04ca307-6b4f-4862-82e4-5a0667d8b85f")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Manufacturer" "Murata Electronics"
+			(at 0 0 0)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "967930ec-3bb6-462e-bb79-4166358d45a6")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "MPN" "LQW15AN27NG00D"
+			(at 0 0 0)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "2e39bd7c-8bd3-4ef9-bf16-934571898397")
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -19008,11 +20298,33 @@
 				)
 			)
 		)
-		(property "Datasheet" ""
+		(property "Datasheet" "https://yageogroup.com/content/datasheet/asset/file/PYU-RC_GROUP_51_ROHS_L"
 			(at 0 0 0)
 			(layer "F.Fab")
 			(hide yes)
 			(uuid "fae8202e-a827-4695-a791-9f324dd96f3b")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Manufacturer" "YAGEO"
+			(at 0 0 0)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "0a547f0e-783e-448f-a969-d90930c1f4ee")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "MPN" "RC0402FR-074K7L"
+			(at 0 0 0)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "ffc55d9f-28a0-4992-bd4f-2b267c84946a")
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -19231,11 +20543,33 @@
 				)
 			)
 		)
-		(property "Datasheet" ""
+		(property "Datasheet" "https://yageogroup.com/content/datasheet/asset/file/PYU-RC_GROUP_51_ROHS_L"
 			(at 0 0 90)
 			(layer "F.Fab")
 			(hide yes)
 			(uuid "3908133f-7fdc-4550-b3cc-6926c75c0a95")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Manufacturer" "YAGEO"
+			(at 0 0 90)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "a68408c2-4d15-4b38-b392-fc31cd289a21")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "MPN" "RC0402FR-0710KL"
+			(at 0 0 90)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "fb3379fd-5d59-4b77-98d4-10fbd16c0f64")
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -19463,11 +20797,33 @@
 				)
 			)
 		)
-		(property "Datasheet" ""
+		(property "Datasheet" "https://www.murata.com/en-us/products/productdetail?partno=GJM1555C1H6R2BB01D%23"
 			(at 0 0 0)
 			(layer "F.Fab")
 			(hide yes)
 			(uuid "9cc261ca-be3b-47b8-805a-cbaf3cacd518")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Manufacturer" "Murata Electronics"
+			(at 0 0 0)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "907c8e94-1257-41a9-a687-9b7d7bad8de5")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "MPN" "GJM1555C1H6R2BB01D"
+			(at 0 0 0)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "6a2170d4-fe79-40fb-aadb-d96e377049ff")
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -19694,11 +21050,22 @@
 				)
 			)
 		)
-		(property "Datasheet" ""
+		(property "Datasheet" "https://www.diodes.com/assets/Datasheets/DMG3401LSN.pdf"
 			(at 0 0 0)
 			(layer "F.Fab")
 			(hide yes)
 			(uuid "e6beb096-0f5f-48bf-b44a-28cf464ccc06")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Manufacturer" "Diodes Incorporated"
+			(at 0 0 0)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "d38101d3-8aa7-4ba4-b37b-388cf038fc3e")
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -20174,11 +21541,33 @@
 				)
 			)
 		)
-		(property "Datasheet" ""
+		(property "Datasheet" "https://mm.digikey.com/Volume0/opasdata/d220001/medias/docus/536/LMK105BJ105KVHF_SS.pdf"
 			(at 0 0 90)
 			(layer "F.Fab")
 			(hide yes)
 			(uuid "6c57a77f-436e-4cbf-b2d8-196d6b2319fc")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Manufacturer" "Taiyo Yuden"
+			(at 0 0 90)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "192263f3-3a1e-4e8e-a5ac-d636b23e0d27")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "MPN" "LMK105BJ105KVHF"
+			(at 0 0 90)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "6d572d28-0c24-4790-8c03-3b9d34541c98")
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -20397,11 +21786,33 @@
 				)
 			)
 		)
-		(property "Datasheet" ""
+		(property "Datasheet" "https://mm.digikey.com/Volume0/opasdata/d220001/medias/docus/609/CL05B104KO5NNNC.pdf"
 			(at 0 0 90)
 			(layer "F.Fab")
 			(hide yes)
 			(uuid "83f753f0-0eb4-4e09-9b21-34964e126b12")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Manufacturer" "Samsung Electro-Mechanics"
+			(at 0 0 90)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "fdbd7a74-f9e9-4c39-9528-53bd682d235e")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "MPN" "CL05B104KO5NNNC"
+			(at 0 0 90)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "db1ec889-1bfb-4c40-acc9-553e98a4ded5")
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -20629,11 +22040,33 @@
 				)
 			)
 		)
-		(property "Datasheet" ""
+		(property "Datasheet" "https://yageogroup.com/content/datasheet/asset/file/PYU-RC_GROUP_51_ROHS_L"
 			(at 0 0 0)
 			(layer "F.Fab")
 			(hide yes)
 			(uuid "ab7a5df2-1a7c-4c15-809e-5d9af4a4d62c")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Manufacturer" "YAGEO"
+			(at 0 0 0)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "a2b5f9d4-2c95-44da-bf7c-09654d9e5de2")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "MPN" "RC0402FR-071KL"
+			(at 0 0 0)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "774820f0-dd22-45b2-81e2-2390c3166a01")
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -20844,11 +22277,22 @@
 				)
 			)
 		)
-		(property "Datasheet" ""
+		(property "Datasheet" "https://www.lcsc.com/datasheet/lcsc_datasheet_2208031800_ZHONGKEWEI-AT6558R-5N32_C500608.pdf"
 			(at 0 0 90)
 			(layer "F.Fab")
 			(hide yes)
 			(uuid "7aa3a026-b3c6-42d3-9576-cc5658718c49")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Manufacturer" "Hangzhou Zhongkewei (ICOFCHINA)"
+			(at 0 0 90)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "72aca85e-f8b2-4ea3-b3fd-1ec5738afbc2")
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -21918,11 +23362,22 @@
 				)
 			)
 		)
-		(property "Datasheet" ""
+		(property "Datasheet" "https://www.bosch-sensortec.com/media/boschsensortec/downloads/datasheets/bst-bme688-ds000.pdf"
 			(at 0 0 90)
 			(layer "F.Fab")
 			(hide yes)
 			(uuid "c9a3a0fb-eb10-4095-8e59-b02b12234679")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Manufacturer" "Bosch Sensortec"
+			(at 0 0 90)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "ed7eff0b-db7e-4988-aaf6-ec9904553316")
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -22242,11 +23697,33 @@
 				)
 			)
 		)
-		(property "Datasheet" ""
+		(property "Datasheet" "https://www.murata.com/en-us/products/productdetail?partno=GRM155R71H103KA88D%23"
 			(at 0 0 90)
 			(layer "F.Fab")
 			(hide yes)
 			(uuid "eb50c085-b23b-4c80-8269-be9696ad2c27")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Manufacturer" "Murata Electronics"
+			(at 0 0 90)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "5cde1387-ce2a-4586-ac3e-238ffb53e30f")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "MPN" "GRM155R71H103KA88D"
+			(at 0 0 90)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "cb889f4d-104c-4483-885c-ace8742ffefc")
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -22458,11 +23935,33 @@
 				)
 			)
 		)
-		(property "Datasheet" ""
+		(property "Datasheet" "https://yageogroup.com/content/datasheet/asset/file/PYU-RC_GROUP_51_ROHS_L"
 			(at 0 0 0)
 			(layer "F.Fab")
 			(hide yes)
 			(uuid "09c9f14e-c5db-4ff1-ae40-7f26cd5d7bb4")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Manufacturer" "YAGEO"
+			(at 0 0 0)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "cf361617-4c26-4308-b221-d15eab0fb5b4")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "MPN" "RC0402FR-0710KL"
+			(at 0 0 0)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "bde118f1-ad74-43a0-a16c-0df34a4f9923")
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -22682,11 +24181,33 @@
 				)
 			)
 		)
-		(property "Datasheet" ""
+		(property "Datasheet" "https://mm.digikey.com/Volume0/opasdata/d220001/medias/docus/8902/Multi-Layer-Ceramic-Capacitors-Datasheet.pdf"
 			(at 0 0 90)
 			(layer "F.Fab")
 			(hide yes)
 			(uuid "730666b7-d859-4242-b00f-2fc2ca0ce6c8")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Manufacturer" "Taiyo Yuden"
+			(at 0 0 90)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "a979342d-ec86-4083-8fb0-704ccd8e9439")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "MPN" "LMK107BJ475KAHT"
+			(at 0 0 90)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "5b2b7f02-4e66-4537-8e4a-3b79b101edbe")
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -22909,11 +24430,33 @@
 				)
 			)
 		)
-		(property "Datasheet" ""
+		(property "Datasheet" "https://yageogroup.com/content/datasheet/asset/file/PYU-RC_GROUP_51_ROHS_L"
 			(at 0 0 90)
 			(layer "F.Fab")
 			(hide yes)
 			(uuid "8b9b4d31-dc98-4403-8cc0-3e3bcef0ce78")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Manufacturer" "YAGEO"
+			(at 0 0 90)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "9a3eadcd-3b13-48a0-aa14-c9a339021a92")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "MPN" "RC0402FR-0710KL"
+			(at 0 0 90)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "37d6e720-9c37-41ee-afc5-314a7cb301aa")
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -23133,11 +24676,33 @@
 				)
 			)
 		)
-		(property "Datasheet" ""
+		(property "Datasheet" "https://optoelectronics.liteon.com/upload/download/DS22-2009-0040/LTST-C281KGKT-5A.PDF"
 			(at 0 0 0)
 			(layer "F.Fab")
 			(hide yes)
 			(uuid "dc2933b6-3c44-45f5-bf1f-9c06b02d7468")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Manufacturer" "Lite-On Inc."
+			(at 0 0 0)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "d6c4153b-071d-4dbd-b1f4-8b37e90159d6")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "MPN" "LTST-C281KGKT-5A"
+			(at 0 0 0)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "591f2859-b877-454e-9492-91cc3bd860f9")
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -23694,11 +25259,33 @@
 				)
 			)
 		)
-		(property "Datasheet" ""
+		(property "Datasheet" "https://www.murata.com/en-us/products/productdetail?partno=LQW15AN56NH00D%23"
 			(at 0 0 0)
 			(layer "F.Fab")
 			(hide yes)
 			(uuid "3ec5d1b4-8adf-4c10-b881-1223cf179d64")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Manufacturer" "Murata Electronics"
+			(at 0 0 0)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "a8374dd3-7b46-45f8-9e5e-742d7fe43704")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "MPN" "LQW15AN56NH00D"
+			(at 0 0 0)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "800fe776-42b1-4303-be6c-7f67cd836673")
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -23939,11 +25526,33 @@
 				)
 			)
 		)
-		(property "Datasheet" ""
+		(property "Datasheet" "https://www.murata.com/en-us/products/productdetail?partno=GRM155R71H473KE14D%23"
 			(at 0 0 0)
 			(layer "F.Fab")
 			(hide yes)
 			(uuid "bbc9d0b3-342a-4dfc-b2e9-4aa7e7eddd5b")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Manufacturer" "Murata Electronics"
+			(at 0 0 0)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "c808cee2-1199-4ed7-ab9d-6ecea341590c")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "MPN" "GRM155R71H473KE14D"
+			(at 0 0 0)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "5cccb0e1-7b1f-449d-9ffc-99fbb200f7b0")
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -24163,11 +25772,33 @@
 				)
 			)
 		)
-		(property "Datasheet" ""
+		(property "Datasheet" "https://yageogroup.com/content/datasheet/asset/file/PYU-RC_GROUP_51_ROHS_L"
 			(at 0 0 0)
 			(layer "F.Fab")
 			(hide yes)
 			(uuid "a4e39035-de0d-4cd2-b3cb-15a1a51d7143")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Manufacturer" "YAGEO"
+			(at 0 0 0)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "43a82a0d-bc26-4ab0-aa5b-22ee1edb885b")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "MPN" "RC0402FR-0722RL"
+			(at 0 0 0)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "26ea1059-e8eb-4fc1-a3b7-1f590ea35e22")
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -24396,12 +26027,38 @@
 				)
 			)
 		)
-		(property "Datasheet" ""
+		(property "Datasheet" "https://mm.digikey.com/Volume0/opasdata/d220001/medias/docus/6129/sma-j-p-x-st-em1-mkt.pdf"
 			(at 0 0 0)
 			(unlocked yes)
 			(layer "F.Fab")
 			(hide yes)
 			(uuid "12448077-420a-48f4-8dd4-8287558d01cd")
+			(effects
+				(font
+					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "Manufacturer" "Samtec Inc."
+			(at 0 0 0)
+			(unlocked yes)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "2a344989-5fa1-403c-a535-7bfa9723c22e")
+			(effects
+				(font
+					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "MPN" "SMA-J-P-H-ST-EM1"
+			(at 0 0 0)
+			(unlocked yes)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "6d64d0e8-027b-4189-9bc5-46dcc75d920a")
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -24997,11 +26654,33 @@
 				)
 			)
 		)
-		(property "Datasheet" ""
+		(property "Datasheet" "https://www.murata.com/en-us/products/productdetail?partno=LQW15AN43NG00D%23"
 			(at 0 0 0)
 			(layer "F.Fab")
 			(hide yes)
 			(uuid "37a9f871-0709-4701-9ca1-2f391850694d")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Manufacturer" "Murata Electronics"
+			(at 0 0 0)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "80ad053e-584c-471e-97dd-b0adc4b88c19")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "MPN" "LQW15AN43NG00D"
+			(at 0 0 0)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "fa185098-740c-4e7d-aa19-26de6074a64b")
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -25214,11 +26893,33 @@
 				)
 			)
 		)
-		(property "Datasheet" ""
+		(property "Datasheet" "https://yageogroup.com/content/datasheet/asset/file/PYU-RC_GROUP_51_ROHS_L"
 			(at 0 0 0)
 			(layer "F.Fab")
 			(hide yes)
 			(uuid "4c86f20e-1872-4398-88e8-34ccdf8d263d")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Manufacturer" "YAGEO"
+			(at 0 0 0)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "e02709c7-2b4d-46d1-84c0-846296c79425")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "MPN" "RC0402FR-0756KL"
+			(at 0 0 0)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "5ed7e637-31ee-4352-a47a-6cbc275e6826")
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -25437,11 +27138,33 @@
 				)
 			)
 		)
-		(property "Datasheet" ""
+		(property "Datasheet" "https://mm.digikey.com/Volume0/opasdata/d220001/medias/docus/536/LMK105BJ105KVHF_SS.pdf"
 			(at 0 0 0)
 			(layer "F.Fab")
 			(hide yes)
 			(uuid "2c27f914-0e70-46d9-bd2e-0ae2158f0269")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Manufacturer" "Taiyo Yuden"
+			(at 0 0 0)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "4e486b27-63c9-40c6-a6cf-cea6c0d78019")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "MPN" "LMK105BJ105KVHF"
+			(at 0 0 0)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "20eb715a-4dc5-43c9-b37a-232ff001803d")
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -25662,11 +27385,22 @@
 				)
 			)
 		)
-		(property "Datasheet" ""
+		(property "Datasheet" "https://ele.kyocera.com/assets/products/crystal-device/cx3225sb_e.pdf"
 			(at 0 0 90)
 			(layer "F.Fab")
 			(hide yes)
 			(uuid "625996a6-9d0f-4ba8-8049-8fccb47d12c4")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Manufacturer" "KYOCERA AVX"
+			(at 0 0 90)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "5201a0c7-b83e-4d96-8610-bc0cc9baf2f2")
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -25920,11 +27654,33 @@
 				)
 			)
 		)
-		(property "Datasheet" ""
+		(property "Datasheet" "https://www.murata.com/en-us/products/productdetail?partno=GRM155R71H103KA88D%23"
 			(at 0 0 0)
 			(layer "F.Fab")
 			(hide yes)
 			(uuid "9f95bc09-22bb-4795-9c8f-bd2121da2406")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Manufacturer" "Murata Electronics"
+			(at 0 0 0)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "4425f1f3-36a4-4a7f-b7c0-9ecafe2573c1")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "MPN" "GRM155R71H103KA88D"
+			(at 0 0 0)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "24015daa-8608-45ea-be5d-df554505869e")
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -26185,11 +27941,33 @@
 				)
 			)
 		)
-		(property "Datasheet" ""
+		(property "Datasheet" "https://www.murata.com/en-us/products/productdetail?partno=GRM155R71H473KE14D%23"
 			(at 0 0 90)
 			(layer "F.Fab")
 			(hide yes)
 			(uuid "a4109ea4-e764-493a-bc27-d591a456d0e9")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Manufacturer" "Murata Electronics"
+			(at 0 0 90)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "682834e5-cafb-4fbd-bc24-0039d656d71a")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "MPN" "GRM155R71H473KE14D"
+			(at 0 0 90)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "b6b0cc88-ad6e-4aaa-b2f8-526ceeebe6d3")
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -26440,11 +28218,33 @@
 				)
 			)
 		)
-		(property "Datasheet" ""
+		(property "Datasheet" "https://www.murata.com/en-us/products/productdetail?partno=LQW15AN27NG00D%23"
 			(at 0 0 0)
 			(layer "F.Fab")
 			(hide yes)
 			(uuid "dc93eea0-d998-4bae-b13c-fa259bc7f935")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Manufacturer" "Murata Electronics"
+			(at 0 0 0)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "08336fba-637d-4457-a8cd-4c42bd8e454d")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "MPN" "LQW15AN27NG00D"
+			(at 0 0 0)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "2ba8c224-7884-45ac-ab54-95f4b2edf13c")
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -26676,11 +28476,33 @@
 				)
 			)
 		)
-		(property "Datasheet" ""
+		(property "Datasheet" "https://www.murata.com/en-us/products/productdetail?partno=GJM1555C1H5R1CB01D%23"
 			(at 0 0 90)
 			(layer "F.Fab")
 			(hide yes)
 			(uuid "19f9421c-dbdf-42d7-8d8f-8d00ab59342b")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Manufacturer" "Murata Electronics"
+			(at 0 0 90)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "57365ba3-afb1-4d4d-b991-888cb14d3b34")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "MPN" "GJM1555C1H5R1CB01D"
+			(at 0 0 90)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "ca09898f-928c-489f-a96d-a56fd6d07fa6")
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -26899,11 +28721,33 @@
 				)
 			)
 		)
-		(property "Datasheet" ""
+		(property "Datasheet" "https://mm.digikey.com/Volume0/opasdata/d220001/medias/docus/609/CL05B104KO5NNNC.pdf"
 			(at 0 0 0)
 			(layer "F.Fab")
 			(hide yes)
 			(uuid "940bd521-13d6-4384-8104-2580b9ceace6")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Manufacturer" "Samsung Electro-Mechanics"
+			(at 0 0 0)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "6e76136f-f752-40a8-b478-c837307e05c6")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "MPN" "CL05B104KO5NNNC"
+			(at 0 0 0)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "7546e9e8-db30-4930-bdb0-78335f49d306")
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -27134,11 +28978,33 @@
 				)
 			)
 		)
-		(property "Datasheet" ""
+		(property "Datasheet" "https://www.murata.com/en-us/products/productdetail?partno=GRM155R71H473KE14D%23"
 			(at 0 0 0)
 			(layer "F.Fab")
 			(hide yes)
 			(uuid "76641eb8-303a-4ac6-9e61-b1a7c41cfac9")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Manufacturer" "Murata Electronics"
+			(at 0 0 0)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "c80d939d-5532-4bac-a205-dc8a8aefe9b1")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "MPN" "GRM155R71H473KE14D"
+			(at 0 0 0)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "adbd666b-3354-4a70-9ed8-f64f559c84e1")
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -27378,11 +29244,33 @@
 				)
 			)
 		)
-		(property "Datasheet" ""
+		(property "Datasheet" "https://www.murata.com/en-us/products/productdetail?partno=GJM1555C1H5R1CB01D%23"
 			(at 0 0 0)
 			(layer "F.Fab")
 			(hide yes)
 			(uuid "08aa9929-611c-41bf-87e4-0d8d183f34d7")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Manufacturer" "Murata Electronics"
+			(at 0 0 0)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "fdbd2514-6788-4c7c-91a9-b773b28025a5")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "MPN" "GJM1555C1H5R1CB01D"
+			(at 0 0 0)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "56583d5f-2a9e-4706-bc35-9d29eb0f8d77")
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -27599,11 +29487,33 @@
 				)
 			)
 		)
-		(property "Datasheet" ""
+		(property "Datasheet" "https://mm.digikey.com/Volume0/opasdata/d220001/medias/docus/609/CL05B104KO5NNNC.pdf"
 			(at 0 0 90)
 			(layer "F.Fab")
 			(hide yes)
 			(uuid "c68590d9-919f-4efc-8d8b-057e1804c92a")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Manufacturer" "Samsung Electro-Mechanics"
+			(at 0 0 90)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "4161d229-d45d-4c4f-b644-2029566f7d82")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "MPN" "CL05B104KO5NNNC"
+			(at 0 0 90)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "5da94919-d8ed-4de5-8b57-af9385661833")
 			(effects
 				(font
 					(size 1.27 1.27)

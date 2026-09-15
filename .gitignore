@@ -4,3 +4,5 @@ NOTES.md
 ~*.lck
 fp-info-cache
 ref/
+tools/__pycache__/
+*.bak
