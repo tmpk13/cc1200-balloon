@@ -6,10 +6,10 @@
 	(descr "Two solder pads for battery leads, 3.0mm pitch, no connector")
 	(tags "solder pad wire battery")
 	(property "Reference" "REF**"
-		(at 0 -0.5 0)
+		(at 0 -3 0)
 		(unlocked yes)
 		(layer "F.SilkS")
-		(uuid "a2646318-e57d-45b6-8d7f-8d954f0998d1")
+		(uuid "04bfe55a-35bf-4894-8689-f432b4417933")
 		(effects
 			(font
 				(size 1 1)
@@ -21,7 +21,7 @@
 		(at 0 1 0)
 		(unlocked yes)
 		(layer "F.Fab")
-		(uuid "d85e610a-8ab5-4e7e-887f-81a1e10ed295")
+		(uuid "568771c4-66fc-4ef2-8365-39015fea9513")
 		(effects
 			(font
 				(size 1 1)
@@ -33,7 +33,7 @@
 		(at 0 0 0)
 		(layer "F.Fab")
 		(hide yes)
-		(uuid "99232761-2d71-40d8-a8f5-5f53f74b09d5")
+		(uuid "b3d2184f-05f7-4d09-9458-5c2c8dd31b48")
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -44,7 +44,7 @@
 		(at 0 0 0)
 		(layer "F.Fab")
 		(hide yes)
-		(uuid "90dc70d5-9575-4e7e-9bad-44d63061fda1")
+		(uuid "d69497da-4532-40a4-89ee-739af1dc4cb1")
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -54,34 +54,34 @@
 	(attr smd)
 	(duplicate_pad_numbers_are_jumpers no)
 	(fp_line
-		(start -2 -2.82)
-		(end -1 -2.82)
+		(start -3.9 0)
+		(end -2.9 0)
 		(stroke
-			(width 0.15)
+			(width 0.2)
 			(type solid)
 		)
 		(layer "F.SilkS")
-		(uuid "252447d6-a1a0-446e-834c-6c198203d061")
+		(uuid "17457e2e-fd34-4aab-bbcd-c8293caba551")
 	)
 	(fp_line
-		(start -1.5 -3.32)
-		(end -1.5 -2.32)
+		(start -3.4 -0.5)
+		(end -3.4 0.5)
 		(stroke
-			(width 0.15)
+			(width 0.2)
 			(type solid)
 		)
 		(layer "F.SilkS")
-		(uuid "227b6cb9-b35c-4c61-b258-ecca32d1fbc2")
+		(uuid "5031af1a-c2eb-4c69-bd71-1d75e1958de4")
 	)
 	(fp_line
-		(start 1 -2.82)
-		(end 2 -2.82)
+		(start 2.9 0)
+		(end 3.9 0)
 		(stroke
-			(width 0.15)
+			(width 0.2)
 			(type solid)
 		)
 		(layer "F.SilkS")
-		(uuid "4d797e9e-10b9-4973-ac54-6b9551f01086")
+		(uuid "6606c775-f13c-4633-9964-d94196670a20")
 	)
 	(fp_rect
 		(start -2.9 -2.2)
@@ -92,7 +92,7 @@
 		)
 		(fill no)
 		(layer "F.CrtYd")
-		(uuid "04ed63f7-c927-4f02-9fb4-fcb2cab8451f")
+		(uuid "812ab7d7-56d3-4081-bdea-a3ca8d4e1bd5")
 	)
 	(fp_line
 		(start -2.7 -1.7)
@@ -102,7 +102,7 @@
 			(type solid)
 		)
 		(layer "F.Fab")
-		(uuid "eaf14019-4d43-49d1-ba9a-51953ab7fb8d")
+		(uuid "5424cae1-bad2-47ac-b7e0-e843a21f9d8b")
 	)
 	(fp_line
 		(start -2.7 1.7)
@@ -112,7 +112,7 @@
 			(type solid)
 		)
 		(layer "F.Fab")
-		(uuid "c1b24903-0803-4487-9d86-ddfa5f80bfaf")
+		(uuid "100c10d0-ce93-4d40-86f3-f01255bc4270")
 	)
 	(fp_line
 		(start 2.7 -1.7)
@@ -122,7 +122,7 @@
 			(type solid)
 		)
 		(layer "F.Fab")
-		(uuid "937ba2de-0649-4d96-8c81-69cd424e58f1")
+		(uuid "df0bdff2-f92a-4cfd-8db5-528c47800fa3")
 	)
 	(fp_line
 		(start 2.7 1.7)
@@ -132,21 +132,21 @@
 			(type solid)
 		)
 		(layer "F.Fab")
-		(uuid "882ff034-07df-4e2c-bd7d-72d7cbae95cc")
+		(uuid "4d6ac901-93c2-44b2-b107-820eba728079")
 	)
 	(pad "1" smd roundrect
 		(at -1.5 0)
 		(size 2 4)
 		(layers "F.Cu" "F.Mask" "F.Paste")
 		(roundrect_rratio 0.25)
-		(uuid "a69d4838-2800-4da3-a65a-665cc205e51a")
+		(uuid "7155a276-5916-41cf-87e7-9c3efde3ae92")
 	)
 	(pad "2" smd roundrect
 		(at 1.5 0)
 		(size 2 4)
 		(layers "F.Cu" "F.Mask" "F.Paste")
 		(roundrect_rratio 0.25)
-		(uuid "7de282bb-a250-495e-a008-2bb005cfe077")
+		(uuid "cee8668c-931c-4792-a3ee-4bef883e4235")
 	)
 	(embedded_fonts no)
 )
