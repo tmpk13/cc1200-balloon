@@ -59,7 +59,7 @@
 		)
 	)
 	(sheet
-		(at 190 40)
+		(at 29.98 40)
 		(size 60 20)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -75,7 +75,7 @@
 		)
 		(uuid "49b0bbaa-8810-5f14-8f67-79558307357c")
 		(property "Sheetname" "CC1200 Radio"
-			(at 190 39.2 0)
+			(at 29.98 39.2 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -86,7 +86,7 @@
 			)
 		)
 		(property "Sheetfile" "radio.kicad_sch"
-			(at 190 60.8 0)
+			(at 29.98 60.8 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -148,53 +148,6 @@
 			(project "cc1200_balloon"
 				(path "/5283d11e-ccf0-51c0-83df-1e782a317298"
 					(page "6")
-				)
-			)
-		)
-	)
-	(sheet
-		(at 30 40)
-		(size 60 20)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(fields_autoplaced yes)
-		(stroke
-			(width 0.1524)
-			(type solid)
-		)
-		(fill
-			(color 0 0 0 0)
-		)
-		(uuid "d85f24fe-16d8-55a9-8cb5-8fe3192a244f")
-		(property "Sheetname" "Power"
-			(at 30 39.2 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left bottom)
-			)
-		)
-		(property "Sheetfile" "power.kicad_sch"
-			(at 30 60.8 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left top)
-			)
-		)
-		(instances
-			(project "cc1200_balloon"
-				(path "/5283d11e-ccf0-51c0-83df-1e782a317298"
-					(page "2")
 				)
 			)
 		)

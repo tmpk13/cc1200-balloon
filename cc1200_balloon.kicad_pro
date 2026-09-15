@@ -76,7 +76,32 @@
           "width": 0.0
         }
       ],
-      "drc_exclusions": [],
+      "drc_exclusions": [
+        [
+          "courtyards_overlap|79415000|93590000|0349b818-fee8-4499-8d7c-9f00bbf1746e|8f407026-49d7-412b-b3cf-eadb327c0901",
+          "Excess couryard. Will fit fine."
+        ],
+        [
+          "courtyards_overlap|79445000|95580000|8f407026-49d7-412b-b3cf-eadb327c0901|98d4aea3-0b19-4bd4-ac1a-43363f24e676",
+          "Excess couryard. Will fit fine."
+        ],
+        [
+          "starved_thermal|100600000|98920000|87b10af7-4447-4cd3-ad1d-b50c24e67eb3|533939be-3201-48b8-bec7-87c0e8344831|F.Cu",
+          "Too tight for full thermal connection"
+        ],
+        [
+          "starved_thermal|102830000|101350000|87b10af7-4447-4cd3-ad1d-b50c24e67eb3|0d4d6ab4-929a-495e-8a2d-59c2ab760bcc|F.Cu",
+          "Too tight for full thermal connection."
+        ],
+        [
+          "starved_thermal|93620000|104950000|87b10af7-4447-4cd3-ad1d-b50c24e67eb3|2848af25-3bf7-40b5-ab9f-2774dcb73cf1|F.Cu",
+          "Too tight for full thermal connection"
+        ],
+        [
+          "starved_thermal|96315000|107550000|87b10af7-4447-4cd3-ad1d-b50c24e67eb3|0f9d8b28-50ee-4101-8d08-1f9edaee1dff|F.Cu",
+          "Too tight for full thermal connection."
+        ]
+      ],
       "meta": {
         "version": 2
       },
@@ -121,14 +146,14 @@
         "pth_inside_courtyard": "error",
         "shorting_items": "error",
         "silk_edge_clearance": "warning",
-        "silk_over_copper": "warning",
-        "silk_overlap": "warning",
+        "silk_over_copper": "ignore",
+        "silk_overlap": "ignore",
         "skew_out_of_range": "error",
         "solder_mask_bridge": "error",
         "starved_thermal": "error",
-        "text_height": "warning",
+        "text_height": "ignore",
         "text_on_edge_cuts": "error",
-        "text_thickness": "warning",
+        "text_thickness": "ignore",
         "through_hole_pad_without_hole": "error",
         "too_many_vias": "error",
         "track_angle": "error",
@@ -704,10 +729,6 @@
     [
       "5283d11e-ccf0-51c0-83df-1e782a317298",
       "cc1200_balloon"
-    ],
-    [
-      "d85f24fe-16d8-55a9-8cb5-8fe3192a244f",
-      "Power"
     ],
     [
       "e204f989-227c-51e9-89c4-b959a993512c",
