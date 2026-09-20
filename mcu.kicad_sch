@@ -2655,16 +2655,6 @@
 	)
 	(wire
 		(pts
-			(xy 185.42 71.12) (xy 270.51 71.12)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "2f9b50a8-a240-4bdc-b22d-0afa63d60bcd")
-	)
-	(wire
-		(pts
 			(xy 186.69 118.11) (xy 187.96 118.11)
 		)
 		(stroke
@@ -2692,6 +2682,16 @@
 			(type default)
 		)
 		(uuid "3457d47d-f16b-4ba2-a725-b43f11ea4d21")
+	)
+	(wire
+		(pts
+			(xy 185.42 71.12) (xy 270.51 71.12)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "42bb578a-4ae7-4e01-93a0-002153bb28b4")
 	)
 	(wire
 		(pts
@@ -3124,7 +3124,7 @@
 		(uuid "fce5e018-ba1a-427d-a912-56557c7153e0")
 	)
 	(label "BATT_VSENSE"
-		(at 185.42 71.12 0)
+		(at 186.69 71.12 0)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -3598,6 +3598,17 @@
 				)
 			)
 		)
+		(property "Description" ""
+			(at 161.29 149.86 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
 		(property "Manufacturer" "Samsung Electro-Mechanics"
 			(at 161.29 149.86 0)
 			(hide yes)
@@ -3610,17 +3621,6 @@
 			)
 		)
 		(property "MPN" "CL05B104KO5NNNC"
-			(at 161.29 149.86 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Description" ""
 			(at 161.29 149.86 0)
 			(hide yes)
 			(show_name no)
@@ -3932,6 +3932,17 @@
 				)
 			)
 		)
+		(property "Description" ""
+			(at 185.42 77.47 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
 		(property "Manufacturer" "Samsung Electro-Mechanics"
 			(at 185.42 77.47 0)
 			(hide yes)
@@ -3944,17 +3955,6 @@
 			)
 		)
 		(property "MPN" "CL05B104KO5NNNC"
-			(at 185.42 77.47 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Description" ""
 			(at 185.42 77.47 0)
 			(hide yes)
 			(show_name no)
@@ -4113,6 +4113,17 @@
 				)
 			)
 		)
+		(property "Description" ""
+			(at 172.72 74.93 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
 		(property "Manufacturer" "YAGEO"
 			(at 172.72 74.93 0)
 			(hide yes)
@@ -4125,17 +4136,6 @@
 			)
 		)
 		(property "MPN" "RC0402FR-07100KL"
-			(at 172.72 74.93 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Description" ""
 			(at 172.72 74.93 0)
 			(hide yes)
 			(show_name no)
@@ -4292,6 +4292,17 @@
 				)
 			)
 		)
+		(property "Description" ""
+			(at 238.76 100.33 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
 		(property "Manufacturer" "YAGEO"
 			(at 238.76 100.33 0)
 			(hide yes)
@@ -4304,17 +4315,6 @@
 			)
 		)
 		(property "MPN" "RC0402FR-074K7L"
-			(at 238.76 100.33 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Description" ""
 			(at 238.76 100.33 0)
 			(hide yes)
 			(show_name no)
@@ -4625,6 +4625,17 @@
 				)
 			)
 		)
+		(property "Description" ""
+			(at 247.65 142.24 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
 		(property "Manufacturer" "YAGEO"
 			(at 247.65 142.24 0)
 			(hide yes)
@@ -4637,17 +4648,6 @@
 			)
 		)
 		(property "MPN" "RC0402FR-071KL"
-			(at 247.65 142.24 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Description" ""
 			(at 247.65 142.24 0)
 			(hide yes)
 			(show_name no)
@@ -4782,7 +4782,7 @@
 				)
 			)
 		)
-		(property "Footprint" "MountingHole:MountingHole_2.7mm_M2.5_ISO7380"
+		(property "Footprint" "MountingHole:MountingHole_2mm"
 			(at 135.89 83.82 0)
 			(hide yes)
 			(show_name no)
@@ -5032,6 +5032,17 @@
 				)
 			)
 		)
+		(property "Description" ""
+			(at 210.82 86.36 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
 		(property "Manufacturer" "Murata Electronics"
 			(at 210.82 86.36 0)
 			(hide yes)
@@ -5044,17 +5055,6 @@
 			)
 		)
 		(property "MPN" "GRM153R60J475ME15D"
-			(at 210.82 86.36 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Description" ""
 			(at 210.82 86.36 0)
 			(hide yes)
 			(show_name no)
@@ -5133,6 +5133,17 @@
 				)
 			)
 		)
+		(property "Description" ""
+			(at 172.72 67.31 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
 		(property "Manufacturer" "YAGEO"
 			(at 172.72 67.31 0)
 			(hide yes)
@@ -5145,17 +5156,6 @@
 			)
 		)
 		(property "MPN" "RC0402FR-07100KL"
-			(at 172.72 67.31 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Description" ""
 			(at 172.72 67.31 0)
 			(hide yes)
 			(show_name no)
@@ -5313,7 +5313,7 @@
 				)
 			)
 		)
-		(property "Manufacturer" "Seeed Technology Co., Ltd"
+		(property "Description" ""
 			(at 201.93 132.08 0)
 			(hide yes)
 			(show_name no)
@@ -5324,7 +5324,7 @@
 				)
 			)
 		)
-		(property "Description" ""
+		(property "Manufacturer" "Seeed Technology Co., Ltd"
 			(at 201.93 132.08 0)
 			(hide yes)
 			(show_name no)
@@ -5532,6 +5532,79 @@
 		)
 	)
 	(symbol
+		(lib_id "Mechanical:MountingHole")
+		(at 135.89 95.25 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(uuid "d2d116ff-75e2-494f-af3b-3da2929f8dc2")
+		(property "Reference" "H102"
+			(at 135.89 91.71 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "M2.5"
+			(at 135.89 98.79 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" "MountingHole:MountingHole_2mm"
+			(at 135.89 95.25 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 135.89 95.25 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" ""
+			(at 135.89 95.25 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(instances
+			(project "cc1200_balloon"
+				(path "/5283d11e-ccf0-51c0-83df-1e782a317298/e204f989-227c-51e9-89c4-b959a993512c"
+					(reference "H102")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
 		(lib_id "Transistor_FET:Q_PMOS_GSD")
 		(at 160.02 55.88 0)
 		(unit 1)
@@ -5584,7 +5657,7 @@
 				)
 			)
 		)
-		(property "Manufacturer" "Diodes Incorporated"
+		(property "Description" ""
 			(at 160.02 55.88 0)
 			(hide yes)
 			(show_name no)
@@ -5595,7 +5668,7 @@
 				)
 			)
 		)
-		(property "Description" ""
+		(property "Manufacturer" "Diodes Incorporated"
 			(at 160.02 55.88 0)
 			(hide yes)
 			(show_name no)
@@ -5844,6 +5917,17 @@
 				)
 			)
 		)
+		(property "Description" ""
+			(at 149.86 110.49 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
 		(property "Manufacturer" "Samtec Inc."
 			(at 149.86 110.49 0)
 			(hide yes)
@@ -5856,17 +5940,6 @@
 			)
 		)
 		(property "MPN" "SMA-J-P-H-ST-EM1"
-			(at 149.86 110.49 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Description" ""
 			(at 149.86 110.49 0)
 			(hide yes)
 			(show_name no)
@@ -5945,6 +6018,17 @@
 				)
 			)
 		)
+		(property "Description" ""
+			(at 161.29 139.7 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
 		(property "Manufacturer" "YAGEO"
 			(at 161.29 139.7 0)
 			(hide yes)
@@ -5957,17 +6041,6 @@
 			)
 		)
 		(property "MPN" "RC0402FR-0710KL"
-			(at 161.29 139.7 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Description" ""
 			(at 161.29 139.7 0)
 			(hide yes)
 			(show_name no)
@@ -6125,6 +6198,17 @@
 				)
 			)
 		)
+		(property "Description" ""
+			(at 250.19 100.33 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
 		(property "Manufacturer" "YAGEO"
 			(at 250.19 100.33 0)
 			(hide yes)
@@ -6137,17 +6221,6 @@
 			)
 		)
 		(property "MPN" "RC0402FR-074K7L"
-			(at 250.19 100.33 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Description" ""
 			(at 250.19 100.33 0)
 			(hide yes)
 			(show_name no)
@@ -6304,6 +6377,17 @@
 				)
 			)
 		)
+		(property "Description" ""
+			(at 223.52 86.36 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
 		(property "Manufacturer" "Samsung Electro-Mechanics"
 			(at 223.52 86.36 0)
 			(hide yes)
@@ -6316,17 +6400,6 @@
 			)
 		)
 		(property "MPN" "CL05B104KO5NNNC"
-			(at 223.52 86.36 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Description" ""
 			(at 223.52 86.36 0)
 			(hide yes)
 			(show_name no)
@@ -6483,6 +6556,17 @@
 				)
 			)
 		)
+		(property "Description" ""
+			(at 252.73 148.59 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
 		(property "Manufacturer" "Lite-On Inc."
 			(at 252.73 148.59 0)
 			(hide yes)
@@ -6495,17 +6579,6 @@
 			)
 		)
 		(property "MPN" "LTST-C281KGKT-5A"
-			(at 252.73 148.59 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Description" ""
 			(at 252.73 148.59 0)
 			(hide yes)
 			(show_name no)

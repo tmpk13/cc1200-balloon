@@ -2,6 +2,174 @@
 	(version 20251024)
 	(generator "kicad_symbol_editor")
 	(generator_version "10.0")
+	(symbol "ALND-WB-0014"
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(duplicate_pin_numbers_are_jumpers no)
+		(property "Reference" "U"
+			(at -8.89 6.35 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left bottom)
+			)
+		)
+		(property "Value" "ALND-WB-0014"
+			(at 4.826 -8.382 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left bottom)
+			)
+		)
+		(property "Footprint" "cc1200_balloon:Abracon_DFN-6_1.1x0.7mm"
+			(at 0 0 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" "https://abracon.com/datasheets/ALND-WB-0014.pdf"
+			(at 0 0 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "GNSS L1 LNA, 1550-1615 MHz, 16 dB, NF 0.85 dB, 1.5-3.6 V, DFN-6"
+			(at 0 0 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(symbol "ALND-WB-0014_0_1"
+			(rectangle
+				(start -6.35 7.62)
+				(end 6.35 -5.08)
+				(stroke
+					(width 0.254)
+					(type default)
+				)
+				(fill
+					(type background)
+				)
+			)
+		)
+		(symbol "ALND-WB-0014_1_1"
+			(pin power_in line
+				(at 0 10.16 270)
+				(length 2.54)
+				(name "VCC"
+					(effects
+						(font
+							(size 1.27 1.27)
+						)
+					)
+				)
+				(number "2"
+					(effects
+						(font
+							(size 1.27 1.27)
+						)
+					)
+				)
+			)
+			(pin output line
+				(at 8.89 2.54 180)
+				(length 2.54)
+				(name "RFOUT"
+					(effects
+						(font
+							(size 1.27 1.27)
+						)
+					)
+				)
+				(number "3"
+					(effects
+						(font
+							(size 1.27 1.27)
+						)
+					)
+				)
+			)
+			(pin input line
+				(at -8.89 2.54 0)
+				(length 2.54)
+				(name "RFIN"
+					(effects
+						(font
+							(size 1.27 1.27)
+						)
+					)
+				)
+				(number "5"
+					(effects
+						(font
+							(size 1.27 1.27)
+						)
+					)
+				)
+			)
+			(pin input line
+				(at -8.89 -2.54 0)
+				(length 2.54)
+				(name "EN"
+					(effects
+						(font
+							(size 1.27 1.27)
+						)
+					)
+				)
+				(number "6"
+					(effects
+						(font
+							(size 1.27 1.27)
+						)
+					)
+				)
+			)
+			(pin power_in line
+				(at 0 -11.43 90)
+				(length 6.35)
+				(name "GND"
+					(effects
+						(font
+							(size 1.27 1.27)
+						)
+					)
+				)
+				(number "{1,4}"
+					(effects
+						(font
+							(size 1.27 1.27)
+						)
+					)
+				)
+			)
+		)
+		(embedded_fonts no)
+	)
 	(symbol "AT6558R"
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -9,7 +177,7 @@
 		(in_pos_files yes)
 		(duplicate_pin_numbers_are_jumpers no)
 		(property "Reference" "U"
-			(at 0 30.48 0)
+			(at 0 2.54 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -19,7 +187,7 @@
 			)
 		)
 		(property "Value" "AT6558R-5N32"
-			(at 0 -30.48 0)
+			(at 0 0 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -85,8 +253,8 @@
 		)
 		(symbol "AT6558R_0_1"
 			(rectangle
-				(start -20.32 27.94)
-				(end 20.32 -27.94)
+				(start -20.32 33.02)
+				(end 20.32 -33.02)
 				(stroke
 					(width 0.254)
 					(type solid)
@@ -98,7 +266,7 @@
 		)
 		(symbol "AT6558R_1_1"
 			(pin power_out line
-				(at -12.7 30.48 270)
+				(at -12.7 35.56 270)
 				(length 2.54)
 				(name "VDD_ANA"
 					(effects
@@ -116,7 +284,7 @@
 				)
 			)
 			(pin power_out line
-				(at -10.16 30.48 270)
+				(at -10.16 35.56 270)
 				(length 2.54)
 				(name "VX_OUT"
 					(effects
@@ -170,7 +338,7 @@
 				)
 			)
 			(pin power_out line
-				(at -7.62 30.48 270)
+				(at -7.62 35.56 270)
 				(length 2.54)
 				(name "VDD12BK"
 					(effects
@@ -188,7 +356,7 @@
 				)
 			)
 			(pin power_in line
-				(at -5.08 30.48 270)
+				(at -5.08 35.56 270)
 				(length 2.54)
 				(name "VDD_BK"
 					(effects
@@ -206,7 +374,7 @@
 				)
 			)
 			(pin power_in line
-				(at -2.54 30.48 270)
+				(at -2.54 35.56 270)
 				(length 2.54)
 				(name "VDD_IO"
 					(effects
@@ -458,7 +626,7 @@
 				)
 			)
 			(pin power_in line
-				(at 0 30.48 270)
+				(at 0 35.56 270)
 				(length 2.54)
 				(name "DX_IN"
 					(effects
@@ -476,7 +644,7 @@
 				)
 			)
 			(pin power_out line
-				(at 2.54 30.48 270)
+				(at 2.54 35.56 270)
 				(length 2.54)
 				(name "DX_OUT"
 					(effects
@@ -494,7 +662,7 @@
 				)
 			)
 			(pin power_in line
-				(at 5.08 30.48 270)
+				(at 5.08 35.56 270)
 				(length 2.54)
 				(name "VCORE"
 					(effects
@@ -512,7 +680,7 @@
 				)
 			)
 			(pin power_out line
-				(at 7.62 30.48 270)
+				(at 7.62 35.56 270)
 				(length 2.54)
 				(name "VDD12BB"
 					(effects
@@ -764,7 +932,7 @@
 				)
 			)
 			(pin power_out line
-				(at 10.16 30.48 270)
+				(at 10.16 35.56 270)
 				(length 2.54)
 				(name "VDD_PLL"
 					(effects
@@ -782,7 +950,7 @@
 				)
 			)
 			(pin power_out line
-				(at 12.7 30.48 270)
+				(at 12.7 35.56 270)
 				(length 2.54)
 				(name "VDD_RF"
 					(effects
@@ -818,7 +986,7 @@
 				)
 			)
 			(pin power_in line
-				(at 0 -30.48 90)
+				(at 0 -35.56 90)
 				(length 2.54)
 				(name "GND"
 					(effects
@@ -1855,6 +2023,101 @@
 					)
 				)
 				(number "33"
+					(effects
+						(font
+							(size 1.27 1.27)
+						)
+					)
+				)
+			)
+		)
+		(embedded_fonts no)
+	)
+	(symbol "GNSS_Patch_PinFed"
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(duplicate_pin_numbers_are_jumpers no)
+		(property "Reference" "AE"
+			(at -6.35 3.81 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "GNSS_Patch_PinFed"
+			(at 0 10.16 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" "cc1200_balloon:Patch_AC33154-1T_15x15mm"
+			(at 0 0 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" "https://www.antennacompany.com/wp-content/uploads/datasheet/AC33154-1T-ds.pdf"
+			(at 0 0 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "Pin-fed ceramic GNSS patch antenna, feed pin and ground reference"
+			(at 0 0 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(symbol "GNSS_Patch_PinFed_0_1"
+			(polyline
+				(pts
+					(xy -3.81 6.35) (xy 3.81 6.35) (xy 3.81 0) (xy -3.81 0) (xy -3.81 6.35)
+				)
+				(stroke
+					(width 0.254)
+					(type default)
+				)
+				(fill
+					(type background)
+				)
+			)
+		)
+		(symbol "GNSS_Patch_PinFed_1_1"
+			(pin passive line
+				(at 0 -2.54 90)
+				(length 2.54)
+				(name "FEED"
+					(effects
+						(font
+							(size 1.27 1.27)
+						)
+					)
+				)
+				(number "1"
 					(effects
 						(font
 							(size 1.27 1.27)

@@ -76,32 +76,7 @@
           "width": 0.0
         }
       ],
-      "drc_exclusions": [
-        [
-          "courtyards_overlap|79415000|93590000|0349b818-fee8-4499-8d7c-9f00bbf1746e|8f407026-49d7-412b-b3cf-eadb327c0901",
-          "Excess couryard. Will fit fine."
-        ],
-        [
-          "courtyards_overlap|79445000|95580000|8f407026-49d7-412b-b3cf-eadb327c0901|98d4aea3-0b19-4bd4-ac1a-43363f24e676",
-          "Excess couryard. Will fit fine."
-        ],
-        [
-          "starved_thermal|100600000|98920000|87b10af7-4447-4cd3-ad1d-b50c24e67eb3|533939be-3201-48b8-bec7-87c0e8344831|F.Cu",
-          "Too tight for full thermal connection"
-        ],
-        [
-          "starved_thermal|102830000|101350000|87b10af7-4447-4cd3-ad1d-b50c24e67eb3|0d4d6ab4-929a-495e-8a2d-59c2ab760bcc|F.Cu",
-          "Too tight for full thermal connection."
-        ],
-        [
-          "starved_thermal|93620000|104950000|87b10af7-4447-4cd3-ad1d-b50c24e67eb3|2848af25-3bf7-40b5-ab9f-2774dcb73cf1|F.Cu",
-          "Too tight for full thermal connection"
-        ],
-        [
-          "starved_thermal|96315000|107550000|87b10af7-4447-4cd3-ad1d-b50c24e67eb3|0f9d8b28-50ee-4101-8d08-1f9edaee1dff|F.Cu",
-          "Too tight for full thermal connection."
-        ]
-      ],
+      "drc_exclusions": [],
       "meta": {
         "version": 2
       },
@@ -302,7 +277,13 @@
   },
   "boards": [],
   "component_class_settings": {
-    "assignments": [],
+    "assignments": [
+      {
+        "component_class": "RF",
+        "conditions": null,
+        "conditions_operator": "ALL"
+      }
+    ],
     "meta": {
       "version": 0
     },
@@ -565,6 +546,14 @@
         "via_diameter": 0.6,
         "via_drill": 0.3,
         "wire_width": 6
+      },
+      {
+        "clearance": 1.0,
+        "name": "RF",
+        "pcb_color": "rgba(0, 0, 0, 0.000)",
+        "priority": 0,
+        "schematic_color": "rgba(0, 0, 0, 0.000)",
+        "tuning_profile": ""
       }
     ],
     "meta": {
@@ -572,7 +561,20 @@
     },
     "net_colors": null,
     "netclass_assignments": null,
-    "netclass_patterns": []
+    "netclass_patterns": [
+      {
+        "netclass": "Default",
+        "pattern": "/GNSS/GNSS_RF_IN"
+      },
+      {
+        "netclass": "Default",
+        "pattern": "/GNSS/GNSS_ANT_BIAS"
+      },
+      {
+        "netclass": "RF",
+        "pattern": "/GNSS/GNSS_*_RF"
+      }
+    ]
   },
   "pcbnew": {
     "last_paths": {
@@ -722,7 +724,7 @@
         "uuid": "5283d11e-ccf0-51c0-83df-1e782a317298"
       }
     ],
-    "used_designators": "Q101,J1,J101,J301,#PWR1001,#PWR1003,#PWR1008-1009,#PWR1012,#PWR1014,#PWR2006-2007,#PWR3038,#PWR3042-3043,#PWR3048,#PWR4009,#PWR4011,#PWR4027-4028,#PWR4035,#PWR5009,#PWR5032-5033,#PWR5050,#PWR5054-5056,C107,C314,C318-319,C326,C414-416,H101-104,X301,X401-402,JP1-2,TP302,TP401-402,R103-104,R203-204,R404,R502-503",
+    "used_designators": "Q101,J1,J101,J301,#PWR1001,#PWR1003,#PWR1008-1009,#PWR1012,#PWR1014,#PWR2006-2007,#PWR3038,#PWR3042-3043,#PWR3048,#PWR4009,#PWR4011,#PWR4027-4028,#PWR4035,#PWR5009,#PWR5032-5033,#PWR5046-5050,#PWR5054-5056,C107,C314,C318-319,C326,C412,C414-416,C512-515,H101-104,X301,X401-402,JP1-2,TP302,TP401-402,R103-104,R203-204,R404,R502-503",
     "variants": []
   },
   "sheets": [

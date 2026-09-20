@@ -5,7 +5,7 @@ quality sensor stack, hosted by a Seeed Wio-E5 module. Four-layer 50 x 30 mm
 board, routed. The last full review is in `BOARD_REVIEW.md`; read its verdict
 table before ordering boards.
 
-The CC1200 radio and its 434 MHz matching network are carried over from the
+The CC1200 radio and its 434 MHz matching network components are carried over from the
 v1 design (an import of the Altus Metrum TeleMini netlist). Everything else
 is new: the Wio-E5 host, an AT6558R GNSS receiver and the sensor set from
 `Forest-Balloon.csv`.
