@@ -1543,7 +1543,7 @@
 							)
 						)
 					)
-					(number "{1,4}"
+					(number "[1,4]"
 						(effects
 							(font
 								(size 1.27 1.27)
@@ -3060,7 +3060,7 @@
 	)
 	(wire
 		(pts
-			(xy 135.89 104.14) (xy 135.89 109.22)
+			(xy 133.35 104.14) (xy 133.35 109.22)
 		)
 		(stroke
 			(width 0)
@@ -3090,7 +3090,7 @@
 	)
 	(wire
 		(pts
-			(xy 101.6 160.02) (xy 102.87 160.02)
+			(xy 97.79 160.02) (xy 111.76 160.02)
 		)
 		(stroke
 			(width 0)
@@ -3130,7 +3130,7 @@
 	)
 	(wire
 		(pts
-			(xy 69.85 160.02) (xy 93.98 160.02)
+			(xy 69.85 160.02) (xy 90.17 160.02)
 		)
 		(stroke
 			(width 0)
@@ -3170,7 +3170,7 @@
 	)
 	(wire
 		(pts
-			(xy 110.49 160.02) (xy 130.81 160.02)
+			(xy 119.38 160.02) (xy 138.43 160.02)
 		)
 		(stroke
 			(width 0)
@@ -3410,7 +3410,7 @@
 	)
 	(wire
 		(pts
-			(xy 170.18 104.14) (xy 135.89 104.14)
+			(xy 170.18 104.14) (xy 133.35 104.14)
 		)
 		(stroke
 			(width 0)
@@ -3430,7 +3430,7 @@
 	)
 	(wire
 		(pts
-			(xy 130.81 139.7) (xy 130.81 160.02)
+			(xy 138.43 139.7) (xy 138.43 160.02)
 		)
 		(stroke
 			(width 0)
@@ -3490,7 +3490,7 @@
 	)
 	(wire
 		(pts
-			(xy 130.81 139.7) (xy 175.26 139.7)
+			(xy 138.43 139.7) (xy 175.26 139.7)
 		)
 		(stroke
 			(width 0)
@@ -3590,7 +3590,7 @@
 	)
 	(wire
 		(pts
-			(xy 143.51 116.84) (xy 162.56 116.84)
+			(xy 140.97 116.84) (xy 162.56 116.84)
 		)
 		(stroke
 			(width 0)
@@ -3709,7 +3709,7 @@
 		(uuid "710023d0-76c3-581f-b494-505a09c0e51b")
 	)
 	(label "GNSS_LNA_OUT_RF"
-		(at 74.93 160.02 0)
+		(at 71.12 160.02 0)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -3819,7 +3819,7 @@
 		(uuid "be94875b-978a-5e73-9b87-d3e932d85f77")
 	)
 	(label "GNSS_IN_RF"
-		(at 123.19 160.02 180)
+		(at 135.89 160.02 180)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -3867,6 +3867,16 @@
 			(justify right bottom)
 		)
 		(uuid "f22cbcea-1cc5-5f1b-a8a0-4d2b48702b15")
+	)
+	(label "GNSS_LNA_RF"
+		(at 110.49 160.02 180)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right bottom)
+		)
+		(uuid "fd14b35e-e397-49ad-9834-0d04c0474b9f")
 	)
 	(global_label "GNSS_TX"
 		(shape passive)
@@ -4190,7 +4200,7 @@
 	)
 	(symbol
 		(lib_id "Oscillator:KT2520K-T")
-		(at 135.89 116.84 0)
+		(at 133.35 116.84 0)
 		(unit 1)
 		(body_style 1)
 		(exclude_from_sim no)
@@ -4200,7 +4210,7 @@
 		(dnp no)
 		(uuid "22f9bb82-8fa8-5b52-9ebd-96d2493ede24")
 		(property "Reference" "X401"
-			(at 123.698 115.57 0)
+			(at 121.158 115.57 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -4210,7 +4220,7 @@
 			)
 		)
 		(property "Value" "TCXO 26MHz"
-			(at 123.698 117.602 0)
+			(at 121.158 117.602 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -4220,7 +4230,7 @@
 			)
 		)
 		(property "Footprint" "Oscillator:Oscillator_SMD_Kyocera_2520-6Pin_2.5x2.0mm"
-			(at 135.89 116.84 0)
+			(at 133.35 116.84 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -4231,7 +4241,7 @@
 			)
 		)
 		(property "Datasheet" "https://www.ndk.com/en/products/upload/lineup/pdf/NDKT03-00022_en.pdf"
-			(at 135.89 116.84 0)
+			(at 133.35 116.84 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -4242,7 +4252,7 @@
 			)
 		)
 		(property "Description" ""
-			(at 135.89 116.84 0)
+			(at 133.35 116.84 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -4253,7 +4263,7 @@
 			)
 		)
 		(property "Manufacturer" "NDK (NIHON DEMPA KOGYO CO., LTD)"
-			(at 135.89 116.84 0)
+			(at 133.35 116.84 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -4264,7 +4274,7 @@
 			)
 		)
 		(property "MPN" "NSC5351B-26M"
-			(at 135.89 116.84 0)
+			(at 133.35 116.84 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -4491,7 +4501,7 @@
 				)
 			)
 		)
-		(pin "{1,4}"
+		(pin "[1,4]"
 			(uuid "956b646d-6371-5988-8d8a-e663d43e661a")
 		)
 		(pin "2"
@@ -4873,7 +4883,7 @@
 	)
 	(symbol
 		(lib_id "Device:C")
-		(at 97.79 160.02 90)
+		(at 93.98 160.02 90)
 		(unit 1)
 		(body_style 1)
 		(exclude_from_sim no)
@@ -4884,7 +4894,7 @@
 		(fields_autoplaced yes)
 		(uuid "5a6ffaf8-95ac-5b01-a0a3-30f7257f4d4f")
 		(property "Reference" "C402"
-			(at 97.79 152.4 90)
+			(at 93.98 152.4 90)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -4894,7 +4904,7 @@
 			)
 		)
 		(property "Value" "100p"
-			(at 97.79 154.94 90)
+			(at 93.98 154.94 90)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -4904,7 +4914,7 @@
 			)
 		)
 		(property "Footprint" "Capacitor_SMD:C_0402_1005Metric"
-			(at 97.79 160.02 0)
+			(at 93.98 160.02 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -4915,7 +4925,7 @@
 			)
 		)
 		(property "Datasheet" "https://www.murata.com/en-us/products/productdetail?partno=GRM1555C1H101JA01D%23"
-			(at 97.79 160.02 0)
+			(at 93.98 160.02 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -4926,7 +4936,7 @@
 			)
 		)
 		(property "Description" ""
-			(at 97.79 160.02 0)
+			(at 93.98 160.02 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -4937,7 +4947,7 @@
 			)
 		)
 		(property "Manufacturer" "Murata Electronics"
-			(at 97.79 160.02 0)
+			(at 93.98 160.02 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -4948,7 +4958,7 @@
 			)
 		)
 		(property "MPN" "GRM1555C1H101JA01D"
-			(at 97.79 160.02 0)
+			(at 93.98 160.02 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -5129,7 +5139,7 @@
 	)
 	(symbol
 		(lib_id "Device:L")
-		(at 106.68 160.02 90)
+		(at 115.57 160.02 90)
 		(unit 1)
 		(body_style 1)
 		(exclude_from_sim no)
@@ -5140,7 +5150,7 @@
 		(fields_autoplaced yes)
 		(uuid "652c4ba9-0993-57f9-99b3-2a30a8c6b66f")
 		(property "Reference" "L402"
-			(at 106.68 154.94 90)
+			(at 115.57 154.94 90)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -5150,7 +5160,7 @@
 			)
 		)
 		(property "Value" "6n8"
-			(at 106.68 157.48 90)
+			(at 115.57 157.48 90)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -5160,7 +5170,7 @@
 			)
 		)
 		(property "Footprint" "Inductor_SMD:L_0402_1005Metric"
-			(at 106.68 160.02 0)
+			(at 115.57 160.02 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -5171,7 +5181,7 @@
 			)
 		)
 		(property "Datasheet" "https://www.murata.com/en-us/products/productdetail?partno=LQW15AN6N8H00D%23"
-			(at 106.68 160.02 0)
+			(at 115.57 160.02 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -5182,7 +5192,7 @@
 			)
 		)
 		(property "Description" ""
-			(at 106.68 160.02 0)
+			(at 115.57 160.02 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -5193,7 +5203,7 @@
 			)
 		)
 		(property "Manufacturer" "Murata Electronics"
-			(at 106.68 160.02 0)
+			(at 115.57 160.02 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -5204,7 +5214,7 @@
 			)
 		)
 		(property "MPN" "LQW15AN6N8H00D"
-			(at 106.68 160.02 0)
+			(at 115.57 160.02 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -7060,7 +7070,7 @@
 	)
 	(symbol
 		(lib_id "power:GND")
-		(at 135.89 124.46 0)
+		(at 133.35 124.46 0)
 		(unit 1)
 		(body_style 1)
 		(exclude_from_sim no)
@@ -7070,7 +7080,7 @@
 		(dnp no)
 		(uuid "d04d3027-2489-500f-a967-1a65b77dbdca")
 		(property "Reference" "#PWR4023"
-			(at 135.89 130.81 0)
+			(at 133.35 130.81 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -7081,7 +7091,7 @@
 			)
 		)
 		(property "Value" "GND"
-			(at 135.89 128.27 0)
+			(at 133.35 128.27 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -7091,7 +7101,7 @@
 			)
 		)
 		(property "Footprint" ""
-			(at 135.89 124.46 0)
+			(at 133.35 124.46 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -7102,7 +7112,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 135.89 124.46 0)
+			(at 133.35 124.46 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -7113,7 +7123,7 @@
 			)
 		)
 		(property "Description" "Power symbol creates a global label with name GND , ground"
-			(at 135.89 124.46 0)
+			(at 133.35 124.46 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
