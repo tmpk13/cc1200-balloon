@@ -1,231 +1,547 @@
 # Board review: cc1200-balloon
 
-Reviewed 2026-09-15 against commit `65ec5d5` plus the working tree (the
-routed four-layer board, 50 x 30 mm). Everything below was checked against
-the files on disk and the manufacturers' data sheets, not against
-`sheets/*.json`, which no longer describes the design (see section 7).
+Reviewed 2026-09-20 against commit `3c0c6dd` ("Add PMOS.") plus the two
+untracked footprints in the working tree. Four-layer 50 x 30 mm board, 106
+placements, routed. Everything below was measured from the files on disk and
+checked against the manufacturers' data sheets. `sheets/*.json` was ignored
+throughout; it has not described this design since 2026-09-06.
+
+Three things changed since the 2026-09-15 review and all three are the
+subject of new findings: the GNSS front end became an on-board ceramic patch
+plus an Abracon LNA, the TCXO was re-sourced, and a P-FET burn/cutdown
+channel was added on `PA15`.
 
 ## 1. Verdict
 
-The schematic is electrically sound except for one wiring error on the
-GNSS TCXO, and the board is routed, DRC-clean apart from six cosmetic
-errors, and in parity with the schematic apart from three parked mounting
-holes. Three items must be fixed before fabrication, five should be, and
-the rest are notes.
+The GNSS front end rework is the right idea and mostly correct, but it went
+onto the board without its matching network and with the patch hanging off
+the board edge. The new burn channel is wired from a SPICE simulation symbol
+whose pin numbering is the reverse of every real SOT-523 MOSFET, and its gate
+has nothing holding it off. Five items block fabrication.
 
 | # | Severity | Item | Fix |
 | --- | --- | --- | --- |
-| 1 | blocking | `X401` pin 1 is tied to `VX_OUT`; on every candidate TCXO that pin is GND or NC, and the named Kyocera part is a 6-pad package that does not fit the 4-pad footprint | disconnect pin 1 from `GNSS_VX`, tie to GND; MPN changed to Pletronics UCF4031035LK005000-26MDK |
-| 2 | blocking | BMV080 I2C address pins `CSB`/`MISO` float: `JP1`/`JP2` are open by default and the data sheet says a floating pin gives an undefined address | use the bridged-by-default 3-pad jumper, or add 100k pull-downs |
-| 3 | blocking | BMV080 laser supply `VDDL` needs 3.3 V +-5 %; the rail is the cell, 2.5 to 3.6 V; only one 1 uF serves three supply pins that each want more than 1 uF | dedicated 3.3 V LDO for the sensor, or accept out-of-window operation; restore per-pin 1 uF and the 100 nF on `VDDIO` |
-| 4 | major | Rail bulk capacitance fell from 76 uF to about 12 uF nominal (about 5 uF at 3.6 V DC bias); the SCD40 draws 205 mA peaks and the CC1200 up to 120 mA in TX from a cell with ohms of internal resistance | restore 22 uF 0805 at the battery entry and at the SCD40 |
-| 5 | major | CC1200 crystal is 6.9 mm from the chip; `XOSC_Q1`/`Q2` traces are 6.1 and 6.2 mm | move `X301` and `C318`/`C319` to within 2.5 mm of pins 30/31 |
-| 6 | major | RF ground returns through single thermal spokes: `L307.2` (LNA shunt), `C302.2`, `C307.2`, `C319.2` (DRC starved_thermal); `C324.1` (TX shunt) and `C301.2` have no GND via within 1.5 mm; exposed pad has 4 vias | solid zone connection for the radio block, one via at every GND pad, 3 x 3 vias in the pad |
-| 7 | major | Only one mounting hole is on the board; `H101`-`H103` sit at x = 133.75, outside the 75..125 outline (`H102`-`H104` are also missing from the schematic) | place or delete them, then add the survivors to the schematic |
-| 8 | major | `C402` and `L401` overlap the `J401` SMA courtyard by 0.5 mm | move the bias-T parts 1 mm inboard |
-| 9 | minor | `X402` was a 12.5 pF crystal against the AT6558R's 8 pF | MPN changed to Epson FC3215AN 32.768K-90NN60KC5 (9 pF) |
-| 10 | minor | `JP1` is labelled IAB0 but drives `CSB`, which the BMV080 calls IAB1; `JP2` the reverse | swap the two values, or the silkscreen legend |
-| 11 | minor | `PM_CS` global label on `PA15` connects to nothing (ERC warning) | no-connect flag, or delete the label |
-| 12 | minor | `JP1`/`JP2` symbol differs from the library copy (ERC warning) | Update Symbols from Library |
-| 13 | minor | `PB13` (`VBAT_SENSE`) is also the Wio-E5 boot pin; `C107` holds it low for about 5 ms at power-up | harmless with your own firmware; keep in mind when unlocking the module's factory RDP |
-| 14 | note | README describes a power switch, soft start, TVS, solder-pad antennas and "no PCB layout"; none of that matches the files | README rewritten in this pass |
+| 1 | blocking | `Q1` uses `Simulation_SPICE:PMOS` (pins 1=D, 2=G, 3=S) on a SOT-523 land; every real SOT-523 MOSFET is 1=G, 2=S, 3=D, so `+BATT` lands on the drain, the burn load on the gate and `PA15` on the source | choose a real part, replace the symbol, re-check the three pads |
+| 2 | blocking | `Q1` gate net has two nodes, `Q1.2` and `U201.6`; nothing holds a high-side P-FET off while the MCU is in reset | 100 k gate pull-up to `+BATT`, 1 k in series to `PA15` |
+| 3 | blocking | The `ALND-WB-0014` LNA has no input match and no input DC block; the data sheet requires an 8.2 nH inductor and the evaluation board adds 1 nF at both ports | add the 8.2 nH and the series cap on `GNSS_LNA_IN_RF` |
+| 4 | blocking | `J401` 15 x 15 mm patch body reaches x = 75.09 against a board edge at x = 75.00; its courtyard crosses the edge and its silkscreen is clipped | move the patch inboard, or widen the board |
+| 5 | blocking | `C512`, `C513`, `C515` are valued `10u` but carry `LMK105BJ105KVHF`, the **1 uF** part used everywhere else; rail bulk is 43.5 uF as drawn and 16.5 uF as ordered | set the MPN to a real 10 uF part and add it to `tools/parts.json` |
+| 6 | major | `GNSS_ONOFF` runs 18.9 mm on `B.Cu` under the patch, 12.65 mm of it straight through the middle of the radiator | reroute outside the patch outline |
+| 7 | major | `X401` NDK `NSC5351B-26M` is rated 1.7 to 3.3 V and is fed from `VX_OUT`, specified 2.7 to 3.6 V | accept 3.3 to 3.6 V as out of window, or pick a 3.6 V TCXO |
+| 8 | major | LNA bypass is one 100 nF 3.57 mm from `U402` pin 2; the evaluation board uses 1 uF plus 1 nF at the part | 1 nF at the pad, keep the 100 nF as bulk |
+| 9 | major | `U402` pads 1 and 4, both GND, each reach the pour through one thermal spoke | solid connection, ground via at each pad |
+| 10 | major | `C107` body overlaps the Wio-E5 body by 0.08 x 0.50 mm; `R103` clears it by 0.08 mm | move both clear of x = 118.88 |
+| 11 | major | 28 unique DRC errors, 13 of them clearance in the GNSS RF corner | see section 6 |
+| 12 | major | Exposed-pad stitching unchanged: `U301` 4 vias, `U401` 4, `U501` 3, `U502` 1 | 3 x 3 in `U301` and `U401` |
+| 13 | major | CC1200 crystal and RF chain unchanged from the last review; LNA legs still unbalanced by 2.67 mm | `LAYOUT_PRIORITY.md` items 6, 7, 9 |
+| 14 | major | No bulk at the battery entry; nearest is `C202` 4.7 uF at 19.2 mm from `Q101` | 22 uF at `Q101` source |
+| 15 | minor | Burn current runs through 7.5 mm of 0.2 mm track and one 0.3 mm via; `J1` pads sit at 0.15 mm | widen, stitch, set a local clearance on `J1` |
+| 16 | minor | `H101`/`H102` hole clearances, `H102` over `D201`, and both holes on the top edge only | move vias, add bottom-edge support |
+| 17 | minor | Patch plus 16 dB LNA is below the AT6558R's recommended 18 to 35 dB of external gain | accept, or a higher-gain LNA |
+| 18 | minor | BMV080 address jumpers still open, `VDDL` still out of window, `JP1`/`JP2` legends still swapped | carried from 2026-09-15, items 2, 3, 10 |
+| 19 | minor | Six symbols unresolved by the BOM tools, so `digikey_bom.csv` and `BOM.md` cannot be regenerated and are stale | add the six to `tools/parts.json` |
 
-## 2. What was verified and found correct
+ERC is clean apart from two `lib_symbol_mismatch` warnings on `JP1`/`JP2`.
+Schematic parity is exact: 0 unconnected items, 0 parity issues, no orphan
+footprints.
 
-Pinouts, checked pin by pin against the data sheets:
+## 2. The burn channel
 
-- `U201` Wio-E5: all 28 pins match Seeed's table. DigiKey 114993120 is
-  the Wio-E5-LE; its pin table is identical to the Wio-E5's, the
-  difference is 14 dBm instead of 22 dBm on the module's own radio.
-- `U301` CC1200: all 32 pins plus the pad match TI's table; `EXT_XOSC`
-  grounded for crystal operation, the four regulator decoupling pins, the
-  1.8 nF loop filter and the 56 k `RBIAS` are as specified. Crystal
-  `CX3225SB40000D0FPLCC` is CL 8 pF, ESR 50 ohm (TI: 10 pF, 60 ohm max);
-  two 12 pF caps plus stray give about 8 to 9 pF, correct for this part.
-- `U401` AT6558R: all 40 pins match section 2.2 of the data sheet. Supply
-  scheme, `VDD12BK` 1 uF (which the data sheet says may never be removed),
-  bias-T values, 100 pF DC block, `TEST` pulled low, `nRST` floating,
-  bare RTC crystal with no load caps: all as the reference design.
-- `U501` SCD40, `U503`/`U504` BME688: stock symbols, wiring correct;
-  BME688 `SDO` low/high gives 0x76/0x77, `CSB` high selects I2C.
-- `U502` AS3935: regulator bypassed (`VREG` to `VDD`, `EN_VREG` low) is
-  the data sheet's configuration for 2.4 to 3.6 V; `SI` high selects I2C;
-  `AD0`/`AD1` high gives address 0x03; 10 uF on `ACG` and 1 uF on `VDD`
-  match figure 19; `CS` high is right for I2C mode. The data sheet asks
-  for a pull-up above 10 k on `SCL`; the shared 4.7 k is stronger, which
-  does no harm at 100 kHz. It also adds its own 10 k pull-up to `SDA` in
-  I2C mode, so `SDA` sees 4.7 k in parallel with 10 k.
-- `J501` BMV080: all 13 contacts match table 11; `PS` high selects I2C,
-  `SCK`/`MOSI` become `SCL`/`SDA`, `IRQ` is open-drain active low with an
-  internal pull-up. Pin numbering convention (odd contacts in the front
-  row, pin 1 on the left with the flex entering from the front, viewed
-  from the top) matches figure 11 of the data sheet; the side the Kyocera
-  drawing puts pin 1 on was not independently confirmed.
-- `Q101` DMG3401LSN reverse block: drain on the battery, source on the
-  load, gate to ground. Correct orientation; the body diode is reverse
-  biased with a reversed cell.
-- I2C bus: `SCL` on `PB6`, `SDA` on `PB7`, correct at all five devices
-  (the swap found in the previous review is fixed).
-- UART crossing to the GNSS, SPI to the CC1200, interrupt lines on
-  distinct EXTI lines, status LED polarity, `NRST` network: correct.
-- Netlist: the field patch in this pass left every net identical (checked
-  by exporting the netlist before and after).
+`Q1` is new, and it is the most dangerous item in this review because the
+failure mode is an unintended cutdown.
 
-Checks run: full-hierarchy ERC (3 warnings, items 11 and 12), DRC with
-zones refilled and schematic parity (6 errors, items 6 and 8; 3 parity
-warnings, item 7), and a pad-to-pin measurement script over the board.
+```
++BATT -- Q1 (P-FET high side) -- J1.1 -- burn wire -- J1.2 -- GND
+                  |
+                PA15
+```
 
-## 3. Item 1 in detail: the TCXO
+**Item 1, the pin mapping.** The symbol is `Simulation_SPICE:PMOS`. Its
+`Sim.Pins` property reads `1=D 2=G 3=S`, and the symbol's pins are numbered
+to match. It is a simulation primitive, not a transistor, and it carries no
+MPN, no manufacturer and no orderable part.
 
-The GNSS sheet wires `X401` pin 1 to `GNSS_VX` (the AT6558R's `VX_OUT`
-supply for the TCXO). The symbol is `Oscillator:ECS-2520MV-xxx-xx`, whose
-pin 1 is an output-enable, and the AT6558R reference schematic shows an
-EN-type TCXO with EN tied high, so the wiring follows the reference.
+The land is `Package_TO_SOT_SMD:SOT-523`, whose pads 1 and 2 are the pair on
+one side and pad 3 is the lone pin on the other. On every real SOT-523
+MOSFET the lone pin is the drain. The Diodes DMG1013T data sheet top view
+shows D alone on one side with G and S facing it, giving the usual 1 = G,
+2 = S, 3 = D. So the board as routed would connect:
 
-The part named on the symbol, Kyocera KT2520K26000ACW33T, is what the
-AT6558R data sheet's own BOM table lists, but:
-
-- it is a six-terminal 2.5 x 2.0 mm package (pins 1, 3 GND; 4 out; 6 Vcc;
-  2, 5 NC), so it does not land on the four-pad footprint at all;
-- its pin 1 is GND on the TCXO variant and Vcont on the VCTCXO variant,
-  never an enable;
-- DigiKey stocks none of the KT2520K26000 variants in cut tape.
-
-The only cut-tape 26 MHz, 0.5 ppm, clipped-sine 2520 TCXO DigiKey has is
-the Pletronics UCF4031035LK005000-26MDK, which is now the MPN on `X401`.
-Its pad 1 is "Gnd/NC" (Vc only on the VCTCXO variant), pad 2 GND, 3 out,
-4 Vcc. With the schematic as drawn, `VX_OUT` would be shorted to ground
-through pad 1. Fix: remove the wire from pin 1 to `GNSS_VX` and tie pin 1
-to GND (also correct for the Kyocera part if it is ever used on a
-six-pad footprint). On the board the trace `X401.1` to `GNSS_VX` is
-4.75 mm long and has to go too.
-
-Two caveats travel with the substitute: its supply window is 3.1 to
-3.5 V (part number code 031/035), and the clipped-sine output level is
-0.8 Vpp minimum against the AT6558R's 0.5 to 1.5 Vpp `XREF` window,
-which is fine. The Epson TG2520SMN 26.0000M-TCGNNM0 (1.7 to 3.63 V,
-pin 1 NC) would suit the unregulated rail better but is reel-only at
-DigiKey; consider it for a production run.
-
-## 4. Supply windows on the unregulated rail
-
-The rail is the cell minus one Rds(on). A fresh bobbin LiSOCl2 cell rests
-near 3.67 V and delivers about 3.6 V under light load, falling toward 3.0 V
-at end of life.
-
-| Part | Operating window | Comment |
+| Board pad | Net today | What a real part puts there |
 | --- | --- | --- |
-| Wio-E5 | 1.8 to 3.6 V | absolute max 3.9 V |
-| CC1200 | 2.0 to 3.6 V | absolute max 3.9 V |
-| AT6558R `VDD_IO`, `DX_IN` | 2.7 to 3.6 V | POR at 2.45 V |
-| TCXO (Pletronics) | 3.1 to 3.5 V | see section 3 |
-| SCD40 | 2.4 to 5.5 V | 205 mA peaks during a measurement |
-| AS3935, regulator off | 2.4 to 3.6 V | |
-| BME688 | 1.71 to 3.6 V | |
-| BMV080 `VDDL` | 3.135 to 3.465 V | laser supply; abs max 3.6 V |
-| BMV080 `VDDA`, `VDDD` | 2.375 to 3.465 V | abs max 3.6 V |
-| BMV080 `VDDIO` | 1.14 to 3.465 V | abs max 3.6 V |
-| AANI-AP-0158-1 antenna | not checked | fed from `ANT_BIAS`, so from `VDD_IO` |
+| 1 | `Net-(J1-Pin_1)`, the burn load | Gate |
+| 2 | `Net-(Q1-G)`, `PA15` | Source |
+| 3 | `+BATT` | Drain |
 
-The BMV080 is the most expensive part on the board and the one with the
-narrowest window: above 3.465 V at a fresh cell and below 3.135 V for most
-of the discharge curve. A small 3.3 V LDO (or the buck-boost that was
-removed on 2026-08-30) is the honest fix; the TCXO would benefit from the
-same rail.
+Nothing about this arrangement works. Pick the part first, then redraw the
+symbol from its data sheet.
+
+**Item 2, the floating gate.** `Net-(Q1-G)` has exactly two nodes: `Q1.2` and
+`U201.6`. There is no pull-up. A P-channel high-side switch is on whenever
+its gate is more than a threshold below its source, and an MCU pin that has
+not been configured yet is an input.
+
+`PA15` on the STM32WLE5 is JTDI, which comes out of reset with an internal
+pull-up, so in the normal case the gate is held near `+BATT` and the FET is
+off. That is a mitigation, not a design. It does not cover the supply ramp
+before the core releases reset, it does not cover a firmware that
+reconfigures the SWJ pins, and it puts a pyrotechnic-class output behind an
+undocumented internal resistor.
+
+```mermaid
+gantt
+    title Q1 gate state from cell connection, milliseconds
+    dateFormat x
+    axisFormat %L
+    section Rail
+    +BATT ramps at Q101           :0, 2
+    +BATT stable                  :2, 60
+    section Gate as drawn
+    undefined, FET may conduct    :crit, 0, 12
+    held by the PA15 pull-up      :active, 12, 60
+    section Gate with a 100k pull-up
+    tracks the rail, FET off      :done, 0, 60
+```
+
+Add a 100 k from gate to `+BATT` and 1 k in series to `PA15`. The pull-up
+costs 36 uA only while the FET is commanded on.
+
+**Item 15, the current path.** `Net-(J1-Pin_1)` is 7.48 mm of 0.2 mm track,
+and the `+BATT` feed reaches `Q1` pin 3 through 0.68 mm of 0.6 mm track and a
+single 0.6/0.3 mm via. A 0.2 mm outer-layer track in 1 oz copper carries
+about 1.1 A at a 10 C rise. Nichrome cutdown loops usually want 1 to 3 A.
+Everything also passes through `Q101`, which is fine for a short pulse but
+should be stated. `J1` is a 1.0 mm pitch header whose 0.85 mm pads sit
+0.15 mm apart, against a 0.2 mm netclass rule; that is inherent to the
+footprint and needs a local clearance override or a different connector.
+
+There is no series fuse, no current limit and no documentation of the
+intended load anywhere in the repository. Size the trace and the via to the
+wire before ordering.
+
+## 3. The GNSS front end
+
+The SMA jack and the off-board active antenna are gone. In their place:
+`J401`, a 15 x 15 mm ceramic patch on the back of the board, feeding `U402`,
+an Abracon `ALND-WB-0014` LNA on the front, into the AT6558R.
 
 ```mermaid
 flowchart LR
-    J101[J101 cell 2.5 to 3.6 V] --> Q101[Q101 reverse block]
-    Q101 --> BATT[+BATT unregulated]
-    BATT --> U201[Wio-E5 1.8 to 3.6]
-    BATT --> U301[CC1200 2.0 to 3.6]
-    BATT --> U401[AT6558R 2.7 to 3.6]
-    U401 -->|VX_OUT| X401[TCXO 3.1 to 3.5]
-    BATT --> SENS[SCD40 AS3935 BME688 x2]
-    BATT --> J501[BMV080 VDDL 3.135 to 3.465]
+    J401["J401 AC33154-1T patch<br/>15x15 mm, B.Cu"] -->|GNSS_LNA_IN_RF<br/>no match, no DC block| U402["U402 ALND-WB-0014<br/>16 dB, NF 0.85 dB"]
+    U402 -->|GNSS_LNA_OUT_RF| C402["C402 100p<br/>DC block"]
+    C402 --> L402["L402 6n8<br/>series match"]
+    L402 -->|GNSS_IN_RF| U401["U401 AT6558R<br/>RF_IN pin 40"]
+    U401 -->|ANT_BIAS pin 10| BIAS["C401 100n"]
+    BIAS --> U402
 ```
 
-## 5. Layout measurements
+### What is right
 
-Radio block, `U301` at (98.25, 103.70) rotated -90 degrees:
+- **Pinout.** `U402` pins 1 GND, 2 VCC, 3 RFOUT, 4 GND, 5 RFIN, 6 EN match
+  the data sheet pin table exactly, and the land pattern in
+  `lib/cc1200_balloon.pretty/Abracon_DFN-6_1.1x0.7mm.kicad_mod` is the
+  data sheet's own 6 x 0.25 mm pads on a 0.4 mm grid.
+- **The bias-T is correctly gone.** With the DC no longer on the RF line
+  there is nothing for the 33 nH choke to block, so deleting `L401` was
+  right. `ANT_BIAS` now powers the LNA directly, and the numbers work: the
+  chip's antenna-detect threshold is 2.5 mA and the LNA draws 5.26 mA
+  typical, so detection reads "antenna present"; short-circuit protection
+  trips at 45 to 60 mA; the detect circuit's drop is 0.3 V at 50 mA, so
+  about 30 mV here.
+- **Sleep behaves.** Section 8.6's power table turns the antenna supply off
+  when `ON_OFF` is low, so the external LNA powers down with the receiver
+  instead of drawing 5 mA through the flight.
+- **EN tied to VCC** is legal: logic high is 1.2 V minimum, absolute maximum
+  4.0 V.
+- **The output DC block is present.** `C402` 100 pF keeps DC off `RF_IN`,
+  which the data sheet caps at 1.2 V.
 
-| Part | To | Distance | Target |
+### Item 3: the input match is missing
+
+The data sheet's own summary says the part "requires only one external
+inductor and capacitor", note 1 under the electrical specification says
+"input matched to 50 ohms using a high quality-factor 8.2nH inductor", and
+the evaluation board BOM is `L1` 8.2 nH `LQW15AN8N2J00D`, `C1`/`C2` 1 nF at
+both ports and `C3` 1 uF on VCC.
+
+On this board the patch feed runs 1.41 mm of 0.2 mm track straight into pin
+5. There is no inductor and no series capacitor. Without the match the LNA
+input is not 50 ohm, so the 0.85 dB noise figure and 16 dB gain in the table
+do not apply, and this sits at the very front of the receive chain where
+every tenth of a dB is a tenth of a dB of sensitivity.
+
+The evaluation board figure does not resolve whether the 8.2 nH is series or
+shunt at the RFIN node. Confirm with Abracon before committing a footprint.
+
+### Item 4: the patch overhangs the board edge
+
+| Measurement | Value |
+| --- | --- |
+| Patch body | x 75.09 to 90.09, y 91.23 to 106.23 |
+| Board outline | x 75.00 to 125.00, y 85.00 to 115.00 |
+| Margin, left | 0.09 mm |
+| Margin, top / bottom | 6.23 mm / 8.77 mm |
+| Courtyard, left | x 74.89, 0.11 mm outside the board |
+
+The silkscreen is already clipped by the edge in three places, which is what
+DRC is reporting. Mechanically the ceramic will sit flush with or slightly
+proud of the edge, with its 3M 9448A adhesive pad partly unsupported.
+
+Electrically it is worse. The data sheet characterizes the antenna on a
+50 x 50 mm ground plane, and every number in the RF table (VSWR 1.2, peak
+gain 2.1 dBi, 57 % efficiency) is measured there. This board is 50 x 30 mm
+and the patch has essentially no ground plane on one side. Expect the
+resonance to move off 1575 MHz and the pattern to tilt away from the short
+side. Nothing on the board can tune that out.
+
+### Item 6: a control line crosses the antenna ground
+
+`GNSS_ONOFF` is routed on `B.Cu`, the same layer the patch is mounted on,
+and 18.9 mm of it lies inside the patch outline, including one run from
+(84.7, 103.4) to (84.7, 90.75) that crosses the radiator end to end 1.9 mm
+from its center. The slot it cuts in the pour is directly under the patch.
+
+Move it to `F.Cu` or around the patch footprint. It is a sleep control line
+with no timing constraint, so the detour is free.
+
+### Item 8: LNA bypassing
+
+`C401` 100 nF is 3.57 mm from `U402` pin 2. At 1.575 GHz an 0402 100 nF is
+well above its self-resonance and 3.6 mm of track adds about 3 nH in series.
+The pin is effectively unbypassed at the operating frequency, which for a
+16 dB gain block is how you get instability and supply-coupled spurs. The
+evaluation board uses 1 uF plus 1 nF. Put a 1 nF within 1 mm of pin 2 and
+leave `C401` where it is as bulk.
+
+### Item 17: gain budget
+
+Section 8.2 of the AT6558R data sheet asks for 18 to 35 dB of gain in the
+external antenna unit. The LNA is 16 dB typical, 15 dB minimum, and the
+match and trace losses come off that. This is below the recommendation
+rather than outside a hard limit, and the receiver will work, but there is
+no margin for the missing input match to eat.
+
+## 4. The TCXO
+
+The blocking defect from the last review is fixed. `X401` pin 1 is no longer
+tied to `VX_OUT`.
+
+The part is now the NDK `NSC5351B-26M` (NT2520SE family), and the wiring
+matches its terminal table exactly: pins 1 and 3 to GND, pin 4 the output,
+pin 6 Vcc, pins 2 and 5 unconnected. The data sheet's mandatory 1000 pF
+output DC-cut capacitor is present as `C416`, in series between pin 4 and
+`XREF`. Output level is 0.8 Vpp minimum against the chip's 0.5 to 1.5 Vpp
+`XREF` window, and stability is 0.5 ppm over -40 to +105 C, which meets
+section 8.4's request for better than 0.5 ppm.
+
+The footprint is the stock Kyocera 2520 6-pin land. Compared against the
+NDK recommended land it matches on every dimension except the outer pad
+length, 0.825 mm here against 0.95 mm recommended, with the difference taken
+off the inboard end. That is a usable land, not a defect.
+
+**Item 7.** The NDK part is specified 1.7 to 3.3 V, typical 1.8 V, absolute
+maximum 4.6 V. It is powered from `VX_OUT`, which the AT6558R pin table
+gives as 2.7 to 3.6 V. On a fresh cell the TCXO runs roughly 0.3 V above its
+recommended maximum. It will not be damaged, and the frequency/voltage
+coefficient is only 0.2 ppm for a 5 % supply change, but the part is out of
+its specified window for the first part of every flight. Either accept that
+in writing or choose a TCXO rated to 3.6 V.
+
+Two smaller notes from the same data sheet: it asks for a 0.01 uF bypass
+close to the product, and `C412` 100 nF is 3.0 mm from pin 6 and 1.43 mm
+from the chip, so it is bypassing the wrong end; and it asks for ground
+under the oscillator for frequency establishment, which the `F.Cu` pour
+provides.
+
+## 5. Power and the bill of materials
+
+### Item 5: three capacitors have the wrong part number
+
+| Ref | Value on the symbol | MPN on the symbol | What that MPN is |
 | --- | --- | --- | --- |
-| `C301`-`C309` 47n | nearest supply pin | 1.2 to 2.0 mm | <= 2 mm, ok |
-| `C313` 220n `DCPL` | pin 6 | 1.61 mm | <= 1.5 mm |
-| `C314` 10n `DCPL_VCO` | pin 21 | 1.60 mm | <= 1.0 mm |
-| `C315` 47n `DCPL_PFD_CHP` | pin 26 | 1.96 mm | <= 1.0 mm |
-| `C316` 47n `DCPL_XOSC` | pin 29 | 1.80 mm | <= 1.0 mm |
-| `C317` 1n8 loop filter | pins 23/24 | 1.30 / 2.34 mm | ok |
-| `X301` crystal | chip center | 6.93 mm | <= 2.5 mm to pins 30/31 |
-| `C318` 12p | pin 30 | 3.33 mm | between crystal and pin |
-| `R301` 56k | pin 14 | 3.22 mm | <= 2 mm |
-| `L301` 56n | pin 17 `PA` | 4.42 mm | <= 1.5 mm |
-| `C323` 5p1 | pin 18 `TRX_SW` | 3.75 mm | <= 1.5 mm |
-| `L307` 27n shunt | pin 19 `LNA_P` | 1.43 mm | ok, but GND on one spoke |
-| `L308` 27n | pin 20 `LNA_N` | 4.10 mm | match `L307` within 0.3 mm |
-| `C325`, `C326` 5p1 | pins 19/20 | 4.17 / 4.37 mm | <= 2 mm |
-| exposed pad | GND vias | 4 | 9 |
+| `C512` | 10u | `LMK105BJ105KVHF` | 1 uF 0402, the part used for all eight 1u lines |
+| `C513` | 10u | `LMK105BJ105KVHF` | same |
+| `C515` | 10u | `LMK105BJ105KVHF` | same |
 
-The decoupling ring is placed well; the RF path and the crystal are the
-loose parts. The `+BATT` feed to the PA bias (`R302`/`C320`) is 7 mm from
-the chip, which is fine for a DC feed behind a 56 nH choke.
+The three were added to give the AS3935, the SCD40 and the BMV080 local
+bulk, and they are placed correctly for that: `C512` 1.30 mm from `U502`
+pin 5, `C513` 2.73 mm from `U501` pin 19, `C515` 2.47 mm from `J501` pin 8.
+The intent is right and the placement is right; only the ordering
+information is wrong, and it is wrong in the direction that fails quietly.
 
-GNSS block, `U401` at (86.92, 93.19): LDO caps 1.2 to 1.7 mm from their
-pins, `DX_IN` 4.7 uF at 1.9 mm, `VCORE` 4.7 uF at 3.5 mm, TCXO output
-trace 3.1 mm, `RF_IN` trace 3.6 mm at 0.2 mm width (about 47 ohm over the
-0.1 mm prepreg to the In1 ground plane), bias-T inductor next to the SMA.
-Four vias in the exposed pad. Good.
+Rail bulk on `+BATT`, counting every capacitor on the net:
 
-Other: the AS3935 loop antenna `L501` is 9.8 mm from the GNSS DC-DC
-inductor `L403`; the sensor listens at 500 kHz and the DC-DC's harmonics
-may register as disturbers. Section 8.7 of the AT6558R data sheet allows
-leaving `DX_IN`/`DX_OUT` open and feeding `VCORE` directly if that turns
-out to matter. Twenty-four top-layer track segments (GNSS UART, PPS,
-`LIGHTNING_IRQ`, I2C) run under the Wio-E5 body; confirm the module's
-underside carries no exposed copper. `J101`, `J202` and the four test
-points are on the back; everything else is on the front. Stackup is
-F.Cu / In1 GND / In2 (+BATT zone inside a GND zone) / B.Cu with 0.1 mm
-prepregs, 1.24 mm core.
+| | Nominal |
+| --- | --- |
+| As drawn | 43.49 uF |
+| As the BOM would be ordered | 16.49 uF |
 
-Two DRC clearance errors reported against GND vias inside the `+BATT`
-zone disappear when zones are refilled; they are a stale fill, not a
-fault. Refill and save before the next DRC.
+Derate for DC bias on top of that. A 6.3 V 0402 10 uF X5R at 3.6 V keeps
+roughly a fifth of its value, so the honest effective figure is a few
+microfarads either way.
 
-## 6. Bill of materials
+**Item 14** is unchanged from the last review: there is still nothing at the
+battery entry. The nearest capacitance to `Q101` pin 2 is `C202` 4.7 uF at
+19.16 mm. The SCD40 pulls 205 mA peaks and the CC1200 up to 120 mA in
+transmit, from a bobbin cell with ohms of internal resistance, through
+19 mm of plane. Put 22 uF at the source pad.
 
-Every symbol that is bought now carries `Datasheet`, `MPN` and
-`Manufacturer` fields, mirrored onto the board's footprints. Solder pads,
-test points, mounting holes and the two solder jumpers carry none; they
-are copper. `tools/parts.json` is the sourcing table,
-`tools/set_part_fields.py` writes the fields, `tools/gen_digikey_bom.py`
-writes `digikey_bom.csv`, `BOM.md` and `bom.json`.
+### Item 19: the BOM tools no longer run
 
-Changes against the previous BOM:
+`python3 tools/set_part_fields.py --check` reports six symbols it cannot
+resolve, so `tools/gen_digikey_bom.py` stops before writing anything:
 
-- `X401` KT2520K26000ACW33T -> UCF4031035LK005000-26MDK (section 3).
-- `X402` FC-135 32.768KA-A5 (12.5 pF) -> FC3215AN 32.768K-90NN60KC5 (9 pF).
-- `D201` is now an 0402: LTST-C281KGKT-5A.
-- `C202` is now 4.7 uF 0402: GRM153R60J475ME15D, 6.3 V rated, which is
-  worth about 2 uF at 3.6 V.
-- `J201`/`J301`/`J401` are Samtec SMA-J-P-H-ST-EM1 edge-launch jacks,
-  $2.65 each. The values still say "pads".
-- 1 uF 0402, 4.7 uF 0603, 5.1 pF, 6.2 pF, 39 pF, 47 pF, 910 pF and 56 nH:
-  the preferred Murata part is obsolete, not for new designs, or gone from
-  cut tape; equivalents substituted (listed in `BOM.md`).
-- Removed since the last BOM: the load switch, its FET, gate network and
-  bulk caps, the TVS, the supercapacitor, `C502`, `C512`-`C514`.
+| Ref | Reason |
+| --- | --- |
+| `Q1` | no part for `PMOS` in `Package_TO_SOT_SMD:SOT-523` |
+| `J1` | no part for `Conn_01x02` in `PinHeader_1x02_P1.00mm_Vertical` |
+| `X401` | MPN `NSC5351B-26M` is not in `parts.json` |
+| `U402` | MPN `ALND-WB-0014-T` is not in `parts.json` |
+| `C416` | no part for `1n0` in `Capacitor_SMD:C_0402_1005Metric` |
+| `J401` | MPN `AC33154-1T` is not in `parts.json` |
 
-Board total $123.52 excluding the AT6558R (LCSC C500608) and a 2.2 pF
-whose cut-tape price was not readable. Watch: the BMV080 box of 10 is
-discontinued at DigiKey (610 boxes left), the Pletronics TCXO has 249 in
-stock, the 0402 LED 523.
+`digikey_bom.csv` and `BOM.md` are therefore stale by five lines: they still
+list three Samtec SMA jacks, the Abracon `AANI-AP-0158-1` off-board antenna
+and the Pletronics TCXO, none of which are on the board any more, and they
+are missing everything in the table above.
 
-## 7. About the generator
+All four new parts are stocked in cut tape or tray at DigiKey, so the table
+entries are straightforward:
 
-`sheets/*.json`, `build.sh` and `tools/gen_bom.ts` describe the design as
-it was on 2026-09-06: a separate power sheet with a load switch, the
-BMV080 on SPI, solder-pad antennas. The schematic has been hand-edited
-since and the board routed against it. Running `build.sh` would overwrite
-all four sheets with the old design. Treat the `.kicad_sch` files as the
-source of truth until the JSON is brought back into line or retired.
+| MPN | DigiKey | Packaging | Stock | Unit at 1 |
+| --- | --- | --- | --- | --- |
+| `NSC5351B-26M` | 644-NSC5351B-26MCT-ND | Cut Tape | 560 | $1.93 |
+| `ALND-WB-0014-T` | 535-ALND-WB-0014-TCT-ND | Cut Tape | 4927 | $0.38 |
+| `AC33154-1T` | 5350-AC33154-1T-ND | Tray | 998 | $2.45 |
+| 10 uF 0402 6.3 V | 490-GRM155R60J106ME15JCT-ND | Cut Tape | 35790 | $0.17 |
+
+Dropping three $2.65 SMA jacks and the $7.26 antenna and adding these takes
+about $12 off the board. The 1000 pF C0G 0402 for `C416` is reel-only in the
+Murata `GRM1555C1H102JA01D`; pick a cut-tape equivalent.
+
+## 6. DRC, ERC and parity
+
+Run with zones refilled, all track errors and schematic parity on. KiCad
+reports the same violation once per copper layer, so the 42 raw entries are
+28 distinct faults.
+
+| Type | Unique | Where |
+| --- | --- | --- |
+| clearance | 13 | 10 in the GNSS RF corner, 1 at `J101`, 4 raw at `J1` counted once |
+| starved_thermal | 7 | `U402` pads 1 and 4, `C302`, `C307`, `C319`, `C407`, `L307` |
+| courtyards_overlap | 4 | `C107`, `R103`, `R104` against `U201`; `H102` against `D201` |
+| hole_clearance | 3 | GND vias into `H101` and `H102` |
+| silk_edge_clearance | 1 | `J401` silkscreen clipped, 3 segments |
+
+The ten GNSS clearance errors are all the same thing: tracks routed at
+0.2 mm against the `RF` netclass rule of 0.3 mm, between `GNSS_ANT_BIAS`,
+`GNSS_LNA_IN_RF`, `GNSS_LNA_OUT_RF`, `GNSS_IN_RF`, `GNSS_VDD_RF` and
+`GNSS_VDD_PLL`, plus two where `GNSS_IN_RF` passes 0.285 mm from `C411`.
+That corner is congested because the LNA, the patch feed, the RF input and
+four LDO outputs all converge there. It needs replanning, not nudging.
+
+`J101` pad 1, the battery positive pad, sits 0.10 mm from a GND via against
+a 0.2 mm rule. That one is a short waiting to happen on a hand-soldered
+battery lead; move the via.
+
+The two ERC warnings are `lib_symbol_mismatch` on `JP1` and `JP2`, carried
+from the last review. "Update Symbols from Library" clears them.
+
+Parity is exact, which is worth stating: 0 unconnected items, 0 parity
+issues, and the three orphan mounting holes from the last review are gone.
+`H101` and `H102` are both in the schematic and both inside the outline now.
+
+## 7. Placement measurements
+
+### CC1200
+
+Every supply pin has a 47 nF within 2.04 mm, which is the number that
+matters; the refdes-to-pin assignment in `SCHEMATIC_REVIEW.md` section 5 was
+never followed, but the ring is correct.
+
+| Pin | Function | Nearest cap | Distance |
+| --- | --- | --- | --- |
+| 1 | VDD_GUARD | `C302` | 1.51 mm |
+| 5 | DVDD | `C301` | 1.53 mm |
+| 12 | DVDD | `C308` | 1.79 mm |
+| 13 | AVDD_IF | `C307` | 1.59 mm |
+| 15 | AVDD_RF | `C307` | 1.23 mm |
+| 22 | AVDD_SYNTH1 | `C306` | 1.75 mm |
+| 25 | AVDD_PFD_CHP | `C304` | 1.77 mm |
+| 27 | AVDD_SYNTH2 | `C304` | 1.74 mm |
+| 28 | AVDD_XOSC | `C303` | 1.69 mm |
+
+`C307` serves pins 13 and 15 and `C304` serves 25 and 27, while `C308` and
+`C309` both crowd pin 12. Nine caps were bought for nine pins; move `C309`
+onto pin 13 and one of the pair onto pin 25.
+
+**Item 13**, the RF chain and the crystal, is unchanged since 2026-09-15:
+
+| Part | To | Now | Target |
+| --- | --- | --- | --- |
+| `X301` pin 1 | `U301` pin 30 | 4.50 mm | 2.5 mm |
+| `X301` pin 3 | `U301` pin 31 | 5.08 mm | 2.5 mm |
+| `C318` | pin 30 | 3.33 mm | between crystal and pin |
+| `C319` | pin 31 | 1.62 mm | ok |
+| `L301` | pin 17 `PA` | 4.42 mm | 1.5 mm |
+| `C323` | pin 18 `TRX_SW` | 3.75 mm | 1.5 mm |
+| `L307` | pin 19 `LNA_P` | 1.43 mm | ok |
+| `L308` | pin 20 `LNA_N` | 4.10 mm | match `L307` within 0.3 mm |
+| `C325` / `C326` | pins 19 / 20 | 4.17 / 4.37 mm | 2 mm |
+| `R301` | pin 14 `RBIAS` | 3.22 mm | 2 mm |
+
+The differential LNA legs are 1.43 mm on P against 4.10 mm on N. That
+imbalance converts common-mode noise into differential signal and no amount
+of value tuning fixes it. `XOSC_Q1` and `XOSC_Q2` are 6.09 and 6.24 mm of
+track on a node whose phase noise multiplies to the carrier by 20.7 dB.
+
+### GNSS
+
+| Part | To | Distance |
+| --- | --- | --- |
+| `C407` 1u | `U401` pin 1 `VDD_ANA` | 1.44 mm |
+| `C408` 1u | pin 5 `VDD12BK` | 1.24 mm |
+| `C409` 1u | pin 24 `VDD12BB` | 1.49 mm |
+| `C410` 1u | pin 38 `VDD_PLL` | 1.73 mm |
+| `C411` 1u | pin 39 `VDD_RF` | 1.53 mm |
+| `C412` 100n | pin 2 `VX_OUT` | 1.43 mm |
+| `C413` 100n | pin 6 `VDD_BK` | 1.33 mm |
+| `C405` 100n | pin 7 `VDD_IO` | 1.66 mm |
+| `C404` 4u7 | pin 21 `DX_IN` | 1.93 mm |
+| `C406` 4u7 | pin 23 `VCORE` | 3.50 mm |
+| `L403` 4u7 | pin 22 `DX_OUT` | 1.57 mm |
+| `X402` | pins 11 / 12 RTC | 2.48 / 2.47 mm |
+| `C403` 100n | pin 7 `VDD_IO` | 7.36 mm |
+
+The LDO decoupling is good. `C403` is 7.36 mm from the pin it nominally
+serves and 2.87 mm from `DX_IN`; treat it as rail bulk, not as `VDD_IO`
+decoupling, or move it.
+
+### Exposed pads
+
+| Part | Pad | Vias in the pad |
+| --- | --- | --- |
+| `U301` CC1200 | 3.45 mm | 4 |
+| `U401` AT6558R | 3.40 mm | 4 |
+| `U501` SCD40 | 4.80 mm | 3 |
+| `U502` AS3935 | 2.70 mm | 1 |
+
+`LAYOUT_PRIORITY.md` puts the CC1200 exposed pad at rank 1, ahead of every
+other length on the board, because it defines what "short" means for the
+seventeen items under it. One via in the AS3935 pad is the worst of the
+four.
+
+### Stackup and zones
+
+`F.Cu` / `In1.Cu` / `In2.Cu` / `B.Cu`, 0.1 mm prepreg, 1.24 mm core,
+1.6 mm total. `In1.Cu` is a single unbroken GND polygon over the whole
+board, which is what the RF depends on. `In2.Cu` carries the `+BATT` zone
+inside the GND zone and is fragmented into 136 polygons, which is expected.
+All 636 track segments are on `F.Cu` and `B.Cu`, so neither plane is cut by
+routing. 290 vias, all 0.6/0.3 mm, 208 of them GND. Vias are tented both
+sides.
+
+## 8. Architecture as built
+
+```mermaid
+classDiagram
+    direction LR
+
+    class Power["Power"] {
+        J101 battery pads, back side
+        Q101 DMG3401LSN reverse block
+        +BATT unregulated, 3.6 V max
+        R103 R104 1:2 sense divider
+        no bulk at the entry
+    }
+    class Burn["Burn channel (new)"] {
+        Q1 P-FET high side
+        gate on PA15, no pull-up
+        J1 2-pin header
+        symbol pins do not match SOT-523
+    }
+    class WioE5["U201 Wio-E5"] {
+        STM32WLE5JC + SX126x
+        SPI1 I2C1 USART2 LPUART1
+        RFIO to J201 SMA
+    }
+    class Radio["U301 CC1200"] {
+        40 MHz X301, 6.9 mm of track
+        TeleMini 434 MHz match
+        J301 SMA
+    }
+    class GNSS["U401 AT6558R-5N32"] {
+        X401 NDK 26 MHz TCXO
+        X402 32.768 kHz
+        L403 internal DCDC
+        ANT_BIAS powers the LNA
+    }
+    class LNA["U402 ALND-WB-0014 (new)"] {
+        16 dB, NF 0.85 dB
+        no input match fitted
+        one 100n bypass at 3.6 mm
+    }
+    class Patch["J401 AC33154-1T (new)"] {
+        15x15 mm ceramic patch
+        back side, 0.09 mm from the edge
+        GNSS_ONOFF crosses beneath
+    }
+    class I2CBus["I2C1 at 100 kHz"] {
+        U501 SCD40 0x62
+        U502 AS3935 0x03
+        U503 BME688 0x76
+        J501 BMV080, address undefined
+    }
+
+    Power --> WioE5
+    Power --> Radio
+    Power --> GNSS
+    Power --> I2CBus
+    Power --> Burn
+    WioE5 --> Burn : PA15
+    WioE5 --> Radio : SPI + CS + RST + IRQ
+    WioE5 --> I2CBus : SCL SDA
+    WioE5 --> GNSS : UART + PPS + ONOFF
+    Patch --> LNA : GNSS_LNA_IN_RF
+    LNA --> GNSS : GNSS_IN_RF
+    GNSS --> LNA : ANT_BIAS
+```
+
+One BME688 is fitted, not two. The schematic and the board both carry
+`U503` alone; `U504` is gone. `README.md` still describes two.
+
+## 9. Carried over unfixed
+
+From the 2026-09-15 review, still open and still correct as written there:
+
+- **BMV080 address pins float.** `JP1`/`JP2` are `SolderJumper_3_Open`. The
+  data sheet is explicit: "These pins cannot be left floating; if left
+  floating the I2C address will be undefined!" The selection latches at
+  power-up and cannot be changed afterwards.
+- **BMV080 `VDDL` wants 3.3 V +-5 %** and gets the cell.
+- **`JP1`/`JP2` legends are swapped.** The data sheet assigns `MISO` to IAB0
+  and `CSB` to IAB1. The netlist has net `IAB0` on `J501.4` `CSB` through
+  `JP1`, labeled IAB0, and net `IAB1` on `J501.11` `MISO` through `JP2`.
+  Both names are on the wrong pin.
+- **`L501`, the AS3935 500 kHz loop, is 9.8 mm from `L403`,** the GNSS DC-DC
+  inductor.
+- **`PB13` is both `BATT_VSENSE` and the module boot pin.** The divider
+  holds it at half the rail, well above the threshold, so this is a note
+  rather than a fault.
+
+## 10. Order of work
+
+1. Choose the burn FET, redraw `Q1` from its data sheet, add the gate
+   pull-up and the series resistor, widen the drain path.
+2. Move the patch inboard far enough to leave ground plane on all four
+   sides, then reroute `GNSS_ONOFF` out from under it.
+3. Add the LNA input match and DC block and the 1 nF at pin 2; replan the
+   GNSS RF corner to clear the ten clearance errors while you are in there.
+4. Fix the three 10 uF part numbers and add 22 uF at `Q101`.
+5. Move `C107` and `R103` clear of the Wio-E5 body, and the vias out of the
+   mounting holes.
+6. Stitch the exposed pads, then take `LAYOUT_PRIORITY.md` items 6, 7 and 9
+   on the CC1200 block.
+7. Add the six missing parts to `tools/parts.json` and regenerate the BOM.
+8. Decide in writing whether the TCXO may run at 3.6 V and whether the
+   BMV080 gets a regulator.

@@ -1,5 +1,43 @@
 # Completed
 
+## 2026-09-20 board review pass
+
+- Full review of the routed board at `3c0c6dd` against the data sheets:
+  `BOARD_REVIEW.md`. 19 items, 5 of them blocking.
+- Three blocks reviewed for the first time: the burn/cutdown channel (`Q1`,
+  `J1`), the GNSS patch plus LNA front end (`J401`, `U402`), and the
+  re-sourced TCXO (`X401` NDK `NSC5351B-26M`).
+- Data sheets read and checked pin by pin: Abracon ALND-WB-0014, The Antenna
+  Company AC33154-1T, NDK NT2520SE, Diodes DMG1013T (for the SOT-523 pin
+  convention), plus the AT6558R sections 6.3, 8.1, 8.2, 8.4 and 8.6.
+- Measured on the board: every CC1200 supply pin to its nearest capacitor,
+  the GNSS LDO decoupling, exposed-pad via counts, RF track lengths, the
+  patch outline against the board edge, and what is routed under the patch
+  and under the Wio-E5.
+- DRC re-run with zones refilled and all track errors on: 42 raw entries,
+  28 distinct faults, tabulated by type. ERC 2 warnings. Parity exact.
+- `README.md` brought back in line with the files: the GNSS section now
+  describes the patch and the LNA rather than the deleted SMA and bias-T,
+  `PA15` is the burn gate rather than a dangling `PM_CS`, one BME688 rather
+  than two, and the BOM section records that the tools no longer run.
+- Written up as the `kicad-symbol-value-mpn-divergence` skill: `Value`,
+  `MPN` and pad numbering are three independent strings that ERC, DRC,
+  parity and netlist export never compare.
+
+### Verified correct, no action
+
+- `X401` pin 1 is no longer tied to `VX_OUT`; the NDK terminal map is
+  followed exactly and the mandatory 1000 pF output DC block is fitted as
+  `C416`. This closes blocking item 1 of the 2026-09-15 review.
+- `H101`/`H102` are both in the schematic and both inside the outline, and
+  there are no orphan footprints. This closes item 7 of that review.
+- Deleting the `ANT_BIAS` choke `L401` was right: the DC no longer shares
+  the antenna line. The LNA's 5.26 mA sits above the receiver's 2.5 mA
+  antenna-detect threshold, and `ANT_BIAS` switches off in low-power mode,
+  so the external LNA sleeps with the receiver.
+- Every CC1200 supply pin has a 47 nF within 2.04 mm.
+- `In1.Cu` is a single unbroken ground polygon; no routing on either plane.
+
 ## 2026-09-15 board review pass
 
 - Full review of the routed board against the data sheets: `BOARD_REVIEW.md`.
