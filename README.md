@@ -115,6 +115,10 @@ the cell minus one Rds(on) and follows the cell from full charge to cutoff.
 Every supply window on this rail is tabulated in section 4 of the
 2026-09-15 review; the BMV080 and the TCXO are the tight ones.
 
+Sleep drain is 271 uA, three quarters of it the SCD40's idle current.
+`POWER_OPTIONS.md` compares this with a single LDO and with switched
+domains (26 uA); `tools/power_budget.py` holds the numbers.
+
 ## GNSS front end
 
 The receiver sees a passive 15 x 15 mm ceramic patch (`J401`, The Antenna

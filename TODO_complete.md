@@ -213,3 +213,10 @@ the 2 known BME688 address-strap warnings.
   template on every build, wiping the net classes, board design settings and
   ERC severities KiCad had written. It now merges the template into an
   existing file and leaves a complete one untouched.
+
+## 2026-09-22 - Power options study
+
+- `POWER_OPTIONS.md`: board as built vs single LDO vs LDO + switched
+  domains, with sleep floor, per-cycle and per-day budgets. Recommendation:
+  SCD41 swap, 1M/1M divider, BMV080 on an EN-switched TPS7A20-33.
+- `tools/power_budget.py` budget model and `tools/test_power_budget.py`.
