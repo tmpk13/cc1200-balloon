@@ -11,6 +11,106 @@ subject of new findings: the GNSS front end became an on-board ceramic patch
 plus an Abracon LNA, the TCXO was re-sourced, and a P-FET burn/cutdown
 channel was added on `PA15`.
 
+**Re-checked 2026-09-22 against the working tree.** Sections 1 to 10 below
+are the original review and are left as written; section 0 records what has
+changed since.
+
+## 0. Re-check, 2026-09-22
+
+Working tree, schematics saved 02:24 and the board 02:29, KiCad still open.
+108 footprints, two added. Only seven parts differ from the reviewed state:
+`L404` and `R205` are new, and `C401`, `C416`, `J401`, `Q1` and `X401`
+moved or rotated.
+
+| Gate | At review | Now |
+| --- | --- | --- |
+| ERC | 2 warnings | 3 warnings |
+| DRC, unique | 28 | 27 |
+| Schematic parity | clean | 1 warning |
+
+### Fixed
+
+- **Item 1, the burn FET pin mapping.** `Q1` is now gate on pad 1, source
+  on pad 2, drain on pad 3, and the footprint was rotated to suit. That is
+  the standard SOT-523 arrangement, so `+BATT` reaches the source and the
+  load reaches the drain. The wiring half of the item is closed.
+- **Item 2, the floating gate.** `R205` 100 k from gate to `+BATT`, placed
+  1.27 mm from `Q1`. Exactly the fix asked for. No series resistor into
+  `PA15`, which was the optional half.
+- **Item 3, the LNA input match.** `L404` 8.2 nH is in series and 0.87 mm
+  from `RFIN`, with the patch feed upstream of it. That is the reference
+  topology element for element, with the inductor at the pin where it
+  belongs. The 1 nF that was briefly in the path has been removed, which is
+  correct: the reference fits no series capacitor at all.
+- **Item 6, partially.** `GNSS_ONOFF` under the patch is down from 18.9 mm
+  to 3.8 mm, and the silkscreen clipping warning is gone. `GNSS_TCK` now
+  contributes 0.6 mm and a via that it did not before, so 4.4 mm of track
+  still crosses the radiator.
+
+A custom rule file, `cc1200_balloon.kicad_dru`, now holds 1 mm of zone
+clearance around `J401`. That is a sensible antipad for the feed. It does
+nothing about copper under the radiator, which is a different question.
+
+### Still open, unchanged
+
+Items 5, 9, 10, 12, 13, 14, 15, 16, 17, 18 and 19 are all exactly as
+measured on 2026-09-20. In particular the CC1200 crystal and RF chain have
+not moved at all, the exposed pads still carry 4, 4, 3 and 1 vias, the
+battery entry still has no bulk within 18.6 mm, and the three 10 uF
+capacitors still carry the 1 uF part number.
+
+**Item 4 has barely moved.** `J401` shifted 1.04 mm, which took the left
+margin from 0.09 mm to 0.24 mm against a board edge at x = 75.00. The patch
+still has essentially no ground plane on that side, and it is still
+specified on a 50 x 50 mm plane. Moving it 1 mm did not address the finding.
+
+### New since the review
+
+| # | Severity | Item |
+| --- | --- | --- |
+| 20 | blocking | `R205` is valued 100k and carries `RC0402FR-0710KL`, the **10 k** part used by `R201`, `R401` and `R501` |
+| 21 | blocking | `L404` is valued 8n2 and carries `LQW15AN6N8H00D`, the **6.8 nH** part used by `L402` |
+| 22 | blocking | `Q1`'s symbol has no `Footprint` field; the board has SOT-523 and parity now warns `footprint_symbol_mismatch` |
+| 23 | major | `Q1` is a hand-edited copy of `Simulation_SPICE:PMOS`, so ERC now warns `lib_symbol_mismatch` on it |
+| 24 | major | `Net-(J401-FEED)` does not match the `/GNSS/GNSS_*_RF` pattern, so the antenna feed is on the Default netclass |
+| 25 | minor | `C401` moved 1.75 mm away from the LNA; it is now 5.28 mm from `U402` pin 2, against 3.57 mm before |
+
+**Items 20 and 21** are the same failure as item 5, now three times over. The
+pull-up would be ordered ten times stronger than drawn, which costs 360 uA
+through `PA15` while the burn is commanded rather than 36 uA. The inductor
+would be ordered at 6.8 nH, which is the one value the part was added to
+avoid, and the reason the match exists at all. Correct numbers:
+
+| Ref | Value | MPN to use | DigiKey | Unit at 1 |
+| --- | --- | --- | --- | --- |
+| `R205` | 100k | `RC0402FR-07100KL` | 311-100KLRCT-ND | $0.10 |
+| `L404` | 8n2 | `LQW15AN8N2H00D` | 490-6850-1-ND | $0.11 |
+| `L404` | 8n2, higher Q | `LQW15AN8N2J8ZD` | 490-15592-1-ND | $0.15 |
+
+**Items 22 and 23 interact, and the order matters.** The pin fix was made by
+editing the embedded copy of a stock symbol, so the schematic and the
+library now disagree. Running "Update Symbols from Library" to clear the
+`JP1`/`JP2` warnings, which section 6 recommends, would revert `Q1`'s pins
+to the stock 1=D, 2=G, 3=S and silently undo the fix. Do not run it while
+`Q1` is in this state. `Transistor_FET:Q_PMOS_GSD` is already embedded in
+the same sheet for `Q101` and is 1=G, 2=S, 3=D natively; swapping `Q1` onto
+it and setting the footprint field closes 22 and 23 together and removes the
+hazard.
+
+**Item 24.** The netclass patterns are `/GNSS/GNSS_RF_IN` and
+`/GNSS/GNSS_ANT_BIAS` to Default and `/GNSS/GNSS_*_RF` to RF. The new net is
+auto-named `Net-(J401-FEED)` and matches none of them, so it inherits
+Default: 0.2 mm clearance instead of 0.3 mm, on the one trace that carries
+the received signal before any gain. Give it a label such as `GNSS_ANT_RF`
+and the existing pattern picks it up.
+
+The input chain as built, which is worth recording because it is now right:
+
+```
+J401 feed pad 1.8 mm --2.0 mm of 0.2 mm track--> L404 8n2 --0.87 mm--> U402.5 RFIN
+U402.3 RFOUT --0.95 mm--> C402 100p --1.09 mm--> L402 6n8 --3.54 mm--> U401.40 RF_IN
+```
+
 ## 1. Verdict
 
 The GNSS front end rework is the right idea and mostly correct, but it went

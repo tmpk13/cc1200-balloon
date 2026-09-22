@@ -125,14 +125,15 @@ Company AC33154-1T) mounted on the back of the board, feeding an Abracon
 sleep. `C402` 100 pF blocks DC into `RF_IN`; `L402` 6.8 nH is the series
 match at the chip.
 
-`BOARD_REVIEW.md` items 3, 4, 6, 8 and 17 all concern this block. It is not
-ready to build.
+`L404` 8.2 nH sits in series 0.87 mm from `RFIN`, which is the Abracon
+reference topology. `BOARD_REVIEW.md` items 4, 8, 17, 21 and 24 still
+concern this block.
 
 ## Burn channel
 
 `Q1`, a P-channel FET on `PA15`, switches `+BATT` into the two-pin header
-`J1` for a cutdown wire. Review items 1, 2 and 15 concern it. It is not
-ready to build.
+`J1` for a cutdown wire. `R205` 100 k holds the gate at the rail while the
+MCU is in reset. Review items 15, 20, 22 and 23 still concern it.
 
 ## Wio-E5 pin map
 
@@ -201,12 +202,12 @@ of truth.
 
 ## Verification
 
-| Check | Result on 2026-09-20 |
+| Check | Result on 2026-09-22 |
 | --- | --- |
-| full-hierarchy ERC | 0 errors, 2 warnings (`JP1`/`JP2` differ from the library) |
-| DRC, zones refilled, all track errors | 28 unique errors: 13 clearance, 7 starved thermal, 4 courtyard, 3 hole clearance, 1 silk |
-| schematic parity | 0 unconnected items, 0 parity issues |
-| pinouts vs data sheets | Wio-E5, CC1200, AT6558R, AS3935, BME688, SCD40, BMV080, ALND-WB-0014, NSC5351B: match. `Q1` does not |
+| full-hierarchy ERC | 0 errors, 3 warnings (`Q1`, `JP1`, `JP2` differ from the library) |
+| DRC, zones refilled, all track errors | 27 unique errors: 13 clearance, 7 starved thermal, 4 courtyard, 3 hole clearance |
+| schematic parity | 0 unconnected items, 1 warning (`Q1` footprint) |
+| pinouts vs data sheets | Wio-E5, CC1200, AT6558R, AS3935, BME688, SCD40, BMV080, ALND-WB-0014, NSC5351B and now `Q1`: all match |
 
 ## Known limitations
 
