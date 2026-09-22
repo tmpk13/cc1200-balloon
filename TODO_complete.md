@@ -1,5 +1,28 @@
 # Completed
 
+## 2026-09-22 field sync and working custom design rules
+
+- `set_part_fields.py` run with KiCad closed: the corrected part numbers are
+  mirrored onto the board, parity back to 0, connectivity unchanged at 100
+  nets. `Q1` and `C416` gained explicit MPN fields on the way.
+- `cc1200_balloon.kicad_dru` rewritten. The original rule matched nothing:
+  the type token is `'Zone'` not `'zone'`, and a footprint is matched with
+  `memberOfFootprint()`, not `Parent.Reference`. KiCad reports neither
+  mistake and ignores a file with a syntax error while exiting 0. Measured,
+  the original rule took unique violations from 27 to 30.
+- New rules: a 0.4 mm antipad on the patch feed and a solid zone connection
+  on `U402`, `L307`, `C302`, `C307`, `C319`, `C407`. All seven starved
+  thermals gone, 27 unique violations down to 20, nothing disconnected.
+- The antipad is capped at 0.4 mm by the layout. At 0.5 mm and above the
+  retreating pour isolates the ground via beside `U402` pad 4, and the
+  violation total does not move, so only `unconnected_items` catches it.
+- Written up as the `kicad-dru-rule-silently-inert` skill.
+
+### Still to do by hand
+
+Open the board, refill zones with `B` and save: custom rules shape the fill,
+and the stored fill predates them.
+
 ## 2026-09-22 BOM regenerated against the board
 
 - `tools/parts.json` gained the seven parts it was missing: the NDK TCXO,

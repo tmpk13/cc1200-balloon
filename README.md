@@ -203,6 +203,14 @@ removing the `Connector_PinHeader_1.00mm:` prefix from `not_purchased`.
 in `tools/parts.json` as the only SOT-523 P-FET rated above 1 A. Confirm it
 against the burn wire before ordering; see `BOARD_REVIEW.md` item 15.
 
+## Custom design rules
+
+`cc1200_balloon.kicad_dru` holds a 0.4 mm antipad on the GNSS patch feed and
+a solid zone connection on the RF ground pads. Custom rules change the
+copper fill, not just the DRC report, so refill zones and save after editing
+it. A rule that matches nothing is silent and so is a syntax error in the
+file, so check that the DRC counts move the way you expect.
+
 ## The generator is stale
 
 `sheets/*.json`, `build.sh` and the TypeScript tools describe the design as
@@ -216,8 +224,8 @@ of truth.
 | Check | Result on 2026-09-22 |
 | --- | --- |
 | full-hierarchy ERC | 0 errors, 3 warnings (`Q1`, `JP1`, `JP2` differ from the library) |
-| DRC, zones refilled, all track errors | 27 unique errors: 13 clearance, 7 starved thermal, 4 courtyard, 3 hole clearance |
-| schematic parity | 0 unconnected items, 5 field warnings (board not yet re-synced) |
+| DRC, zones refilled, all track errors | 20 unique errors: 13 clearance, 4 courtyard, 3 hole clearance |
+| schematic parity | 0 unconnected items, 0 parity issues |
 | pinouts vs data sheets | Wio-E5, CC1200, AT6558R, AS3935, BME688, SCD40, BMV080, ALND-WB-0014, NSC5351B and now `Q1`: all match |
 
 ## Known limitations

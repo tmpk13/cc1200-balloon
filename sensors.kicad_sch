@@ -3517,7 +3517,7 @@
 				)
 			)
 		)
-		(property "Datasheet" "https://mm.digikey.com/Volume0/opasdata/d220001/medias/docus/536/LMK105BJ105KVHF_SS.pdf"
+		(property "Datasheet" "https://pim.murata.com/asset/pim4/ceramicCapacitorSMD/GRM155R60J106ME15-01A-EN_PDF_CERAMICCAPACITORSMD"
 			(at 297.18 236.22 0)
 			(hide yes)
 			(show_name no)
@@ -3539,7 +3539,7 @@
 				)
 			)
 		)
-		(property "Manufacturer" "Taiyo Yuden"
+		(property "Manufacturer" "Murata Electronics"
 			(at 297.18 236.22 0)
 			(hide yes)
 			(show_name no)
@@ -3550,7 +3550,7 @@
 				)
 			)
 		)
-		(property "MPN" "LMK105BJ105KVHF"
+		(property "MPN" "GRM155R60J106ME15J"
 			(at 297.18 236.22 0)
 			(hide yes)
 			(show_name no)
@@ -6468,7 +6468,7 @@
 				)
 			)
 		)
-		(property "Datasheet" "https://mm.digikey.com/Volume0/opasdata/d220001/medias/docus/536/LMK105BJ105KVHF_SS.pdf"
+		(property "Datasheet" "https://pim.murata.com/asset/pim4/ceramicCapacitorSMD/GRM155R60J106ME15-01A-EN_PDF_CERAMICCAPACITORSMD"
 			(at 302.26 80.01 0)
 			(hide yes)
 			(show_name no)
@@ -6490,7 +6490,7 @@
 				)
 			)
 		)
-		(property "Manufacturer" "Taiyo Yuden"
+		(property "Manufacturer" "Murata Electronics"
 			(at 302.26 80.01 0)
 			(hide yes)
 			(show_name no)
@@ -6501,7 +6501,7 @@
 				)
 			)
 		)
-		(property "MPN" "LMK105BJ105KVHF"
+		(property "MPN" "GRM155R60J106ME15J"
 			(at 302.26 80.01 0)
 			(hide yes)
 			(show_name no)
@@ -7626,7 +7626,7 @@
 				)
 			)
 		)
-		(property "Datasheet" "https://mm.digikey.com/Volume0/opasdata/d220001/medias/docus/536/LMK105BJ105KVHF_SS.pdf"
+		(property "Datasheet" "https://pim.murata.com/asset/pim4/ceramicCapacitorSMD/GRM155R60J106ME15-01A-EN_PDF_CERAMICCAPACITORSMD"
 			(at 255.27 134.62 0)
 			(hide yes)
 			(show_name no)
@@ -7648,7 +7648,7 @@
 				)
 			)
 		)
-		(property "Manufacturer" "Taiyo Yuden"
+		(property "Manufacturer" "Murata Electronics"
 			(at 255.27 134.62 0)
 			(hide yes)
 			(show_name no)
@@ -7659,7 +7659,7 @@
 				)
 			)
 		)
-		(property "MPN" "LMK105BJ105KVHF"
+		(property "MPN" "GRM155R60J106ME15J"
 			(at 255.27 134.62 0)
 			(hide yes)
 			(show_name no)

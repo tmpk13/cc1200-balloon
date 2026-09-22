@@ -4859,7 +4859,7 @@
 				)
 			)
 		)
-		(property "Datasheet" "https://www.murata.com/en-us/products/productdetail?partno=LQW15AN6N8H00D%23"
+		(property "Datasheet" "https://pim.murata.com/asset/pim4/inductor/JELF243A-0050_PDF_INDUCTOR"
 			(at 102.87 104.14 0)
 			(hide yes)
 			(show_name no)
@@ -4892,7 +4892,7 @@
 				)
 			)
 		)
-		(property "MPN" "LQW15AN6N8H00D"
+		(property "MPN" "LQW15AN8N2H00D"
 			(at 102.87 104.14 0)
 			(hide yes)
 			(show_name no)
@@ -6488,7 +6488,7 @@
 				)
 			)
 		)
-		(property "Datasheet" "~"
+		(property "Datasheet" "https://mm.digikey.com/Volume0/opasdata/d220001/medias/docus/658/CL05C102JB5NNNC_Spec.pdf"
 			(at 162.56 127 0)
 			(hide yes)
 			(show_name no)
@@ -6510,7 +6510,7 @@
 				)
 			)
 		)
-		(property "Manufacturer" ""
+		(property "Manufacturer" "Samsung Electro-Mechanics"
 			(at 162.56 127 0)
 			(hide yes)
 			(show_name no)
@@ -6521,7 +6521,7 @@
 				)
 			)
 		)
-		(property "MPN" ""
+		(property "MPN" "CL05C102JB5NNNC"
 			(at 162.56 127 0)
 			(hide yes)
 			(show_name no)

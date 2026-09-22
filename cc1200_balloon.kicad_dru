@@ -1,0 +1,27 @@
+(version 1)
+
+# Custom rules change the copper fill, not just the DRC report: the zone
+# filler resolves clearance through these rules before it pours. Refill
+# zones (B) and save after editing this file, or the stored fill and the
+# rules disagree.
+#
+# A rule that matches nothing is silent, and so is a syntax error in this
+# file. 'Zone' is case sensitive, and a footprint is matched with
+# memberOfFootprint(), not by Parent.Reference. After any edit, check that
+# the DRC counts moved the way you expected.
+
+# Antipad around the GNSS patch feed pin. 1.0 mm is what the feed wants,
+# but at 0.5 mm and above the pour retreats far enough to isolate the
+# ground via beside U402 pad 4 and DRC reports a missing connection. 0.4 mm
+# is the ceiling this layout allows; widening it needs U402 or the feed
+# moved first.
+(rule "Antipad around the GNSS patch feed"
+  (constraint clearance (min 0.4mm))
+  (condition "A.Type == 'Zone' && B.NetName == 'Net-(J401-FEED)'"))
+
+# These GND pads reached the pour through a single thermal spoke against a
+# required two, which DRC reports as starved_thermal. RF ground wants a
+# solid connection anyway.
+(rule "Solid ground connection on the RF pads"
+  (constraint zone_connection solid)
+  (condition "A.memberOfFootprint('U402') || A.memberOfFootprint('L307') || A.memberOfFootprint('C302') || A.memberOfFootprint('C307') || A.memberOfFootprint('C319') || A.memberOfFootprint('C407')"))

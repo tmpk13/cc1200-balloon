@@ -47,9 +47,10 @@ moved or rotated.
   contributes 0.6 mm and a via that it did not before, so 4.4 mm of track
   still crosses the radiator.
 
-A custom rule file, `cc1200_balloon.kicad_dru`, now holds 1 mm of zone
-clearance around `J401`. That is a sensible antipad for the feed. It does
-nothing about copper under the radiator, which is a different question.
+A custom rule file, `cc1200_balloon.kicad_dru`, now asks for 1 mm of zone
+clearance around `J401`. The intent is right and the rule as written does
+not work; see the second addendum. It would in any case do nothing about
+copper under the radiator, which is a different question.
 
 ### Still open, unchanged
 
@@ -136,11 +137,48 @@ schematic, so they are easy to override:
   still stands: SOT-523 is the wrong package for a cutdown channel, and
   SOT-23 would carry the current with margin.
 
-Two things are deliberately left undone because KiCad held the board open.
-The PCB's mirrored `MPN` and `Manufacturer` fields are still the old values,
-which is why parity reports five field mismatches; `set_part_fields.py`
-fixes them in one pass once KiCad is closed. Item 23 is untouched, so the
-"Update Symbols from Library" hazard is still live.
+### Addendum, field sync and the custom rules
+
+With KiCad closed, `set_part_fields.py` mirrored the corrected fields onto
+the board. Parity is back to 0 and connectivity is unchanged at 100 nets.
+The run also wrote `SLMT520V2CP` and `CL05C102JB5NNNC` into `Q1` and `C416`,
+which had resolved through the generic table rather than an explicit field,
+so the burn FET choice now appears in the schematic as well as in
+`tools/parts.json`.
+
+**Item 9 is closed, and the rule that was supposed to help was making things
+worse.** `cc1200_balloon.kicad_dru` had:
+
+    (condition "A.Type == 'zone' && B.Parent.Reference == 'J401'")
+
+The type token is `'Zone'`, case sensitive, and `Parent.Reference` is not an
+accessor; a footprint is matched with `memberOfFootprint()`. KiCad reports
+neither mistake, and ignores a file with a syntax error in it while still
+exiting 0. Measured on this board under one flag set, the original rule took
+unique violations from 27 to 30 by adding three starved thermals.
+
+The file now carries a 0.4 mm antipad on the patch feed and a solid zone
+connection on `U402`, `L307`, `C302`, `C307`, `C319` and `C407`. All seven
+starved thermals are gone and the board is at 20 unique violations, 0
+unconnected, 0 parity.
+
+The antipad is capped by the layout, not by preference. The feed wants
+1 mm; at 0.5 mm and above the retreating pour isolates the ground via beside
+`U402` pad 4 and DRC reports a missing connection, while the violation total
+does not move. Widening it needs `U402` or the feed relocated.
+
+| Antipad | Unique violations | Unconnected |
+| --- | --- | --- |
+| none | 27 | 0 |
+| 0.4 mm | 20 | 0 |
+| 0.5 mm | 20 | 1 |
+| 1.0 mm | 20 | 1 |
+
+Custom rules shape the pour rather than only reporting on it, so the stored
+fill is now stale: open the board, refill zones with `B` and save.
+
+Item 23 is still untouched, so the "Update Symbols from Library" hazard
+remains live.
 
 ## 1. Verdict
 

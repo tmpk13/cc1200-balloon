@@ -116,7 +116,7 @@
 		(filling no)
 		(zone_defaults)
 		(pcbplotparams
-			(layerselection 0x00000000_00000000_55555555_5755f5ff)
+			(layerselection 0x00000000_00000000_5555555f_ff55ffff)
 			(plot_on_all_layers_selection 0x00000000_00000000_00000000_00000000)
 			(disableapertmacros no)
 			(usegerberextensions no)
@@ -147,9 +147,9 @@
 			(subtractmaskfromsilk no)
 			(outputformat 1)
 			(mirror no)
-			(drillshape 1)
+			(drillshape 0)
 			(scaleselection 1)
-			(outputdirectory "")
+			(outputdirectory "balloon-gerbers/")
 		)
 	)
 	(footprint "cc1200_balloon:Jumper_3_0402"
@@ -6225,7 +6225,7 @@
 				)
 			)
 		)
-		(property "Datasheet" "~"
+		(property "Datasheet" "https://mm.digikey.com/Volume0/opasdata/d220001/medias/docus/658/CL05C102JB5NNNC_Spec.pdf"
 			(at 0 0 0)
 			(layer "F.Fab")
 			(hide yes)
@@ -6247,7 +6247,7 @@
 				)
 			)
 		)
-		(property "Manufacturer" ""
+		(property "Manufacturer" "Samsung Electro-Mechanics"
 			(at 0 0 180)
 			(unlocked yes)
 			(layer "F.Fab")
@@ -6260,7 +6260,7 @@
 				)
 			)
 		)
-		(property "MPN" ""
+		(property "MPN" "CL05C102JB5NNNC"
 			(at 0 0 180)
 			(unlocked yes)
 			(layer "F.Fab")
@@ -15178,7 +15178,7 @@
 				)
 			)
 		)
-		(property "MPN" "RC0402FR-0710KL"
+		(property "MPN" "RC0402FR-07100KL"
 			(at 0 0 90)
 			(unlocked yes)
 			(layer "F.Fab")
@@ -16766,7 +16766,7 @@
 				)
 			)
 		)
-		(property "Datasheet" "https://mm.digikey.com/Volume0/opasdata/d220001/medias/docus/536/LMK105BJ105KVHF_SS.pdf"
+		(property "Datasheet" "https://pim.murata.com/asset/pim4/ceramicCapacitorSMD/GRM155R60J106ME15-01A-EN_PDF_CERAMICCAPACITORSMD"
 			(at 0 0 0)
 			(layer "F.Fab")
 			(hide yes)
@@ -16788,7 +16788,7 @@
 				)
 			)
 		)
-		(property "Manufacturer" "Taiyo Yuden"
+		(property "Manufacturer" "Murata Electronics"
 			(at 0 0 180)
 			(unlocked yes)
 			(layer "F.Fab")
@@ -16801,7 +16801,7 @@
 				)
 			)
 		)
-		(property "MPN" "LMK105BJ105KVHF"
+		(property "MPN" "GRM155R60J106ME15J"
 			(at 0 0 180)
 			(unlocked yes)
 			(layer "F.Fab")
@@ -21831,7 +21831,7 @@
 				)
 			)
 		)
-		(property "Datasheet" "https://mm.digikey.com/Volume0/opasdata/d220001/medias/docus/536/LMK105BJ105KVHF_SS.pdf"
+		(property "Datasheet" "https://pim.murata.com/asset/pim4/ceramicCapacitorSMD/GRM155R60J106ME15-01A-EN_PDF_CERAMICCAPACITORSMD"
 			(at 0 0 90)
 			(layer "F.Fab")
 			(hide yes)
@@ -21853,7 +21853,7 @@
 				)
 			)
 		)
-		(property "Manufacturer" "Taiyo Yuden"
+		(property "Manufacturer" "Murata Electronics"
 			(at 0 0 90)
 			(unlocked yes)
 			(layer "F.Fab")
@@ -21866,7 +21866,7 @@
 				)
 			)
 		)
-		(property "MPN" "LMK105BJ105KVHF"
+		(property "MPN" "GRM155R60J106ME15J"
 			(at 0 0 90)
 			(unlocked yes)
 			(layer "F.Fab")
@@ -24450,12 +24450,38 @@
 				)
 			)
 		)
-		(property "Datasheet" "https://ngspice.sourceforge.io/docs/ngspice-html-manual/manual.xhtml#cha_MOSFETs"
+		(property "Datasheet" "https://mm.digikey.com/Volume0/opasdata/d220001/medias/docus/8951/5399_SLMT520V2CP%20SOT-523.pdf"
 			(at 0 0 0)
 			(unlocked yes)
 			(layer "F.Fab")
 			(hide yes)
 			(uuid "14e6820e-d7bb-4c3b-80e7-ffef4133bfa6")
+			(effects
+				(font
+					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "Manufacturer" "Shenzhen Slkormicro Semicon"
+			(at 0 0 0)
+			(unlocked yes)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "88a34994-f4e9-49b9-a855-087604885cfe")
+			(effects
+				(font
+					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "MPN" "SLMT520V2CP"
+			(at 0 0 0)
+			(unlocked yes)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "1e83aaa5-bf67-4fcb-b694-b227473471e8")
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -26721,7 +26747,7 @@
 				)
 			)
 		)
-		(property "Datasheet" "https://mm.digikey.com/Volume0/opasdata/d220001/medias/docus/536/LMK105BJ105KVHF_SS.pdf"
+		(property "Datasheet" "https://pim.murata.com/asset/pim4/ceramicCapacitorSMD/GRM155R60J106ME15-01A-EN_PDF_CERAMICCAPACITORSMD"
 			(at 0 0 90)
 			(layer "F.Fab")
 			(hide yes)
@@ -26743,7 +26769,7 @@
 				)
 			)
 		)
-		(property "Manufacturer" "Taiyo Yuden"
+		(property "Manufacturer" "Murata Electronics"
 			(at 0 0 90)
 			(unlocked yes)
 			(layer "F.Fab")
@@ -26756,7 +26782,7 @@
 				)
 			)
 		)
-		(property "MPN" "LMK105BJ105KVHF"
+		(property "MPN" "GRM155R60J106ME15J"
 			(at 0 0 90)
 			(unlocked yes)
 			(layer "F.Fab")
@@ -27659,7 +27685,7 @@
 				)
 			)
 		)
-		(property "Datasheet" "https://www.murata.com/en-us/products/productdetail?partno=LQW15AN6N8H00D%23"
+		(property "Datasheet" "https://pim.murata.com/asset/pim4/inductor/JELF243A-0050_PDF_INDUCTOR"
 			(at 0 0 0)
 			(layer "F.Fab")
 			(hide yes)
@@ -27694,7 +27720,7 @@
 				)
 			)
 		)
-		(property "MPN" "LQW15AN6N8H00D"
+		(property "MPN" "LQW15AN8N2H00D"
 			(at 0 0 180)
 			(unlocked yes)
 			(layer "F.Fab")
@@ -30427,7 +30453,7 @@
 		(uuid "d8bd3388-5398-4c6b-ba33-c18b1967d281")
 	)
 	(gr_line
-		(start 79 94.995)
+		(start 81.01 98.81)
 		(end 68.4 89.1)
 		(stroke
 			(width 0.1)
