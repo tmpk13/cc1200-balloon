@@ -108,7 +108,7 @@ the cell minus one Rds(on) and follows the cell from full charge to cutoff.
 | | |
 | --- | --- |
 | Rail | `+BATT`, unregulated, 3.6 V maximum |
-| Bulk on the rail | 43.5 uF nominal as drawn, 4.7 uF at the MCU and the GNSS, 10 uF at each of the three big sensor loads, 1 uF at each IC |
+| Bulk on the rail | 43.5 uF nominal, 4.7 uF at the MCU and the GNSS, 10 uF at each of the three big sensor loads, 1 uF at each IC |
 | At the battery entry | nothing; nearest is `C202` at 19 mm |
 | Off-state drain | none possible: the board is live whenever the cell is connected |
 
@@ -186,11 +186,22 @@ python3 tools/set_part_fields.py           # write fields into *.kicad_sch and t
 python3 tools/gen_digikey_bom.py           # digikey_bom.csv, BOM.md, bom.json
 ```
 
-**The BOM tools do not currently run.** Six symbols (`Q1`, `J1`, `X401`,
-`U402`, `C416`, `J401`) have no entry in `tools/parts.json`, so
-`digikey_bom.csv` and `BOM.md` are stale: they still list three SMA jacks,
-an off-board active antenna, the old TCXO and two BME688. Review item 19
-lists the DigiKey numbers to add.
+`digikey_bom.csv`, `BOM.md` and `bom.json` were regenerated on 2026-09-22
+and match the board: 53 lines, 52 in the upload, $107.21 for one board.
+
+`resolve()` cross-checks `Value` against `MPN`: a symbol whose value has a
+generic entry must carry that entry's part number, so editing a value and
+leaving a copied part number behind is now an error rather than a wrong
+line in the upload.
+
+`J1` is not purchased. There is no 2-pin 1.00 mm through-hole header at
+DigiKey, so the burn wire solders straight into its holes, as the battery
+and debug pads do. Fit a header by adding one to `tools/parts.json` and
+removing the `Connector_PinHeader_1.00mm:` prefix from `not_purchased`.
+
+`Q1` has no part named in the design. The BOM carries `SLMT520V2CP`, chosen
+in `tools/parts.json` as the only SOT-523 P-FET rated above 1 A. Confirm it
+against the burn wire before ordering; see `BOARD_REVIEW.md` item 15.
 
 ## The generator is stale
 
@@ -206,7 +217,7 @@ of truth.
 | --- | --- |
 | full-hierarchy ERC | 0 errors, 3 warnings (`Q1`, `JP1`, `JP2` differ from the library) |
 | DRC, zones refilled, all track errors | 27 unique errors: 13 clearance, 7 starved thermal, 4 courtyard, 3 hole clearance |
-| schematic parity | 0 unconnected items, 1 warning (`Q1` footprint) |
+| schematic parity | 0 unconnected items, 5 field warnings (board not yet re-synced) |
 | pinouts vs data sheets | Wio-E5, CC1200, AT6558R, AS3935, BME688, SCD40, BMV080, ALND-WB-0014, NSC5351B and now `Q1`: all match |
 
 ## Known limitations

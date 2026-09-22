@@ -8,18 +8,14 @@
   "TestPoint:",
   "MountingHole:",
   "cc1200_balloon:SolderPad_",
-  "cc1200_balloon:Jumper_"
+  "cc1200_balloon:Jumper_",
+  "Connector_PinHeader_1.00mm:"
  ],
  "off_board": [
   {
    "mpn": "BMV080",
    "mates": "J501",
    "note": "Bosch particulate sensor on flex; box of 10; plugs into J501"
-  },
-  {
-   "mpn": "AANI-AP-0158-1",
-   "mates": "J401",
-   "note": "active L1 patch, 28 dB LNA, 100 mm u.FL pigtail; cut the plug off and fit an SMA plug or solder to J401"
   }
  ],
  "generic": {
@@ -56,7 +52,11 @@
   "33n|L_0402_1005Metric": "LQW15AN33NG00D",
   "6n8|L_0402_1005Metric": "LQW15AN6N8H00D",
   "STATUS|LED_0402_1005Metric": "LTST-C281KGKT-5A",
-  "*|SMA_Samtec_SMA-J-P-H-ST-EM1_EdgeMount": "SMA-J-P-H-ST-EM1"
+  "*|SMA_Samtec_SMA-J-P-H-ST-EM1_EdgeMount": "SMA-J-P-H-ST-EM1",
+  "8n2|L_0402_1005Metric": "LQW15AN8N2H00D",
+  "1n0|C_0402_1005Metric": "CL05C102JB5NNNC",
+  "10u|C_0402_1005Metric": "GRM155R60J106ME15J",
+  "PMOS|SOT-523": "SLMT520V2CP"
  },
  "parts": {
   "CL05B104KO5NNNC": {
@@ -597,6 +597,82 @@
    "price": 7.26,
    "stock": 454,
    "priced": "2026-09-15"
+  },
+  "NSC5351B-26M": {
+   "manufacturer": "NDK (NIHON DEMPA KOGYO CO., LTD)",
+   "description": "TCXO 26MHz 0.5ppm clipped sine 2520",
+   "datasheet": "https://www.ndk.com/en/products/upload/lineup/pdf/NDKT03-00022_en.pdf",
+   "digikey": "644-NSC5351B-26MCT-ND",
+   "packaging": "Cut Tape",
+   "price": 1.93,
+   "stock": 560,
+   "priced": "2026-09-22",
+   "note": "supply 1.7-3.3 V, fed from VX_OUT which the AT6558R specifies up to 3.6 V"
+  },
+  "ALND-WB-0014-T": {
+   "manufacturer": "Abracon LLC",
+   "description": "LNA GNSS L1 16dB NF 0.85dB DFN-6",
+   "datasheet": "https://abracon.com/datasheets/ALND-WB-0014.pdf",
+   "digikey": "535-ALND-WB-0014-TCT-ND",
+   "packaging": "Cut Tape",
+   "price": 0.38,
+   "stock": 4927,
+   "priced": "2026-09-22"
+  },
+  "AC33154-1T": {
+   "manufacturer": "The Antenna Company",
+   "description": "ANT GNSS L1 ceramic patch 15x15x4mm pin fed",
+   "datasheet": "https://www.antennacompany.com/wp-content/uploads/datasheet/AC33154-1T-ds.pdf",
+   "digikey": "5350-AC33154-1T-ND",
+   "packaging": "Tray",
+   "price": 2.45,
+   "stock": 998,
+   "priced": "2026-09-22",
+   "note": "specified on a 50 x 50 mm ground plane; this board gives it far less"
+  },
+  "CL05C102JB5NNNC": {
+   "manufacturer": "Samsung Electro-Mechanics",
+   "description": "CAP 1n0 50V C0G 0402",
+   "datasheet": "https://mm.digikey.com/Volume0/opasdata/d220001/medias/docus/658/CL05C102JB5NNNC_Spec.pdf",
+   "digikey": "1276-1635-1-ND",
+   "packaging": "Cut Tape",
+   "price": 0.12,
+   "stock": 22,
+   "priced": "2026-09-22",
+   "stock_note": "only 22 in stock; the Murata GRM1555C1H102JA01D equivalent is reel only"
+  },
+  "LQW15AN8N2H00D": {
+   "manufacturer": "Murata Electronics",
+   "description": "IND 8.2nH 3% wirewound 0402",
+   "datasheet": "https://pim.murata.com/asset/pim4/inductor/JELF243A-0050_PDF_INDUCTOR",
+   "digikey": "490-6850-1-ND",
+   "packaging": "Cut Tape",
+   "price": 0.11,
+   "stock": 2864,
+   "priced": "2026-09-22",
+   "stock_note": "the LQW15AN8N2J00D named on the Abracon evaluation board is reel only"
+  },
+  "GRM155R60J106ME15J": {
+   "manufacturer": "Murata Electronics",
+   "description": "CAP 10u 6.3V X5R 0402",
+   "datasheet": "https://pim.murata.com/asset/pim4/ceramicCapacitorSMD/GRM155R60J106ME15-01A-EN_PDF_CERAMICCAPACITORSMD",
+   "digikey": "490-GRM155R60J106ME15JCT-ND",
+   "packaging": "Cut Tape",
+   "price": 0.17,
+   "stock": 35790,
+   "priced": "2026-09-22",
+   "note": "6.3 V rating keeps roughly a fifth of its value at 3.6 V DC bias"
+  },
+  "SLMT520V2CP": {
+   "manufacturer": "Shenzhen Slkormicro Semicon",
+   "description": "MOSFET P-CH 20V 2A 180mOhm SOT-523",
+   "datasheet": "https://mm.digikey.com/Volume0/opasdata/d220001/medias/docus/8951/5399_SLMT520V2CP%20SOT-523.pdf",
+   "digikey": "5399-SLMT520V2CPCT-ND",
+   "packaging": "Cut Tape",
+   "price": 0.15,
+   "stock": null,
+   "priced": "2026-09-22",
+   "note": "part choice not made by the design: the only SOT-523 P-FET rated above 1 A. DigiKey reported no stock figure, confirm before ordering. SOT-523 limits the burn current; SOT-23 would carry more"
   }
  }
 }

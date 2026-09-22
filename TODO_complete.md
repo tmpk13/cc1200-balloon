@@ -1,5 +1,31 @@
 # Completed
 
+## 2026-09-22 BOM regenerated against the board
+
+- `tools/parts.json` gained the seven parts it was missing: the NDK TCXO,
+  the Abracon LNA, the ceramic patch, a 1n0 C0G, an 8.2 nH, a 10 uF 0402 and
+  a SOT-523 P-FET for the burn channel. Dropped the off-board active antenna
+  that the on-board patch replaced.
+- Five wrong or absent schematic fields corrected: `R205` and `L404` carried
+  the part numbers of a 10 k and a 6.8 nH, `C512`/`C513`/`C515` carried a
+  1 uF, and `Q1` had lost its `Footprint` field. Netlist exported before and
+  after: 100 nets, identical membership.
+- `resolve()` now cross-checks `Value` against `MPN` for any part the generic
+  table can identify, so this class of error fails the build instead of
+  printing a wrong line. `gen_digikey_bom.py` reports every unresolved symbol
+  at once rather than dying on the first.
+- `digikey_bom.csv`, `BOM.md` and `bom.json` regenerated: 53 lines, 52 in the
+  upload, 98 placements, $107.21 for one board against $123.52 before.
+- Sourcing risks now surface the 1n0 at 22 in stock, the 10 uF DC bias
+  derating, the patch's 50 x 50 mm reference plane, the burn FET's unknown
+  stock, and the TCXO supply window.
+
+### Left undone on purpose
+
+KiCad held all three editors open, so the PCB was not written. Its mirrored
+`MPN` and `Manufacturer` fields are stale and parity reports five field
+mismatches until `python3 tools/set_part_fields.py` is run with KiCad closed.
+
 ## 2026-09-20 board review pass
 
 - Full review of the routed board at `3c0c6dd` against the data sheets:

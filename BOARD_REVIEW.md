@@ -53,11 +53,11 @@ nothing about copper under the radiator, which is a different question.
 
 ### Still open, unchanged
 
-Items 5, 9, 10, 12, 13, 14, 15, 16, 17, 18 and 19 are all exactly as
-measured on 2026-09-20. In particular the CC1200 crystal and RF chain have
-not moved at all, the exposed pads still carry 4, 4, 3 and 1 vias, the
-battery entry still has no bulk within 18.6 mm, and the three 10 uF
-capacitors still carry the 1 uF part number.
+Items 9, 10, 12, 13, 14, 15, 16, 17 and 18 are all exactly as measured on
+2026-09-20. In particular the CC1200 crystal and RF chain have not moved at
+all, the exposed pads still carry 4, 4, 3 and 1 vias, and the battery entry
+still has no bulk within 18.6 mm. Items 5 and 19 were open at the re-check
+and were closed later the same day; see the addendum.
 
 **Item 4 has barely moved.** `J401` shifted 1.04 mm, which took the left
 margin from 0.09 mm to 0.24 mm against a board edge at x = 75.00. The patch
@@ -110,6 +110,37 @@ The input chain as built, which is worth recording because it is now right:
 J401 feed pad 1.8 mm --2.0 mm of 0.2 mm track--> L404 8n2 --0.87 mm--> U402.5 RFIN
 U402.3 RFOUT --0.95 mm--> C402 100p --1.09 mm--> L402 6n8 --3.54 mm--> U401.40 RF_IN
 ```
+
+### Addendum, BOM pass later the same day
+
+Items 19, 20, 21 and 22 are closed. `tools/parts.json` gained the seven
+parts it was missing, the five wrong or absent fields were corrected in the
+schematics, and `digikey_bom.csv`, `BOM.md` and `bom.json` were regenerated:
+53 lines, 52 in the upload, $107.21 for one board against $123.52 before.
+Connectivity was exported before and after and is identical, and ERC is
+unchanged at three warnings.
+
+`resolve()` in `tools/set_part_fields.py` now refuses a symbol whose value
+has a generic entry but whose MPN field names something else. That check is
+what would have caught items 5, 20 and 21 on the day they were introduced,
+and it now fails the build instead of printing a wrong line.
+
+Two judgment calls are recorded in `tools/parts.json` rather than in the
+schematic, so they are easy to override:
+
+- **`J1` is not purchased.** DigiKey lists no 2-pin 1.00 mm through-hole
+  header, so the burn wire solders into the holes the way the battery and
+  debug pads already work.
+- **`Q1` is `SLMT520V2CP`**, the only SOT-523 P-FET rated above 1 A. The
+  design names no part, DigiKey reported no stock figure for it, and item 15
+  still stands: SOT-523 is the wrong package for a cutdown channel, and
+  SOT-23 would carry the current with margin.
+
+Two things are deliberately left undone because KiCad held the board open.
+The PCB's mirrored `MPN` and `Manufacturer` fields are still the old values,
+which is why parity reports five field mismatches; `set_part_fields.py`
+fixes them in one pass once KiCad is closed. Item 23 is untouched, so the
+"Update Symbols from Library" hazard is still live.
 
 ## 1. Verdict
 

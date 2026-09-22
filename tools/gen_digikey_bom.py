@@ -28,6 +28,7 @@ def natural(ref):
 
 def collect(parts):
     lines = {}
+    problems = []
     for sheet in SHEETS:
         root = k.parse((ROOT / f"{sheet}.kicad_sch").read_text())[0]
         for sym in k.children(root, "symbol"):
@@ -40,7 +41,11 @@ def collect(parts):
             value = k.prop(sym, "Value")[2]
             footprint = k.prop(sym, "Footprint")[2]
             mpn_prop = k.prop(sym, "MPN")
-            key, part = resolve(parts, value, footprint, mpn_prop[2] if mpn_prop else "")
+            try:
+                key, part = resolve(parts, value, footprint, mpn_prop[2] if mpn_prop else "")
+            except KeyError as e:
+                problems.append(f"{sheet} {ref}: {e}")
+                continue
             if key is None:
                 continue
             dnp = k.child(sym, "dnp")
@@ -48,6 +53,11 @@ def collect(parts):
             line = lines.setdefault((key, dnp), {
                 "mpn": key, "value": value, "footprint": footprint, "dnp": dnp, "refs": [], **part})
             line["refs"].append(ref)
+    if problems:
+        print("cannot build the BOM until these are resolved:", file=sys.stderr)
+        for p in problems:
+            print("   ", p, file=sys.stderr)
+        sys.exit(1)
     for line in lines.values():
         line["refs"].sort(key=natural)
     out = sorted(lines.values(), key=lambda l: natural(l["refs"][0]))

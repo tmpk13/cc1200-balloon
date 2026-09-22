@@ -35,12 +35,21 @@ def resolve(parts, value, footprint, mpn):
     for prefix in parts["not_purchased"]:
         if footprint.startswith(prefix):
             return None, None
+    pkg = footprint.split(":", 1)[1] if ":" in footprint else footprint
+    generic = parts["generic"].get(f"{value}|{pkg}")
     if mpn:
         mpn = parts["replace"].get(mpn, mpn)
+        # A part whose value has a generic entry must carry that entry's MPN.
+        # Editing Value and leaving a copied MPN behind is otherwise invisible:
+        # ERC, DRC, netlist parity and the board all stay consistent while the
+        # BOM orders a different component.
+        if generic is not None and generic != mpn:
+            raise KeyError(
+                f"value {value!r} in {pkg} resolves to {generic}, "
+                f"but the MPN field says {mpn}")
         if mpn in parts["parts"]:
             return mpn, parts["parts"][mpn]
         raise KeyError(f"MPN {mpn!r} is not in parts.json")
-    pkg = footprint.split(":", 1)[1] if ":" in footprint else footprint
     for key in (f"{value}|{pkg}", f"*|{pkg}"):
         if key in parts["generic"]:
             mpn = parts["generic"][key]
