@@ -23,12 +23,12 @@ has nothing holding it off. Five items block fabrication.
 | --- | --- | --- | --- |
 | 1 | blocking | `Q1` uses `Simulation_SPICE:PMOS` (pins 1=D, 2=G, 3=S) on a SOT-523 land; every real SOT-523 MOSFET is 1=G, 2=S, 3=D, so `+BATT` lands on the drain, the burn load on the gate and `PA15` on the source | choose a real part, replace the symbol, re-check the three pads |
 | 2 | blocking | `Q1` gate net has two nodes, `Q1.2` and `U201.6`; nothing holds a high-side P-FET off while the MCU is in reset | 100 k gate pull-up to `+BATT`, 1 k in series to `PA15` |
-| 3 | blocking | The `ALND-WB-0014` LNA has no input match and no input DC block; the data sheet requires an 8.2 nH inductor and the evaluation board adds 1 nF at both ports | add the 8.2 nH and the series cap on `GNSS_LNA_IN_RF` |
+| 3 | blocking | The `ALND-WB-0014` LNA has no input match; the data sheet requires a high-Q 8.2 nH in series at `RFIN` and the patch feed goes straight into the pin | add the 8.2 nH in series on `GNSS_LNA_IN_RF` |
 | 4 | blocking | `J401` 15 x 15 mm patch body reaches x = 75.09 against a board edge at x = 75.00; its courtyard crosses the edge and its silkscreen is clipped | move the patch inboard, or widen the board |
 | 5 | blocking | `C512`, `C513`, `C515` are valued `10u` but carry `LMK105BJ105KVHF`, the **1 uF** part used everywhere else; rail bulk is 43.5 uF as drawn and 16.5 uF as ordered | set the MPN to a real 10 uF part and add it to `tools/parts.json` |
 | 6 | major | `GNSS_ONOFF` runs 18.9 mm on `B.Cu` under the patch, 12.65 mm of it straight through the middle of the radiator | reroute outside the patch outline |
 | 7 | major | `X401` NDK `NSC5351B-26M` is rated 1.7 to 3.3 V and is fed from `VX_OUT`, specified 2.7 to 3.6 V | accept 3.3 to 3.6 V as out of window, or pick a 3.6 V TCXO |
-| 8 | major | LNA bypass is one 100 nF 3.57 mm from `U402` pin 2; the evaluation board uses 1 uF plus 1 nF at the part | 1 nF at the pad, keep the 100 nF as bulk |
+| 8 | major | LNA bypass is one 100 nF 3.57 mm from `U402` pin 2; the evaluation board shunts 1 uF and 1 nF on VCC and 1 nF on EN, all at the part | 1 nF at the pad, keep the 100 nF as bulk |
 | 9 | major | `U402` pads 1 and 4, both GND, each reach the pour through one thermal spoke | solid connection, ground via at each pad |
 | 10 | major | `C107` body overlaps the Wio-E5 body by 0.08 x 0.50 mm; `R103` clears it by 0.08 mm | move both clear of x = 118.88 |
 | 11 | major | 28 unique DRC errors, 13 of them clearance in the GNSS RF corner | see section 6 |
@@ -158,20 +158,58 @@ flowchart LR
 
 ### Item 3: the input match is missing
 
-The data sheet's own summary says the part "requires only one external
-inductor and capacitor", note 1 under the electrical specification says
-"input matched to 50 ohms using a high quality-factor 8.2nH inductor", and
-the evaluation board BOM is `L1` 8.2 nH `LQW15AN8N2J00D`, `C1`/`C2` 1 nF at
-both ports and `C3` 1 uF on VCC.
+Note 1 under the electrical specification says "input matched to 50 ohms
+using a high quality-factor 8.2nH inductor". The evaluation board schematic
+on page 7 of the data sheet settles the topology, read at 600 dpi:
+
+```
+J2 (source) ---- L1 8.2 nH ---- RFIN pin 5
+                 in series
+
+RFOUT pin 3 ---- J1                  no DC block anywhere in the RF path
+VCC pin 2 ---- C3 1 uF ---- GND      both shunt
+          ---- C1 1 nF ---- GND
+EN  pin 6 ---- C2 1 nF ---- GND      shunt
+```
+
+So there is exactly one element in the signal path and it is **an 8.2 nH in
+series ahead of `RFIN`**. The three capacitors in the evaluation board BOM
+are all shunt bypasses: `C1` and `C3` on VCC, `C2` on EN. None of them is a
+series DC block, and the board ships without one on either RF port.
 
 On this board the patch feed runs 1.41 mm of 0.2 mm track straight into pin
-5. There is no inductor and no series capacitor. Without the match the LNA
-input is not 50 ohm, so the 0.85 dB noise figure and 16 dB gain in the table
-do not apply, and this sits at the very front of the receive chain where
-every tenth of a dB is a tenth of a dB of sensitivity.
+5 with nothing in it. Without the match the LNA input is not 50 ohm, so the
+0.85 dB noise figure and 16 dB gain in the table do not apply, and this sits
+at the very front of the receive chain where a tenth of a dB of mismatch
+loss is a tenth of a dB of sensitivity.
 
-The evaluation board figure does not resolve whether the 8.2 nH is series or
-shunt at the RFIN node. Confirm with Abracon before committing a footprint.
+**No input DC block is needed here**, despite the data sheet's note about
+100 pF at both ports. That note is conditional on DC existing in the signal
+path, which is the case when the LNA feeds or is fed through a bias-T. On
+this board `ANT_BIAS` goes to the LNA's VCC and EN pins and never touches
+the RF line, and the patch feed pin is a DC open, so there is no DC to
+block. The 100 pF on the output, `C402`, is still right and still required:
+it keeps the LNA's output bias off `RF_IN`, which the AT6558R limits to
+1.2 V DC.
+
+Sourcing. The evaluation board's `LQW15AN8N2J00D` is reel-only at DigiKey.
+Same series, same electrical specification, in cut tape:
+
+| MPN | DigiKey | Tolerance | Q at 250 MHz | DCR | Stock | Unit at 1 |
+| --- | --- | --- | --- | --- | --- | --- |
+| `LQW15AN8N2H00D` | 490-6850-1-ND | 3 % | 25 | 140 mOhm | 2864 | $0.11 |
+| `LQW15AN8N2J8ZD` | 490-15592-1-ND | 5 % | 32 | 69 mOhm | 9249 | $0.15 |
+
+The first is the direct equivalent and matches the `LQW15AN` parts already
+on the board. The second is the higher-Q variant of the same size, and
+since the data sheet asks for a high quality factor at the one place in the
+chain where loss costs noise figure one for one, it is the better buy for
+four cents.
+
+Placement is the hard part, not the part number. `J401` pad to `U402`
+pin 5 is 2.35 mm center to center on a diagonal, which does not fit an 0402
+in series without reworking that corner. The corner already has ten
+clearance errors, so do both at once.
 
 ### Item 4: the patch overhangs the board edge
 
@@ -210,8 +248,9 @@ with no timing constraint, so the detour is free.
 well above its self-resonance and 3.6 mm of track adds about 3 nH in series.
 The pin is effectively unbypassed at the operating frequency, which for a
 16 dB gain block is how you get instability and supply-coupled spurs. The
-evaluation board uses 1 uF plus 1 nF. Put a 1 nF within 1 mm of pin 2 and
-leave `C401` where it is as bulk.
+evaluation board shunts 1 uF and 1 nF on VCC and another 1 nF on EN, all
+beside the part. Put a 1 nF within 1 mm of pin 2 and leave `C401` where it
+is as bulk. EN is tied to VCC here, so one cap serves both.
 
 ### Item 17: gain budget
 
@@ -535,8 +574,9 @@ From the 2026-09-15 review, still open and still correct as written there:
    pull-up and the series resistor, widen the drain path.
 2. Move the patch inboard far enough to leave ground plane on all four
    sides, then reroute `GNSS_ONOFF` out from under it.
-3. Add the LNA input match and DC block and the 1 nF at pin 2; replan the
-   GNSS RF corner to clear the ten clearance errors while you are in there.
+3. Add the series 8.2 nH at `RFIN` and the 1 nF at pin 2; replan the GNSS RF
+   corner to clear the ten clearance errors while you are in there, since
+   the inductor does not fit in the 2.35 mm it has today.
 4. Fix the three 10 uF part numbers and add 22 uF at `Q101`.
 5. Move `C107` and `R103` clear of the Wio-E5 body, and the vias out of the
    mounting holes.
