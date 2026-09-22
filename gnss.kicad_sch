@@ -3260,6 +3260,16 @@
 	)
 	(wire
 		(pts
+			(xy 102.87 107.95) (xy 102.87 132.08)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "83260fdc-4177-4893-b7a3-30629e759ec7")
+	)
+	(wire
+		(pts
 			(xy 78.74 118.11) (xy 92.71 118.11)
 		)
 		(stroke
@@ -3570,7 +3580,7 @@
 	)
 	(wire
 		(pts
-			(xy 102.87 113.03) (xy 102.87 132.08)
+			(xy 102.87 99.06) (xy 102.87 100.33)
 		)
 		(stroke
 			(width 0)
@@ -4799,6 +4809,110 @@
 			(project "cc1200_balloon"
 				(path "/5283d11e-ccf0-51c0-83df-1e782a317298/1196daa9-9a1d-5196-81bd-062aae793ab1"
 					(reference "#PWR4008")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Device:L")
+		(at 102.87 104.14 180)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "575a715d-07af-4310-a36b-b3511330a985")
+		(property "Reference" "L404"
+			(at 104.14 102.8699 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+		(property "Value" "8n2"
+			(at 104.14 105.4099 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+		(property "Footprint" "Inductor_SMD:L_0402_1005Metric"
+			(at 102.87 104.14 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" "https://www.murata.com/en-us/products/productdetail?partno=LQW15AN6N8H00D%23"
+			(at 102.87 104.14 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" ""
+			(at 102.87 104.14 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Manufacturer" "Murata Electronics"
+			(at 102.87 104.14 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "MPN" "LQW15AN6N8H00D"
+			(at 102.87 104.14 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "422feae7-90e5-4229-bcd4-608080aca7a9")
+		)
+		(pin "2"
+			(uuid "25c93184-91ec-4ef8-838e-d3ff3e890967")
+		)
+		(instances
+			(project "cc1200_balloon"
+				(path "/5283d11e-ccf0-51c0-83df-1e782a317298/1196daa9-9a1d-5196-81bd-062aae793ab1"
+					(reference "L404")
 					(unit 1)
 				)
 			)
@@ -7530,7 +7644,7 @@
 	)
 	(symbol
 		(lib_id "cc1200_balloon:GNSS_Patch_PinFed")
-		(at 102.87 110.49 0)
+		(at 102.87 96.52 0)
 		(unit 1)
 		(body_style 1)
 		(exclude_from_sim no)
@@ -7540,7 +7654,7 @@
 		(dnp no)
 		(uuid "e5cbf0c9-53fd-511b-b8c0-d32eb5addd50")
 		(property "Reference" "J401"
-			(at 102.87 101.346 0)
+			(at 102.87 87.376 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -7550,7 +7664,7 @@
 			)
 		)
 		(property "Value" "GNSS patch 15x15mm"
-			(at 102.87 99.06 0)
+			(at 102.87 85.09 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -7560,7 +7674,7 @@
 			)
 		)
 		(property "Footprint" "cc1200_balloon:Patch_AC33154-1T_15x15mm"
-			(at 102.87 110.49 0)
+			(at 102.87 96.52 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -7571,7 +7685,7 @@
 			)
 		)
 		(property "Datasheet" "https://www.antennacompany.com/wp-content/uploads/datasheet/AC33154-1T-ds.pdf"
-			(at 102.87 110.49 0)
+			(at 102.87 96.52 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -7582,7 +7696,7 @@
 			)
 		)
 		(property "Description" "Pin-fed ceramic GNSS patch antenna, feed pin and ground reference"
-			(at 102.87 110.49 0)
+			(at 102.87 96.52 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -7593,7 +7707,7 @@
 			)
 		)
 		(property "Manufacturer" "The Antenna Company"
-			(at 102.87 110.49 0)
+			(at 102.87 96.52 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -7604,7 +7718,7 @@
 			)
 		)
 		(property "MPN" "AC33154-1T"
-			(at 102.87 110.49 0)
+			(at 102.87 96.52 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)

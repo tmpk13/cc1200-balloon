@@ -1500,10 +1500,10 @@
 				)
 			)
 			(symbol "PMOS_1_1"
-				(pin passive line
-					(at 2.54 5.08 270)
+				(pin input line
+					(at -5.08 0 0)
 					(length 2.54)
-					(name "D"
+					(name "G"
 						(effects
 							(font
 								(size 1.27 1.27)
@@ -1518,10 +1518,10 @@
 						)
 					)
 				)
-				(pin input line
-					(at -5.08 0 0)
+				(pin passive line
+					(at 2.54 -5.08 90)
 					(length 2.54)
-					(name "G"
+					(name "S"
 						(effects
 							(font
 								(size 1.27 1.27)
@@ -1537,9 +1537,9 @@
 					)
 				)
 				(pin passive line
-					(at 2.54 -5.08 90)
+					(at 2.54 5.08 270)
 					(length 2.54)
-					(name "S"
+					(name "D"
 						(effects
 							(font
 								(size 1.27 1.27)
@@ -2880,6 +2880,12 @@
 		(uuid "d3a3dece-221c-49bf-b1df-aa0ab0a4109f")
 	)
 	(junction
+		(at 234.95 172.72)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "e5f54541-02b9-47ef-b4ba-8895dc422d5e")
+	)
+	(junction
 		(at 205.74 162.56)
 		(diameter 0)
 		(color 0 0 0 0)
@@ -3181,6 +3187,16 @@
 	)
 	(wire
 		(pts
+			(xy 234.95 172.72) (xy 237.49 172.72)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "88f9595c-bfd4-4430-a78b-7f5c356d3157")
+	)
+	(wire
+		(pts
 			(xy 205.74 162.56) (xy 205.74 161.29)
 		)
 		(stroke
@@ -3211,7 +3227,7 @@
 	)
 	(wire
 		(pts
-			(xy 224.79 152.4) (xy 224.79 171.45)
+			(xy 224.79 152.4) (xy 224.79 172.72)
 		)
 		(stroke
 			(width 0)
@@ -3281,7 +3297,7 @@
 	)
 	(wire
 		(pts
-			(xy 224.79 171.45) (xy 229.87 171.45)
+			(xy 224.79 172.72) (xy 234.95 172.72)
 		)
 		(stroke
 			(width 0)
@@ -3331,7 +3347,7 @@
 	)
 	(wire
 		(pts
-			(xy 237.49 176.53) (xy 237.49 177.8)
+			(xy 245.11 177.8) (xy 245.11 179.07)
 		)
 		(stroke
 			(width 0)
@@ -4002,8 +4018,7 @@
 	)
 	(symbol
 		(lib_id "power:GND")
-		(at 210.82 90.17 0)
-		(mirror y)
+		(at 161.29 153.67 0)
 		(unit 1)
 		(body_style 1)
 		(exclude_from_sim no)
@@ -4011,9 +4026,9 @@
 		(on_board yes)
 		(in_pos_files yes)
 		(dnp no)
-		(uuid "059bd604-04cd-5e95-81b8-828cbd96dee3")
-		(property "Reference" "#PWR2014"
-			(at 210.82 96.52 0)
+		(uuid "09620805-ace2-48f1-822d-dedbbcf7157d")
+		(property "Reference" "#PWR2016"
+			(at 161.29 160.02 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -4024,7 +4039,7 @@
 			)
 		)
 		(property "Value" "GND"
-			(at 210.82 93.98 0)
+			(at 161.29 157.48 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -4034,7 +4049,7 @@
 			)
 		)
 		(property "Footprint" ""
-			(at 210.82 90.17 0)
+			(at 161.29 153.67 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -4045,7 +4060,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 210.82 90.17 0)
+			(at 161.29 153.67 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -4056,7 +4071,7 @@
 			)
 		)
 		(property "Description" ""
-			(at 210.82 90.17 0)
+			(at 161.29 153.67 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -4067,12 +4082,12 @@
 			)
 		)
 		(pin "1"
-			(uuid "f812baa2-4728-5a95-b001-590ebdf6357a")
+			(uuid "72c56a2d-44aa-5feb-8066-4ece3f91b788")
 		)
 		(instances
 			(project "cc1200_balloon"
 				(path "/5283d11e-ccf0-51c0-83df-1e782a317298/e204f989-227c-51e9-89c4-b959a993512c"
-					(reference "#PWR2014")
+					(reference "#PWR2016")
 					(unit 1)
 				)
 			)
@@ -4150,6 +4165,84 @@
 			(project "cc1200_balloon"
 				(path "/5283d11e-ccf0-51c0-83df-1e782a317298/e204f989-227c-51e9-89c4-b959a993512c"
 					(reference "#PWR2005")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "power:+BATT")
+		(at 200.66 207.01 0)
+		(mirror y)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(uuid "0af8d8dd-9e70-4fc1-a2aa-635aceec9809")
+		(property "Reference" "#PWR2008"
+			(at 200.66 213.36 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "+BATT"
+			(at 200.66 203.2 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 200.66 207.01 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 200.66 207.01 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" ""
+			(at 200.66 207.01 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "448ba73d-94f8-5e8f-9ddc-905c6bda8861")
+		)
+		(instances
+			(project "cc1200_balloon"
+				(path "/5283d11e-ccf0-51c0-83df-1e782a317298/e204f989-227c-51e9-89c4-b959a993512c"
+					(reference "#PWR2008")
 					(unit 1)
 				)
 			)
@@ -4235,7 +4328,7 @@
 	)
 	(symbol
 		(lib_id "power:GND")
-		(at 237.49 180.34 0)
+		(at 245.11 181.61 0)
 		(unit 1)
 		(body_style 1)
 		(exclude_from_sim no)
@@ -4245,7 +4338,7 @@
 		(dnp no)
 		(uuid "17831907-8a14-4a32-a055-09d9159c5786")
 		(property "Reference" "#PWR02020"
-			(at 237.49 186.69 0)
+			(at 245.11 187.96 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -4256,7 +4349,7 @@
 			)
 		)
 		(property "Value" "GND"
-			(at 237.49 184.15 0)
+			(at 245.11 185.42 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -4266,7 +4359,7 @@
 			)
 		)
 		(property "Footprint" ""
-			(at 237.49 180.34 0)
+			(at 245.11 181.61 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -4277,7 +4370,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 237.49 180.34 0)
+			(at 245.11 181.61 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -4288,7 +4381,7 @@
 			)
 		)
 		(property "Description" ""
-			(at 237.49 180.34 0)
+			(at 245.11 181.61 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -4671,7 +4764,7 @@
 	)
 	(symbol
 		(lib_id "Simulation_SPICE:PMOS")
-		(at 234.95 171.45 0)
+		(at 242.57 172.72 0)
 		(mirror x)
 		(unit 1)
 		(body_style 1)
@@ -4682,7 +4775,7 @@
 		(dnp no)
 		(uuid "363349d2-2f0f-487f-bd09-6c2a507cce19")
 		(property "Reference" "Q1"
-			(at 241.3 172.7201 0)
+			(at 247.65 173.99 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -4693,7 +4786,7 @@
 			)
 		)
 		(property "Value" "PMOS"
-			(at 241.3 170.1801 0)
+			(at 247.65 171.45 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -4703,8 +4796,8 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "Package_TO_SOT_SMD:SOT-523"
-			(at 240.03 173.99 0)
+		(property "Footprint" ""
+			(at 247.65 175.26 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -4715,7 +4808,7 @@
 			)
 		)
 		(property "Datasheet" "https://ngspice.sourceforge.io/docs/ngspice-html-manual/manual.xhtml#cha_MOSFETs"
-			(at 234.95 158.75 0)
+			(at 242.57 160.02 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -4726,7 +4819,7 @@
 			)
 		)
 		(property "Description" "P-MOSFET transistor, drain/source/gate"
-			(at 234.95 171.45 0)
+			(at 242.57 172.72 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -4737,7 +4830,7 @@
 			)
 		)
 		(property "Sim.Device" "PMOS"
-			(at 234.95 154.305 0)
+			(at 242.57 155.575 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -4748,7 +4841,7 @@
 			)
 		)
 		(property "Sim.Type" "VDMOS"
-			(at 234.95 152.4 0)
+			(at 242.57 153.67 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -4759,7 +4852,7 @@
 			)
 		)
 		(property "Sim.Pins" "1=D 2=G 3=S"
-			(at 234.95 156.21 0)
+			(at 242.57 157.48 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -4884,84 +4977,6 @@
 			(project "cc1200_balloon"
 				(path "/5283d11e-ccf0-51c0-83df-1e782a317298/e204f989-227c-51e9-89c4-b959a993512c"
 					(reference "R203")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "power:+BATT")
-		(at 200.66 207.01 0)
-		(mirror y)
-		(unit 1)
-		(body_style 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(in_pos_files yes)
-		(dnp no)
-		(uuid "4420ae65-9ec0-514e-8a24-9e81cfd08e9e")
-		(property "Reference" "#PWR2008"
-			(at 200.66 213.36 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Value" "+BATT"
-			(at 200.66 203.2 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Footprint" ""
-			(at 200.66 207.01 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Datasheet" ""
-			(at 200.66 207.01 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Description" ""
-			(at 200.66 207.01 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(pin "1"
-			(uuid "448ba73d-94f8-5e8f-9ddc-905c6bda8861")
-		)
-		(instances
-			(project "cc1200_balloon"
-				(path "/5283d11e-ccf0-51c0-83df-1e782a317298/e204f989-227c-51e9-89c4-b959a993512c"
-					(reference "#PWR2008")
 					(unit 1)
 				)
 			)
@@ -5223,84 +5238,6 @@
 		)
 	)
 	(symbol
-		(lib_id "power:GND")
-		(at 205.74 166.37 0)
-		(mirror y)
-		(unit 1)
-		(body_style 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(in_pos_files yes)
-		(dnp no)
-		(uuid "613cca3b-8909-58e2-a4d2-b3e20b3f8f15")
-		(property "Reference" "#PWR2012"
-			(at 205.74 172.72 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Value" "GND"
-			(at 205.74 170.18 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Footprint" ""
-			(at 205.74 166.37 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Datasheet" ""
-			(at 205.74 166.37 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Description" ""
-			(at 205.74 166.37 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(pin "1"
-			(uuid "66af2924-b366-5fff-8b87-6112b699192e")
-		)
-		(instances
-			(project "cc1200_balloon"
-				(path "/5283d11e-ccf0-51c0-83df-1e782a317298/e204f989-227c-51e9-89c4-b959a993512c"
-					(reference "#PWR2012")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
 		(lib_id "Mechanical:MountingHole")
 		(at 135.89 83.82 0)
 		(unit 1)
@@ -5375,7 +5312,7 @@
 	)
 	(symbol
 		(lib_id "power:+BATT")
-		(at 237.49 166.37 0)
+		(at 245.11 167.64 0)
 		(mirror y)
 		(unit 1)
 		(body_style 1)
@@ -5386,7 +5323,7 @@
 		(dnp no)
 		(uuid "6c605796-f806-4e4b-9e14-c09cfa844a2d")
 		(property "Reference" "#PWR02003"
-			(at 237.49 172.72 0)
+			(at 245.11 173.99 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -5397,7 +5334,7 @@
 			)
 		)
 		(property "Value" "+BATT"
-			(at 237.49 162.56 0)
+			(at 245.11 163.83 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -5407,7 +5344,7 @@
 			)
 		)
 		(property "Footprint" ""
-			(at 237.49 166.37 0)
+			(at 245.11 167.64 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -5418,7 +5355,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 237.49 166.37 0)
+			(at 245.11 167.64 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -5429,7 +5366,7 @@
 			)
 		)
 		(property "Description" ""
-			(at 237.49 166.37 0)
+			(at 245.11 167.64 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -5446,6 +5383,162 @@
 			(project "cc1200_balloon"
 				(path "/5283d11e-ccf0-51c0-83df-1e782a317298/e204f989-227c-51e9-89c4-b959a993512c"
 					(reference "#PWR02003")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "power:+BATT")
+		(at 234.95 165.1 0)
+		(mirror y)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(uuid "6fffaad2-f3f1-4a8d-8d51-a321e5255f76")
+		(property "Reference" "#PWR02004"
+			(at 234.95 171.45 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "+BATT"
+			(at 234.95 161.29 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 234.95 165.1 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 234.95 165.1 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" ""
+			(at 234.95 165.1 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "4df486ef-2227-49b8-aca2-a5c0b9b64aae")
+		)
+		(instances
+			(project "cc1200_balloon"
+				(path "/5283d11e-ccf0-51c0-83df-1e782a317298/e204f989-227c-51e9-89c4-b959a993512c"
+					(reference "#PWR02004")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "power:GND")
+		(at 223.52 90.17 0)
+		(mirror y)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(uuid "73b2fe5f-5ada-4399-b76a-fed7b6ff2391")
+		(property "Reference" "#PWR2013"
+			(at 223.52 96.52 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "GND"
+			(at 223.52 93.98 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 223.52 90.17 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 223.52 90.17 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" ""
+			(at 223.52 90.17 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "a8ce1b7b-cb85-539d-9828-1eccaa6d4d5d")
+		)
+		(instances
+			(project "cc1200_balloon"
+				(path "/5283d11e-ccf0-51c0-83df-1e782a317298/e204f989-227c-51e9-89c4-b959a993512c"
+					(reference "#PWR2013")
 					(unit 1)
 				)
 			)
@@ -5530,7 +5623,8 @@
 	)
 	(symbol
 		(lib_id "power:GND")
-		(at 252.73 152.4 0)
+		(at 205.74 166.37 0)
+		(mirror y)
 		(unit 1)
 		(body_style 1)
 		(exclude_from_sim no)
@@ -5538,9 +5632,9 @@
 		(on_board yes)
 		(in_pos_files yes)
 		(dnp no)
-		(uuid "8c262ed0-e905-515c-bd4b-3b02773152c9")
-		(property "Reference" "#PWR2019"
-			(at 252.73 158.75 0)
+		(uuid "8057ef07-72bb-41dc-b2ee-19831f5beaaa")
+		(property "Reference" "#PWR2012"
+			(at 205.74 172.72 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -5551,7 +5645,7 @@
 			)
 		)
 		(property "Value" "GND"
-			(at 252.73 156.21 0)
+			(at 205.74 170.18 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -5561,7 +5655,7 @@
 			)
 		)
 		(property "Footprint" ""
-			(at 252.73 152.4 0)
+			(at 205.74 166.37 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -5572,7 +5666,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 252.73 152.4 0)
+			(at 205.74 166.37 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -5583,7 +5677,7 @@
 			)
 		)
 		(property "Description" ""
-			(at 252.73 152.4 0)
+			(at 205.74 166.37 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -5594,12 +5688,12 @@
 			)
 		)
 		(pin "1"
-			(uuid "c023ff48-4008-554e-a167-ee47514d5714")
+			(uuid "66af2924-b366-5fff-8b87-6112b699192e")
 		)
 		(instances
 			(project "cc1200_balloon"
 				(path "/5283d11e-ccf0-51c0-83df-1e782a317298/e204f989-227c-51e9-89c4-b959a993512c"
-					(reference "#PWR2019")
+					(reference "#PWR2012")
 					(unit 1)
 				)
 			)
@@ -5810,7 +5904,7 @@
 	)
 	(symbol
 		(lib_id "power:GND")
-		(at 149.86 115.57 0)
+		(at 210.82 90.17 0)
 		(mirror y)
 		(unit 1)
 		(body_style 1)
@@ -5819,9 +5913,9 @@
 		(on_board yes)
 		(in_pos_files yes)
 		(dnp no)
-		(uuid "aa097418-e8b3-53b9-992c-693f6ede0ca4")
-		(property "Reference" "#PWR2017"
-			(at 149.86 121.92 0)
+		(uuid "add8a3eb-eb49-4541-ba84-5f389f44484a")
+		(property "Reference" "#PWR2014"
+			(at 210.82 96.52 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -5832,7 +5926,7 @@
 			)
 		)
 		(property "Value" "GND"
-			(at 149.86 119.38 0)
+			(at 210.82 93.98 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -5842,7 +5936,7 @@
 			)
 		)
 		(property "Footprint" ""
-			(at 149.86 115.57 0)
+			(at 210.82 90.17 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -5853,7 +5947,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 149.86 115.57 0)
+			(at 210.82 90.17 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -5864,7 +5958,7 @@
 			)
 		)
 		(property "Description" ""
-			(at 149.86 115.57 0)
+			(at 210.82 90.17 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -5875,12 +5969,12 @@
 			)
 		)
 		(pin "1"
-			(uuid "45407080-b00e-58f8-95da-e3fbc9d8e5c9")
+			(uuid "f812baa2-4728-5a95-b001-590ebdf6357a")
 		)
 		(instances
 			(project "cc1200_balloon"
 				(path "/5283d11e-ccf0-51c0-83df-1e782a317298/e204f989-227c-51e9-89c4-b959a993512c"
-					(reference "#PWR2017")
+					(reference "#PWR2014")
 					(unit 1)
 				)
 			)
@@ -5888,7 +5982,7 @@
 	)
 	(symbol
 		(lib_id "Connector_Generic:Conn_01x02")
-		(at 242.57 177.8 0)
+		(at 250.19 179.07 0)
 		(unit 1)
 		(body_style 1)
 		(exclude_from_sim no)
@@ -5899,7 +5993,7 @@
 		(fields_autoplaced yes)
 		(uuid "b33066fa-a52f-4836-b491-f32ebbf2c265")
 		(property "Reference" "J1"
-			(at 245.11 177.7999 0)
+			(at 252.73 179.0699 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -5910,7 +6004,7 @@
 			)
 		)
 		(property "Value" "Conn_01x02"
-			(at 245.11 180.3399 0)
+			(at 252.73 181.6099 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -5921,7 +6015,7 @@
 			)
 		)
 		(property "Footprint" "Connector_PinHeader_1.00mm:PinHeader_1x02_P1.00mm_Vertical"
-			(at 242.57 177.8 0)
+			(at 250.19 179.07 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -5932,7 +6026,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 242.57 177.8 0)
+			(at 250.19 179.07 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -5943,7 +6037,7 @@
 			)
 		)
 		(property "Description" "Generic connector, single row, 01x02, script generated (kicad-library-utils/schlib/autogen/connector/)"
-			(at 242.57 177.8 0)
+			(at 250.19 179.07 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -6143,6 +6237,84 @@
 			(project "cc1200_balloon"
 				(path "/5283d11e-ccf0-51c0-83df-1e782a317298/e204f989-227c-51e9-89c4-b959a993512c"
 					(reference "U201")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "power:GND")
+		(at 149.86 115.57 0)
+		(mirror y)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(uuid "b3e1c0b5-b312-4386-9288-bb5779736e19")
+		(property "Reference" "#PWR2017"
+			(at 149.86 121.92 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "GND"
+			(at 149.86 119.38 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 149.86 115.57 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 149.86 115.57 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" ""
+			(at 149.86 115.57 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "45407080-b00e-58f8-95da-e3fbc9d8e5c9")
+		)
+		(instances
+			(project "cc1200_balloon"
+				(path "/5283d11e-ccf0-51c0-83df-1e782a317298/e204f989-227c-51e9-89c4-b959a993512c"
+					(reference "#PWR2017")
 					(unit 1)
 				)
 			)
@@ -6418,161 +6590,6 @@
 		)
 	)
 	(symbol
-		(lib_id "power:GND")
-		(at 161.29 153.67 0)
-		(unit 1)
-		(body_style 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(in_pos_files yes)
-		(dnp no)
-		(uuid "e1ac2354-8f2c-5793-bb1b-0442acb58324")
-		(property "Reference" "#PWR2016"
-			(at 161.29 160.02 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Value" "GND"
-			(at 161.29 157.48 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Footprint" ""
-			(at 161.29 153.67 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Datasheet" ""
-			(at 161.29 153.67 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Description" ""
-			(at 161.29 153.67 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(pin "1"
-			(uuid "72c56a2d-44aa-5feb-8066-4ece3f91b788")
-		)
-		(instances
-			(project "cc1200_balloon"
-				(path "/5283d11e-ccf0-51c0-83df-1e782a317298/e204f989-227c-51e9-89c4-b959a993512c"
-					(reference "#PWR2016")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "power:GND")
-		(at 191.77 199.39 0)
-		(mirror y)
-		(unit 1)
-		(body_style 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(in_pos_files yes)
-		(dnp no)
-		(uuid "e2f5017a-8bae-55fc-9da6-c3359828eb82")
-		(property "Reference" "#PWR2018"
-			(at 191.77 205.74 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Value" "GND"
-			(at 191.77 203.2 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Footprint" ""
-			(at 191.77 199.39 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Datasheet" ""
-			(at 191.77 199.39 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Description" ""
-			(at 191.77 199.39 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(pin "1"
-			(uuid "427aba4b-ed3c-539f-95f6-f716b54597ab")
-		)
-		(instances
-			(project "cc1200_balloon"
-				(path "/5283d11e-ccf0-51c0-83df-1e782a317298/e204f989-227c-51e9-89c4-b959a993512c"
-					(reference "#PWR2018")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
 		(lib_id "Connector:Conn_Coaxial")
 		(at 149.86 110.49 0)
 		(mirror y)
@@ -6669,6 +6686,184 @@
 			(project "cc1200_balloon"
 				(path "/5283d11e-ccf0-51c0-83df-1e782a317298/e204f989-227c-51e9-89c4-b959a993512c"
 					(reference "J201")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "power:GND")
+		(at 252.73 152.4 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(uuid "e604ce1e-375a-4f58-a1cb-4a6c4f880bec")
+		(property "Reference" "#PWR2019"
+			(at 252.73 158.75 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "GND"
+			(at 252.73 156.21 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 252.73 152.4 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 252.73 152.4 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" ""
+			(at 252.73 152.4 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "c023ff48-4008-554e-a167-ee47514d5714")
+		)
+		(instances
+			(project "cc1200_balloon"
+				(path "/5283d11e-ccf0-51c0-83df-1e782a317298/e204f989-227c-51e9-89c4-b959a993512c"
+					(reference "#PWR2019")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Device:R")
+		(at 234.95 168.91 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(uuid "e6d617c9-1894-4924-bccf-0b7fa7b07476")
+		(property "Reference" "R205"
+			(at 230.124 167.91 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "100k"
+			(at 230.759 169.91 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" "Resistor_SMD:R_0402_1005Metric"
+			(at 234.95 168.91 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" "https://yageogroup.com/content/datasheet/asset/file/PYU-RC_GROUP_51_ROHS_L"
+			(at 234.95 168.91 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" ""
+			(at 234.95 168.91 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Manufacturer" "YAGEO"
+			(at 234.95 168.91 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "MPN" "RC0402FR-0710KL"
+			(at 234.95 168.91 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "1857a168-7c45-4ffc-9aff-dd23e46911a5")
+		)
+		(pin "2"
+			(uuid "f862e466-ccb4-4eb2-9314-1ec79506daee")
+		)
+		(instances
+			(project "cc1200_balloon"
+				(path "/5283d11e-ccf0-51c0-83df-1e782a317298/e204f989-227c-51e9-89c4-b959a993512c"
+					(reference "R205")
 					(unit 1)
 				)
 			)
@@ -7136,7 +7331,7 @@
 	)
 	(symbol
 		(lib_id "power:GND")
-		(at 223.52 90.17 0)
+		(at 191.77 199.39 0)
 		(mirror y)
 		(unit 1)
 		(body_style 1)
@@ -7145,9 +7340,9 @@
 		(on_board yes)
 		(in_pos_files yes)
 		(dnp no)
-		(uuid "f2edada1-ca1b-5372-9fd9-fe5cc21e71dd")
-		(property "Reference" "#PWR2013"
-			(at 223.52 96.52 0)
+		(uuid "ef83296f-dc96-4050-ba6e-9d26a8e3a793")
+		(property "Reference" "#PWR2018"
+			(at 191.77 205.74 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -7158,7 +7353,7 @@
 			)
 		)
 		(property "Value" "GND"
-			(at 223.52 93.98 0)
+			(at 191.77 203.2 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -7168,7 +7363,7 @@
 			)
 		)
 		(property "Footprint" ""
-			(at 223.52 90.17 0)
+			(at 191.77 199.39 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -7179,7 +7374,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 223.52 90.17 0)
+			(at 191.77 199.39 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -7190,7 +7385,7 @@
 			)
 		)
 		(property "Description" ""
-			(at 223.52 90.17 0)
+			(at 191.77 199.39 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -7201,12 +7396,12 @@
 			)
 		)
 		(pin "1"
-			(uuid "a8ce1b7b-cb85-539d-9828-1eccaa6d4d5d")
+			(uuid "427aba4b-ed3c-539f-95f6-f716b54597ab")
 		)
 		(instances
 			(project "cc1200_balloon"
 				(path "/5283d11e-ccf0-51c0-83df-1e782a317298/e204f989-227c-51e9-89c4-b959a993512c"
-					(reference "#PWR2013")
+					(reference "#PWR2018")
 					(unit 1)
 				)
 			)
