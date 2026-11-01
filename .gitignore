@@ -1,4 +1,5 @@
 NOTES.md
+notes/
 *.kicad_prl
 *-backups/
 ~*.lck
