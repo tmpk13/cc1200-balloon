@@ -1,0 +1,36 @@
+[tasks.erc]
+description = "Run full-hierarchy ERC from the root sheet; report in build/erc.rpt"
+run = [
+    "mkdir -p build",
+    "kicad-cli sch erc --severity-error --exit-code-violations -o build/erc.rpt cc1200_balloon.kicad_sch",
+]
+
+[tasks.drc]
+description = "Run DRC with zones refilled in memory (the board is not saved), every track error and schematic parity; report in build/drc.rpt"
+run = [
+    "mkdir -p build",
+    "kicad-cli pcb drc --refill-zones --all-track-errors --schematic-parity --severity-error --exit-code-violations -o build/drc.rpt cc1200_balloon.kicad_pcb",
+]
+
+[tasks.fields-check]
+description = "Report the Datasheet, MPN and Manufacturer fields that tools/set_part_fields.py would change"
+run = "python3 tools/set_part_fields.py --check"
+
+[tasks.fields]
+description = "Write Datasheet, MPN and Manufacturer from tools/parts.json into the sheets and the board footprints"
+run = "python3 tools/set_part_fields.py"
+
+[tasks.bom]
+description = "Regenerate digikey_bom.csv, BOM.md and bom.json from the schematic and tools/parts.json"
+run = "python3 tools/gen_digikey_bom.py"
+
+[tasks.power]
+description = "Print the battery budget for the as-built, single-LDO and switched-domain power options"
+run = "python3 tools/power_budget.py"
+
+[tasks.test]
+description = "Run the power budget tests (pytest) and the label localizer tests (bun)"
+run = [
+    "pytest -q --tb=short tools",
+    "bun test ./tools",
+]
