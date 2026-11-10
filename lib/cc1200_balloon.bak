@@ -159,7 +159,7 @@
 						)
 					)
 				)
-				(number "{1,4}"
+				(number "[1,4]"
 					(effects
 						(font
 							(size 1.27 1.27)

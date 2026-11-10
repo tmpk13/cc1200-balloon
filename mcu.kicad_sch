@@ -4818,6 +4818,17 @@
 				)
 			)
 		)
+		(property "Description" "P-MOSFET transistor, drain/source/gate"
+			(at 242.57 172.72 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
 		(property "Manufacturer" "Shenzhen Slkormicro Semicon"
 			(at 242.57 160.02 0)
 			(hide yes)
@@ -4831,17 +4842,6 @@
 		)
 		(property "MPN" "SLMT520V2CP"
 			(at 242.57 160.02 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Description" "P-MOSFET transistor, drain/source/gate"
-			(at 242.57 172.72 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
